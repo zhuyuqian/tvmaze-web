@@ -1,0 +1,51 @@
+@import "./themes";
+
+//遍历主题map
+@mixin themeify {
+  @each $theme-name, $theme-map in $themes {
+    $theme-map: $theme-map !global;
+    body[data-theme=#{$theme-name}] & {
+      @content;
+    }
+  }
+}
+
+//声明一个根据Key获取颜色的function
+@function themed($key) {
+  @return map-get($theme-map, $key);
+}
+
+//获取背景颜色
+@mixin backgroundColor($color) {
+  @include themeify {
+    background-color: themed($color);
+  }
+}
+
+//获取字体颜色
+@mixin fontColor($color) {
+  @include themeify {
+    color: themed($color);
+  }
+}
+
+// 获取边框
+@mixin border($border) {
+  @include themeify {
+    border: themed($border);
+  }
+}
+
+//获取边框颜色
+@mixin borderColor($color) {
+  @include themeify {
+    border-color: themed($color);
+  }
+}
+
+// 获取投影颜色
+@mixin boxShadow($shadow) {
+  @include themeify {
+    box-shadow: themed($shadow);
+  }
+}

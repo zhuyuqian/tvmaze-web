@@ -1,0 +1,488 @@
+@import 'animate.css';
+@import "./_themes";
+@import "./_handle";
+
+@font-face {
+  font-family: 'myNum';
+  src: url('~/assets/font/DIN_Alternate_Bold.ttf') format('truetype');
+  font-weight: normal;
+}
+
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: none;
+
+  &[data-theme] {
+    display: block;
+  }
+}
+
+@each $theme-name, $theme-map in $themes {
+  body[data-theme=#{$theme-name}] {
+    background-color: map-get($theme-map, 'color-page-background');
+  }
+}
+
+//链接
+a {
+  text-decoration: none;
+  @include fontColor("color-text");
+
+  &:hover {
+    @include fontColor("color-primary");
+  }
+}
+
+//p标签
+p {
+  margin: 0
+}
+
+//主体区域
+.content {
+  margin: 0 auto;
+}
+
+// 吸顶
+.stick-top {
+  position: sticky;
+  top: 10px;
+  z-index: 1;
+}
+
+// 吸底
+.stick-bottom {
+  position: sticky;
+  bottom: 0;
+  z-index: 1;
+}
+
+// 卡片
+.common-card {
+  position: relative;
+  top: 0;
+  display: block;
+  padding: 15px;
+  overflow: hidden;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  transition: 0.3s all;
+  @include border("border-base");
+  @include backgroundColor("color-card-background");
+
+  .cover-box {
+    font-size: 0;
+  }
+
+  .info-box {
+    @include fontColor('color-text');
+
+    .name-box {
+      @include fontColor('color-title');
+    }
+  }
+
+  &.list {
+    margin-bottom: -1px;
+    border-radius: 0;
+  }
+
+  &:hover, &.active {
+    z-index: 2;
+    top: -10px;
+    @include boxShadow('box-shadow');
+
+    .info-box {
+      .name-box {
+        @include fontColor('color-primary')
+      }
+    }
+
+    &:not(.list)::before {
+      position: absolute;
+      content: '';
+      z-index: -2;
+      left: -50%;
+      top: -50%;
+      width: 200%;
+      height: 200%;
+      background-repeat: no-repeat;
+      background-position: 0 0;
+      animation: rotate 2s linear infinite;
+      @include themeify {
+        background-image: conic-gradient(transparent, themed('color-primary'), transparent 30%);
+      }
+    }
+
+    &:not(.list)::after {
+      position: absolute;
+      content: '';
+      z-index: -1;
+      left: 6px;
+      top: 6px;
+      width: calc(100% - 12px);
+      height: calc(100% - 12px);
+      border-radius: 4px;
+      @include backgroundColor('color-card-background');
+    }
+  }
+}
+
+//溢出省略号
+.pub-ellipsis-1 {
+  overflow: hidden;
+  display: -webkit-box;
+  word-break: break-all;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+
+.pub-ellipsis-2 {
+  overflow: hidden;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.pub-ellipsis-3 {
+  word-break: break-all;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+
+//element-ui
+
+// 输入框
+.el-input {
+  .el-input__icon {
+    @include fontColor('color-text');
+  }
+
+  .el-input__inner {
+    background: none;
+    @include fontColor('color-text');
+    @include border('border-base');
+
+    &::placeholder {
+      @include fontColor('color-placeholder');
+    }
+
+    &:focus {
+      @include borderColor('color-primary');
+    }
+  }
+}
+
+// 按钮
+.el-button {
+  border: none;
+
+  &.el-button--primary {
+    @include backgroundColor('color-primary-light');
+
+    &:hover {
+      @include backgroundColor('color-primary');
+    }
+  }
+}
+
+// 单选框组
+.el-radio-group {
+  .el-radio {
+    .el-radio__input {
+      .el-radio__inner {
+        background: none;
+        @include border("border-base");
+
+        &::after {
+          background: none;
+        }
+      }
+
+      &.is-checked {
+        .el-radio__inner {
+          @include borderColor('color-primary');
+
+          &::after {
+            background: none;
+            top: calc(50% - 10px);
+            left: calc(50% - 4px);
+            font-size: 20px;
+            content: '✓';
+            @include fontColor('color-primary')
+          }
+        }
+      }
+    }
+
+    .el-radio__label {
+      @include fontColor('color-text');
+    }
+
+    &.is-checked {
+      .el-radio__label {
+        @include fontColor('color-primary');
+      }
+    }
+  }
+}
+
+// 多选框组
+.el-checkbox-group {
+  .el-checkbox {
+    .el-checkbox__input {
+      .el-checkbox__inner {
+        background: none;
+        @include border("border-base");
+
+        &::after {
+          border: none;
+        }
+      }
+
+      &.is-checked {
+        .el-checkbox__inner {
+          @include borderColor('color-primary');
+
+          &::after {
+            border: none;
+            top: calc(50% - 10px);
+            left: calc(50% - 6px);
+            content: '✓';
+            font-size: 20px;
+            transform: none;
+            @include fontColor('color-primary')
+          }
+        }
+      }
+    }
+
+    .el-checkbox__label {
+      @include fontColor('color-text');
+    }
+
+    &.is-checked {
+      .el-checkbox__label {
+        @include fontColor('color-primary');
+      }
+    }
+  }
+}
+
+// 弹出
+.el-popper {
+  &.el-picker-panel {
+    @include fontColor('color-text');
+    @include backgroundColor('color-card-background');
+    @include borderColor('border-color');
+
+    .el-picker-panel__body-wrapper {
+      .el-picker-panel__body {
+        .el-date-picker__header {
+          .el-picker-panel__icon-btn {
+            @include fontColor('color-text');
+
+            &:hover {
+              @include fontColor('color-primary');
+            }
+          }
+
+          .el-date-picker__header-label {
+            @include fontColor('color-text');
+
+            &:hover {
+              @include fontColor('color-primary');
+            }
+          }
+        }
+
+        .el-picker-panel__content {
+          .el-date-table {
+            th {
+              @include borderColor('border-color');
+            }
+
+            td {
+              &:hover {
+                span {
+                  @include fontColor('color-primary')
+                }
+              }
+
+              &.current:not(.disabled) {
+                span {
+                  @include backgroundColor('color-primary')
+                }
+
+                &:hover {
+                  span {
+                    color: #fff !important;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+  }
+
+  &.el-popper {
+    @include backgroundColor('color-card-background');
+    @include border('border-base');
+  }
+
+  .popper__arrow {
+    @include themeify {
+      border-bottom-color: themed('border-color');
+    }
+
+    &::after {
+      @include themeify {
+        border-bottom-color: themed('color-card-background');
+      }
+    }
+  }
+}
+
+// 弹框
+.el-dialog {
+  @include backgroundColor('color-page-background')
+}
+
+// 开关
+.el-switch {
+  .el-switch__core {
+    @include border('border-base');
+    @include backgroundColor('color-card-background')
+  }
+
+  .el-switch__label {
+    margin-left: 4px;
+    font-weight: normal;
+    @include fontColor('color-text');
+
+    &.is-active {
+      @include fontColor('color-primary');
+    }
+  }
+
+  &.is-checked {
+    .el-switch__core {
+      @include backgroundColor('color-primary')
+    }
+  }
+}
+
+//message消息信息
+.el-message-box__wrapper {
+  .el-message-box {
+    @include backgroundColor('color-card-background');
+    @include border('border-base');
+
+    .el-message-box__header {
+      .el-message-box__title {
+        @include fontColor('color-title')
+      }
+
+      .el-message-box__headerbtn {
+        .el-message-box__close {
+          @include fontColor('color-text')
+        }
+      }
+    }
+  }
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(1turn);
+  }
+}
+
+// 列表动画
+@for $i from 1 to 50 {
+  .animate__animated.delay-#{$i} {
+    animation-delay: 50ms * $i;
+  }
+}
+
+// xl
+@media screen and (min-width: 1920px) {
+  body {
+    min-width: 1440px;
+
+    .content {
+      width: 1440px;
+    }
+  }
+}
+
+// xl-lg
+@media screen and (max-width: 1920px) and (min-width: 1440px) {
+  body {
+    min-width: 1440px;
+
+    .content {
+      width: 1440px;
+    }
+  }
+}
+
+// lg
+@media screen and (max-width: 1440px) and (min-width: 1200px) {
+  body {
+    min-width: 1200px;
+
+    .content {
+      width: 1200px;
+    }
+  }
+}
+
+// md
+@media screen and (max-width: 1200px) and (min-width: 992px) {
+  body {
+    min-width: 992px;
+
+    .content {
+      width: 992px;
+    }
+  }
+}
+
+// sm
+@media screen and (max-width: 992px) and (min-width: 768px) {
+  body {
+    min-width: 768px;
+
+    .content {
+      width: 768px;
+    }
+  }
+}
+
+// xs
+@media screen and (max-width: 768px) {
+  body {
+    min-width: 768px;
+
+    .content {
+      width: 768px;
+    }
+  }
+}

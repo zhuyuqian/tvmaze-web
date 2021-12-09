@@ -1,0 +1,58 @@
+$themes: (
+  "black": (// 暗黑
+    color-primary:rgb(255, 153, 0), // 主题色
+    color-primary-light:rgba(255, 153, 0, 0.8), // 主题色（亮）
+    color-page-background:rgba(23, 23, 23, 1), // 页面背景
+    color-deep-background:rgba(17, 17, 17, 1), // 深色背景
+    color-card-background:rgba(32, 32, 32, 1), // 有内容的背景色
+    color-title:rgba(212, 212, 213, 1), // 标题颜色
+    color-text:rgb(147, 147, 148), // 文字颜色
+    color-placeholder:rgba(68, 68, 68, 1), // 输入框没有文字的颜色
+    color-disabled:rgba(179, 179, 180, 0.2), // 禁用颜色
+    border-base:1px solid rgba(68, 68, 68, 0.3), // 边框
+    border-color:rgba(68, 68, 68, 0.3), // 边框
+    box-shadow:0 0 20px rgb(0, 0, 0), // 投影
+  ),
+  "dark": (// 深邃
+    color-primary:rgb(80, 161, 255), // 主题色
+    color-primary-light:rgba(80, 161, 255, 0.6), // 主题色（亮）
+    color-page-background:rgba(22, 32, 47, 1), // 页面背景
+    color-deep-background:rgba(19, 26, 38, 1), // 深色背景
+    color-card-background:rgba(29, 40, 59, 1), // 有内容的背景色
+    color-title:rgba(160, 180, 200, 1), // 标题颜色
+    color-text:rgba(160, 180, 200, 0.8), // 文字颜色
+    color-placeholder:rgba(120, 130, 140, 1), // 输入框没有文字的颜色
+    color-disabled:rgba(160, 180, 200, 0.2), // 禁用颜色
+    border-base:1px solid rgba(120, 130, 140, 0.3), // 边框
+    border-color:rgba(120, 130, 140, 0.3), // 边框
+    box-shadow:0 0 20px rgb(0, 5, 16), // 投影
+  ),
+  "haitian":(// 海天
+    color-primary:rgba(71, 105, 183, 1), // 主题色
+    color-primary-light:rgba(71, 105, 183, 0.8), // 主题色（亮）
+    color-page-background:rgba(220, 226, 241, 1), // 页面背景
+    color-deep-background:rgba(211, 218, 237, 1), // 深色背景
+    color-card-background:rgba(233, 237, 246, 1), // 有内容的背景色
+    color-title:rgba(88, 117, 183, 1), // 标题颜色
+    color-text:rgb(129, 147, 189), // 文字颜色
+    color-placeholder:rgba(71, 105, 183, 0.2), // 输入框没有文字的颜色
+    color-disabled:rgba(160, 180, 200, 0.2), // 禁用颜色
+    border-base:1px solid rgba(71, 105, 183, 0.2), // 边框
+    border-color:rgba(71, 105, 183, 0.2), // 边框
+    box-shadow:0 0 20px rgba(71, 105, 183, 0.2), // 投影
+  ),
+  "fugu":(// 复古
+    color-primary:rgb(6, 109, 117), // 主题色
+    color-primary-light:rgba(6, 109, 117, 0.8), // 主题色（亮)
+    color-page-background:rgba(131, 130, 115, 1), // 页面背景
+    color-deep-background:rgb(131, 130, 115), // 深色背景
+    color-card-background:rgb(148, 147, 133), // 有内容的背景色
+    color-title:rgb(54, 54, 47), // 标题颜色
+    color-text:rgba(54, 54, 47, 0.5), // 文字颜色
+    color-placeholder:rgba(224, 222, 201, 0.3), // 输入框没有文字的颜色
+    color-disabled:rgba(224, 222, 201, 0.2), // 禁用颜色
+    border-base:1px solid rgba(224, 222, 201, 0.2), // 边框
+    border-color:rgba(224, 222, 201, 0.2), // 边框
+    box-shadow:0 0 20px rgba(54, 54, 47, 0.2), // 投影
+  )
+);

@@ -1,0 +1,28 @@
+{
+  "name": "diyixueli-web",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "serve": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@nuxtjs/axios": "^5.13.6",
+    "animate.css": "^4.1.1",
+    "core-js": "^3.19.2",
+    "dayjs": "^1.10.7",
+    "element-ui": "^2.15.6",
+    "js-cookie": "^3.0.1",
+    "nuxt": "^2.15.8",
+    "wangeditor": "^4.7.10"
+  },
+  "devDependencies": {
+    "@nuxtjs/style-resources": "^1.2.1",
+    "babel-plugin-component": "^1.1.1",
+    "sass": "^1.44.0",
+    "sass-loader": "^10.2.0",
+    "vue-i18n": "^8.26.7"
+  }
+}
