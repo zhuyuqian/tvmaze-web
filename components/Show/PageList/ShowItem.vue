@@ -4,10 +4,10 @@
       <image-plus :src="info.showImageMedium"/>
     </div>
     <div class="info-box">
-      <div class="name-box pub-ellipsis-1">{{ $store.getters.TEXT_BY_LANG(info.showName, info.showNameZh) }}</div>
+      <div class="name-box pub-ellipsis-1">{{ info.showName }} {{ info.showNameZh }}</div>
       <div class="summary-box pub-ellipsis-1"
            v-html="$store.getters.TEXT_BY_LANG(info.showSummary,info.showSummaryZh)"></div>
-      <div class="desc-box">{{ $t(`show.language.${info.showLanguage}`) }}</div>
+      <div class="other-box">{{ $t(`show.language.${info.showLanguage}`) }}</div>
       <div class="other-box pub-ellipsis-1">
         <span>
           <template v-for="(genre,index) of info.showGenres">
@@ -39,24 +39,6 @@ export default {
     .name-box {
       margin-top: 6px;
       line-height: 24px;
-    }
-
-    .desc-box {
-      font-size: 12px;
-    }
-
-    .other-box {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-top: 2px;
-      font-size: 12px;
-
-      span {
-        &:before {
-          margin-right: 2px;
-        }
-      }
     }
   }
 
@@ -99,6 +81,7 @@ export default {
       }
 
       .summary-box {
+        display: -webkit-box;
         margin-top: 4px;
         font-size: 14px;
       }

@@ -1,5 +1,5 @@
 <template>
-  <div class="show-item common-card" :class="{[shape]:true,active:isActive}" @click="$emit('open-episode',info)">
+  <div class="show-season-item common-card" :class="{[shape]:true,active:isActive}" @click="$emit('open-episode',info)">
     <div class="cover-box">
       <image-plus :src="info.seasonImageMedium"/>
     </div>
@@ -25,25 +25,11 @@ export default {
 <style lang="scss" scoped>
 @import "~assets/scss/_handle.scss";
 
-.show-item {
+.show-season-item {
   .info-box {
     .name-box {
       margin-top: 6px;
       line-height: 24px;
-    }
-
-    .other-box {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-top: 2px;
-      font-size: 12px;
-
-      span {
-        &:before {
-          margin-right: 2px;
-        }
-      }
     }
   }
 
@@ -51,7 +37,7 @@ export default {
   &.card {
     .cover-box {
       width: 100%;
-      height: 180px;
+      height: 200px;
     }
 
     .info-box {

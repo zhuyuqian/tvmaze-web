@@ -86,6 +86,20 @@ p {
     .name-box {
       @include fontColor('color-title');
     }
+
+    .other-box {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 2px;
+      font-size: 12px;
+
+      span {
+        &:before {
+          margin-right: 2px;
+        }
+      }
+    }
   }
 
   &.list {
@@ -137,7 +151,6 @@ p {
 //溢出省略号
 .pub-ellipsis-1 {
   overflow: hidden;
-  display: -webkit-box;
   word-break: break-all;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -401,6 +414,14 @@ p {
 
       .el-message-box__headerbtn {
         .el-message-box__close {
+          @include fontColor('color-text')
+        }
+      }
+    }
+
+    .el-message-box__content {
+      .el-message-box__container {
+        .el-message-box__message {
           @include fontColor('color-text')
         }
       }

@@ -16,10 +16,11 @@
                   :sm="SHOW_SHAPE==='list'?24:8"
                   :md="SHOW_SHAPE==='list'?24:6"
                   :lg="SHOW_SHAPE==='list'?24:4">
-            <show-item :info="show" :shape="SHOW_SHAPE" class="animate__animated animate__fadeInDown"
+            <show-item :info="show" :shape="SHOW_SHAPE" class="animate__animated animate__fadeInUp"
                        :class="`delay-${index}`"/>
           </el-col>
         </el-row>
+        <data-empty v-if="!showInfo.count"/>
         <pagination-plus :current-page="searchInfo.page" :page-size="18" :total="showInfo.count"
                          @change="searchInfoChange"/>
       </el-col>

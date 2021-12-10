@@ -11,7 +11,7 @@
         <content-warp :ref="item.hours" v-for="item of pageInfo.list" :name="item.hours" :key="item.hours" size="small">
           <el-row :gutter="15">
             <el-col :span="6" v-for="(show,index) of item.showList" :key="show.showId">
-              <schedule-item :info="show" class="animate__animated animate__fadeInDown" :class="`delay-${index}`"/>
+              <schedule-item :info="show" class="animate__animated animate__fadeInUp" :class="`delay-${index}`"/>
             </el-col>
           </el-row>
         </content-warp>

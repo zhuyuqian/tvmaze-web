@@ -5,8 +5,9 @@
     <el-row :gutter="15" v-if="shape==='card'">
       <el-col v-for="(season,index) of list" :key="season.seasonId" :xs="6" :sm="6" :md="4" :lg="4" :xl="3">
         <show-season-item :shape="shape" :info="season" @open-episode="openEpisode"
-                          class="animate__animated animate__fadeInDown" :class="`delay-${index}`"/>
+                          class="animate__animated animate__fadeInUp" :class="`delay-${index}`"/>
       </el-col>
+      <data-empty v-if="!list.length"/>
     </el-row>
     <!--弹窗-->
     <show-episode-list-dialog ref="episode-dialog"/>

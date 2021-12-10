@@ -4,8 +4,9 @@
       <content-search-warp slot="rt" v-model="searchInfo.name" @change="searchInfoChange"/>
       <el-row :gutter="15">
         <el-col :xs="8" :sm="8" :md="6" :lg="4" v-for="(network,index) of pageInfo.data" :key="network.networkId">
-          <network-item :info="network" class="animate__animated animate__fadeInDown" :class="`delay-${index}`"/>
+          <network-item :info="network" class="animate__animated animate__fadeInUp" :class="`delay-${index}`"/>
         </el-col>
+        <data-empty v-if="!pageInfo.count"/>
       </el-row>
     </content-warp>
     <pagination-plus :current-page="searchInfo.page" :page-size="searchInfo.size" :total="pageInfo.count"

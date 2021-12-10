@@ -5,8 +5,7 @@
     </div>
     <div class="info-box">
       <div class="other-box">
-        <span>S{{ info.seasonNo }} E{{ info.episodeNo }}</span>
-        <span>{{ $dayjs(info.episodeAirsTime).format('YYYY-MM-DD') }}</span>
+        {{ $dayjs(info.episodeAirsTime).format('YYYY/MM/DD') }} S{{ info.seasonNo }} E{{ info.episodeNo }}
       </div>
       <div class="name-box">{{ info.episodeName }} {{ info.episodeNameZh }}</div>
       <div class="summary-box" v-html="$store.getters.TEXT_BY_LANG(info.episodeSummary, info.episodeSummaryZh)"></div>
@@ -41,10 +40,6 @@ export default {
   .info-box {
     flex: 1;
     margin-left: 10px;
-
-    .other-box {
-      font-size: 12px;
-    }
 
     .name-box {
       margin-top: 2px;

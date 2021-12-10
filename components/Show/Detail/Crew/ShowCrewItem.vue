@@ -5,7 +5,7 @@
     </div>
     <div class="info-box">
       <div class="name-box pub-ellipsis-1" :title="info.peopleName">{{ info.peopleName }}</div>
-      <div class="desc-box " :title="info.crewType">职责：{{ $t(`people.crew.${info.crewType}`) }}</div>
+      <div class="other-box " :title="info.crewType">职责：{{ $t(`people.crew.${info.crewType}`) }}</div>
     </div>
   </div>
 </template>
@@ -28,11 +28,6 @@ export default {
   .info-box {
     .name-box {
       margin-top: 4px;
-    }
-
-    .desc-box {
-      margin-top: 2px;
-      font-size: 12px;
     }
   }
 }

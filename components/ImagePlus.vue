@@ -1,5 +1,5 @@
 <template>
-  <img class="image-plus" v-lazy="src" :key="src" :style="{objectFit:fit}">
+  <img class="image-plus" v-lazy="src||''" :key="src" :style="{objectFit:fit}">
 </template>
 
 <script>
@@ -23,6 +23,7 @@ export default {
     display: block;
     margin: 0 auto;
     width: 20px;
+    opacity: 0.4;
     object-fit: contain !important;
   }
 
@@ -31,7 +32,7 @@ export default {
     margin: 0 auto;
     width: 40px;
     object-fit: contain !important;
-    opacity: 0.5;
+    opacity: 0.4;
   }
 }
 </style>

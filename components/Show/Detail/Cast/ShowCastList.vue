@@ -4,10 +4,10 @@
     <el-row :gutter="15">
       <template v-for="(cast,index) of list">
         <el-col :xs="6" :sm="6" :md="4" :lg="4" :xl="3" :key="cast.castId" v-if="showAll || index<minCount">
-          <show-cast-item :info="cast"
-                          class="animate__animated animate__fadeInDown" :class="`delay-${index}`"/>
+          <show-cast-item :info="cast" class="animate__animated animate__fadeInUp" :class="`delay-${index}`"/>
         </el-col>
       </template>
+      <data-empty v-if="!list.length"/>
     </el-row>
   </content-warp>
 </template>

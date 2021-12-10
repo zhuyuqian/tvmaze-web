@@ -28,11 +28,10 @@ export default {
     '@/assets/scss/common.scss'
   ],
   plugins: [
-    '@/plugins/element-ui',
     '@/plugins/tool',
+    '@/plugins/element-ui',
     '@/plugins/i18n.js',
     {src: '@/plugins/vue-lazyload', ssr: false},
-    {src: '@/plugins/async-components', ssr: false}
   ],
   components: true,
   buildModules: [],

@@ -41,13 +41,12 @@ export default {
 @import "~assets/scss/_handle.scss";
 
 .show-order {
-  margin-right: 10px;
+  margin-right: 15px;
   display: flex;
   align-items: center;
 
   .order-item {
     font-size: 13px;
-    width: 30px;
     margin-left: 10px;
     text-align: center;
     cursor: pointer;
@@ -70,6 +69,10 @@ export default {
         margin-left: -10px;
         @include backgroundColor('color-primary');
       }
+    }
+
+    &:first-child {
+      margin-left: 0;
     }
   }
 }

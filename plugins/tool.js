@@ -1,6 +1,5 @@
 import Vue from 'vue';
 import Dayjs from 'dayjs';
-import isEmail from 'is-email';
 
 const relativeTime = require('dayjs/plugin/relativeTime');
 require('dayjs/locale/zh-cn');
@@ -9,9 +8,7 @@ Dayjs.locale('zh-cn');
 Dayjs.extend(relativeTime);
 
 Vue.prototype.$dayjs = Dayjs;
-Vue.prototype.$valid = {
-  isEmail,
-}
+Vue.prototype.$valid = {}
 Vue.prototype.$dic = {
   logoText: 'TvMaze',
   themeMap: {

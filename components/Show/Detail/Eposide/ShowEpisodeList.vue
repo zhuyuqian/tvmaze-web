@@ -7,7 +7,8 @@
     <span slot="rt" class="el-icon-date">季终：{{ $dayjs(seasonInfo.seasonEnd).format('YYYY-MM-DD') }}</span>
     <show-episode-item v-for="(episode,index) of episodeList" :key="episode.episodeId" :info="episode"
                        v-show="!onlySelf||episode.episodeType==='regular'"
-                       class="animate__animated animate__fadeInDown" :class="`delay-${index}`"/>
+                       class="animate__animated animate__fadeInUp" :class="`delay-${index}`"/>
+    <data-empty v-if="!loading && !episodeList.length"/>
   </content-warp>
 </template>
 

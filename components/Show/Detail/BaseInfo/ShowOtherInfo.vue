@@ -3,7 +3,7 @@
     <div class="other-box">
       <p class="label">{{ $t('Status') }}</p>
       <p class="value">
-        <el-tooltip :content="`最后更新时间：${$dayjs(info.showUpdated).format('YYYY-MM-DD HH:mm:ss')}`" placement="left">
+        <el-tooltip :content="`最后更新时间：${$dayjs(info.showUpdated).format('YYYY-MM-DD HH:mm:ss')}`" placement="bottom">
           <i class="el-icon-warning-outline"></i>
         </el-tooltip>
         {{ $t(`show.status.${info.showStatus}`) }}
