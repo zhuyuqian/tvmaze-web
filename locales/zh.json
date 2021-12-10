@@ -8,6 +8,7 @@
   "Network": "频道",
   "WebChannel": "流媒",
   "Schedule": "时间表",
+  "People": "人员",
   "More": "更多",
   "Hot": "热门",
   "Will Return": "即将回归",
@@ -22,6 +23,7 @@
   "Score": "评分",
   "Show All": "显示全部",
   "Null": "无",
+  "Gender": "性别",
   "show": {
     "order": {
       "A-Z": "A-Z",
@@ -134,6 +136,15 @@
     }
   },
   "people": {
+    "gender": {
+      "Male": "汉纸",
+      "Female": "妹纸"
+    },
+    "order": {
+      "A-Z": "A-Z",
+      "Birthday": "生日",
+      "Lately": "最近"
+    },
     "crew": {
       "Consulting Producer": "顾问制片",
       "Second Assistant Director": "第二副导演",

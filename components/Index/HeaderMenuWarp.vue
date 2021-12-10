@@ -18,6 +18,9 @@
         <nuxt-link class="menu-box" to="/schedule" :class="{active:$route.path.startsWith('/schedule')}">
           {{ $t('Schedule') }}
         </nuxt-link>
+        <nuxt-link class="menu-box" to="/people" :class="{active:$route.path.startsWith('/people')}">
+          {{ $t('People') }}
+        </nuxt-link>
       </nav>
     </div>
   </div>

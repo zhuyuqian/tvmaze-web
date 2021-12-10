@@ -41,11 +41,6 @@ export default {
     flex: 1;
     margin-left: 10px;
 
-    .name-box {
-      margin-top: 2px;
-      font-size: 16px;
-    }
-
     .summary-box {
       margin-top: 2px;
       font-size: 14px;

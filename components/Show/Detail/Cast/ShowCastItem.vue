@@ -24,11 +24,5 @@ export default {
     width: 100%;
     height: 190px;
   }
-
-  .info-box {
-    .name-box {
-      margin-top: 4px;
-    }
-  }
 }
 </style>

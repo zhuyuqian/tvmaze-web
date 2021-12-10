@@ -26,24 +26,11 @@ export default {
 @import "~assets/scss/_handle.scss";
 
 .show-season-item {
-  .info-box {
-    .name-box {
-      margin-top: 6px;
-      line-height: 24px;
-    }
-  }
-
 
   &.card {
     .cover-box {
       width: 100%;
       height: 200px;
-    }
-
-    .info-box {
-      .name-box {
-        font-size: 15px;
-      }
     }
   }
 
@@ -59,10 +46,6 @@ export default {
       flex: 1;
       overflow: hidden;
       margin-left: 20px;
-
-      .name-box {
-        font-size: 16px;
-      }
     }
   }
 }

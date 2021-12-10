@@ -38,12 +38,6 @@ export default {
     overflow: hidden;
     margin-left: 10px;
 
-    .name-box {
-      display: block;
-      font-size: 14px;
-      margin-bottom: 4px;
-    }
-
     .episode-name {
       display: block;
       font-size: 12px;

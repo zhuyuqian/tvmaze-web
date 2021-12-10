@@ -22,7 +22,7 @@ Vue.prototype.$dic = {
     en: 'English'
   },
   sexMap: {
-    1: "汉纸",
-    2: '妹纸'
+    Male: "汉纸",
+    Female: '妹纸'
   }
 }

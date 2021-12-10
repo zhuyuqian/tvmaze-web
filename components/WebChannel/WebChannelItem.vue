@@ -31,12 +31,5 @@ export default {
     height: 80px;
     margin: 0 auto;
   }
-
-  .info-box {
-    .name-box {
-      margin-top: 10px;
-      font-size: 16px;
-    }
-  }
 }
 </style>

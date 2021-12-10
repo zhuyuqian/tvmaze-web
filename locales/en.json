@@ -8,6 +8,7 @@
   "Network": "Network",
   "WebChannel": "WebChannel",
   "Schedule": "Schedule",
+  "People": "People",
   "More": "more",
   "Hot": "Hot",
   "Will Return": "Will Return",
@@ -22,6 +23,7 @@
   "Score": "Score",
   "Show All": "Show All",
   "Null": "null",
+  "Gender": "Gender",
   "show": {
     "order": {
       "A-Z": "A-Z",
@@ -134,6 +136,15 @@
     }
   },
   "people": {
+    "gender": {
+      "Male": "Male",
+      "Female": "Female"
+    },
+    "order": {
+      "A-Z": "A-Z",
+      "Birthday": "Birthday",
+      "Lately": "Lately"
+    },
     "crew": {
       "Consulting Producer": "Consulting Producer",
       "Second Assistant Director": "Second Assistant Director",

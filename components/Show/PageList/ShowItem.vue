@@ -35,12 +35,6 @@ export default {
 @import "~assets/scss/_handle.scss";
 
 .show-item {
-  .info-box {
-    .name-box {
-      margin-top: 6px;
-      line-height: 24px;
-    }
-  }
 
   &.card {
     .cover-box {
@@ -49,10 +43,6 @@ export default {
     }
 
     .info-box {
-      .name-box {
-        font-size: 15px;
-      }
-
       .summary-box {
         display: none;
       }
@@ -75,10 +65,6 @@ export default {
       flex: 1;
       overflow: hidden;
       margin-left: 20px;
-
-      .name-box {
-        font-size: 16px;
-      }
 
       .summary-box {
         display: -webkit-box;

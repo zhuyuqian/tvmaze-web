@@ -84,6 +84,9 @@ p {
     @include fontColor('color-text');
 
     .name-box {
+      margin-top: 6px;
+      line-height: 24px;
+      font-size: 15px;
       @include fontColor('color-title');
     }
 
