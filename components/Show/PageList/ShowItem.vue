@@ -4,7 +4,9 @@
       <image-plus :src="info.showImageMedium"/>
     </div>
     <div class="info-box">
-      <div class="name-box pub-ellipsis-1">{{ info.showName }} {{ info.showNameZh }}</div>
+      <div class="name-box pub-ellipsis-1" :title="`${info.showNameZh} ${info.showName}`">
+        {{ info.showNameZh }} {{ info.showName }}
+      </div>
       <div class="summary-box pub-ellipsis-1"
            v-html="$store.getters.TEXT_BY_LANG(info.showSummary,info.showSummaryZh)"></div>
       <div class="other-box">{{ $t(`show.language.${info.showLanguage}`) }}</div>

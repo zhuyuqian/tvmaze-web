@@ -7,7 +7,7 @@
       <div class="other-box">
         {{ $dayjs(info.episodeAirsTime).format('YYYY/MM/DD') }} S{{ info.seasonNo }} E{{ info.episodeNo }}
       </div>
-      <div class="name-box">{{ info.episodeName }} {{ info.episodeNameZh }}</div>
+      <div class="name-box">{{ info.episodeNameZh }} {{ info.episodeName }}</div>
       <div class="summary-box" v-html="$store.getters.TEXT_BY_LANG(info.episodeSummary, info.episodeSummaryZh)"></div>
       <div class="score-box">
         <span>{{ info.tvmazeRatingAverage }}</span>
