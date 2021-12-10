@@ -1,5 +1,5 @@
 <template>
-  <content-warp :name="name" :count="seasonInfo.showName">
+  <content-warp :name="name" :count="`${seasonInfo.showNameZh} ${seasonInfo.showName}`">
     <el-tooltip slot="rt" content="打开此按钮时将隐藏特别篇和剧场版" placement="top">
       <el-switch v-model="onlySelf" active-text="仅显示正剧"/>
     </el-tooltip>

@@ -1,7 +1,8 @@
 <template>
   <div class="show-page-nav stick-top">
     <span v-for="(menu,key) of menus" :key="key" :class="{active:key===current}" @click="jump(key)">
-      {{ $t(menu) }}</span>
+      {{ $t(menu) }}
+    </span>
   </div>
 </template>
 
@@ -73,6 +74,8 @@ export default {
   text-align: center;
   z-index: 3;
   top: 0;
+  left: 0;
+  right: 0;
   @include backgroundColor('color-page-background');
 
   span {

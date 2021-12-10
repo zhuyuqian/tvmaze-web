@@ -1,6 +1,6 @@
 <template>
   <div class="logo-box">
-    <span>{{ $dic.logoText }}</span>
+    <nuxt-link class="logo-text" to="/">{{ $dic.logoText }}</nuxt-link>
   </div>
 </template>
 
@@ -12,9 +12,8 @@ export default {}
 @import "~assets/scss/_handle.scss";
 
 .logo-box {
-  span {
+  .logo-text {
     font-size: 26px;
-    @include fontColor("color-title")
   }
 }
 </style>
