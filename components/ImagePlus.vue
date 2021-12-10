@@ -22,17 +22,17 @@ export default {
   &[lazy=loading] {
     display: block;
     margin: 0 auto;
-    width: 20px;
     opacity: 0.4;
+    width: 20px !important;
     object-fit: contain !important;
   }
 
   &[lazy=error] {
     display: block;
     margin: 0 auto;
-    width: 40px;
-    object-fit: contain !important;
     opacity: 0.4;
+    width: 40px !important;
+    object-fit: contain !important;
   }
 }
 </style>
