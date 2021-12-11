@@ -8,8 +8,8 @@ export const getSearchInfo = (query = {}, params = {}) => {
     genre: query.genre || undefined,
     name: query.name || undefined,
     language: query.language || undefined,
-    network: params.network || undefined,
-    webChannel: params.webChannel || undefined
+    network: params.networkId || undefined,
+    webChannel: params.webChannelId || undefined
   }
 }
 

@@ -1,5 +1,5 @@
 <template>
-  <show-page :title="pageInfo.webChannelName" :search-info="searchInfo" :search-info-change="searchInfoChange"
+  <show-page :title="pageInfo.networkName" :search-info="searchInfo" :search-info-change="searchInfoChange"
              :show-info="showInfo"/>
 </template>
 
@@ -20,7 +20,7 @@ export default {
       {data: {data: pageInfo}}
     ] = await Promise.all([
       app.$axios.get('/show/list', {params: searchInfo}),
-      app.$axios.get('/webChannel/info', {params: {webChannelId: params.id}})
+      app.$axios.get('/network/info', {params: {networkId: params.networkId}})
     ])
     return {
       pageInfo,

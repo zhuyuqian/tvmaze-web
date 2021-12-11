@@ -16,7 +16,7 @@
           </el-col>
         </el-row>
         <data-empty v-if="!pageInfo.count"/>
-        <pagination-plus :current-page="searchInfo.page" :page-size="searchInfo.size" :total="pageInfo.count"
+        <pagination-plus :current-page="searchInfo.page" :page-size="24" :total="pageInfo.count"
                          @change="searchInfoChange"/>
       </el-col>
     </el-row>

@@ -9,7 +9,7 @@
         <data-empty v-if="!pageInfo.count"/>
       </el-row>
     </content-warp>
-    <pagination-plus :current-page="searchInfo.page" :page-size="searchInfo.size" :total="pageInfo.count"
+    <pagination-plus :current-page="searchInfo.page" :page-size="24" :total="pageInfo.count"
                      @change="searchInfoChange"/>
   </div>
 </template>

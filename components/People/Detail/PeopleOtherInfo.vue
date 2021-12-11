@@ -11,7 +11,9 @@
       <div class="other-box">
         <p class="label">年龄</p>
         <p class="value">
-          <span v-if="info.peopleBirthday">{{ $dayjs().diff($dayjs(info.peopleBirthday), 'year') }}</span>
+          <span v-if="info.peopleBirthday">
+            {{ $dayjs(info.peopleDeathday || undefined).diff($dayjs(info.peopleBirthday), 'year') }}
+          </span>
           <span class="none" v-else>{{ $t('Null') }}</span>
         </p>
       </div>
