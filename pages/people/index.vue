@@ -1,6 +1,6 @@
 <template>
   <content-warp name="全部人员" :count="pageInfo.count">
-    <people-order slot="rt" v-model="searchInfo.order" @change="searchInfoChange"/>
+    <content-order-warp slot="rt" v-model="searchInfo.order" @change="searchInfoChange" :order-map="orderMap"/>
     <content-search-warp slot="rt" v-model="searchInfo.name" @change="searchInfoChange"/>
     <el-row :gutter="15">
       <el-col :span="3" class="stick-top">
@@ -9,7 +9,10 @@
       <el-col :span="21">
         <el-row :gutter="15">
           <el-col :xs="8" :sm="8" :md="6" :lg="4" v-for="(people,index) of pageInfo.data" :key="people.peopleId">
-            <people-item :info="people" class="animate__animated animate__fadeInUp" :class="`delay-${index}`"/>
+            <people-item class="animate__animated animate__fadeInUp" :class="`delay-${index}`"
+                         :jump-id="people.peopleId"
+                         :cover="people.peopleImageMedium"
+                         :title="`${people.peopleNameZh} ${people.peopleName}`"/>
           </el-col>
         </el-row>
         <data-empty v-if="!pageInfo.count"/>
@@ -34,7 +37,12 @@ export default {
   data() {
     return {
       searchInfo: getSearchInfo(),
-      pageInfo: {data: [], count: 0}
+      pageInfo: {data: [], count: 0},
+      orderMap: {
+        'a-z': '名称由A-Z排序',
+        'birthday': '出生日期从最近向前',
+        'new': '更新时间由近向前排序',
+      }
     }
   },
   watch: {

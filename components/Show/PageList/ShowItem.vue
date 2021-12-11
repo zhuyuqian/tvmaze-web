@@ -56,7 +56,6 @@ export default {
   }
 
   &.list {
-    display: flex;
 
     .cover-box {
       width: 80px;
@@ -64,10 +63,6 @@ export default {
     }
 
     .info-box {
-      flex: 1;
-      overflow: hidden;
-      margin-left: 20px;
-
       .summary-box {
         display: -webkit-box;
         margin-top: 4px;

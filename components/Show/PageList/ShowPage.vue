@@ -1,6 +1,6 @@
 <template>
   <content-warp :name="title" :count="showInfo.count">
-    <show-order slot="rt" v-model="searchInfo.order" @change="searchInfoChange"/>
+    <content-order-warp slot="rt" v-model="searchInfo.order" @change="searchInfoChange" :order-map="orderMap"/>
     <content-search-warp slot="rt" v-model="searchInfo.name" @change="searchInfoChange"/>
     <show-shape slot="rt"/>
     <el-row :gutter="15">
@@ -37,6 +37,16 @@ export default {
     showInfo: {type: Object, required: true},
     title: {type: String, required: true},
     searchInfoChange: {type: Function, required: true}
+  },
+  data() {
+    return {
+      orderMap: {
+        'a-z': '名称由A-Z排序',
+        'hot': '评分由高到低排序',
+        'new': '更新时间由近向前排序',
+        'premiered': '首播时间由近向前排序'
+      }
+    }
   },
   computed: {
     ...mapGetters(['SHOW_SHAPE'])

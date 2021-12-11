@@ -1,10 +1,12 @@
 <template>
   <content-warp :name="name" :count="`${seasonInfo.showNameZh} ${seasonInfo.showName}`">
+    <span slot="rt" class="el-icon-date"
+          v-if="seasonInfo.seasonPremiere">播出：{{ $dayjs(seasonInfo.seasonPremiere).format('YYYY-MM-DD') }}</span>
+    <span slot="rt" class="el-icon-date"
+          v-if="seasonInfo.seasonEnd">季终：{{ $dayjs(seasonInfo.seasonEnd).format('YYYY-MM-DD') }}</span>
     <el-tooltip slot="rt" content="打开此按钮时将隐藏特别篇和剧场版" placement="top">
       <el-switch v-model="onlySelf" active-text="仅显示正剧"/>
     </el-tooltip>
-    <span slot="rt" class="el-icon-date">播出：{{ $dayjs(seasonInfo.seasonPremiere).format('YYYY-MM-DD') }}</span>
-    <span slot="rt" class="el-icon-date">季终：{{ $dayjs(seasonInfo.seasonEnd).format('YYYY-MM-DD') }}</span>
     <show-episode-item v-for="(episode,index) of episodeList" :key="episode.episodeId" :info="episode"
                        v-show="!onlySelf||episode.episodeType==='regular'"
                        class="animate__animated animate__fadeInUp" :class="`delay-${index}`"/>
@@ -59,7 +61,7 @@ export default {
 
 .el-icon-date {
   font-size: 12px;
-  margin-left: 10px;
+  margin-right: 15px;
   @include fontColor('color-text');
 
   &:before {

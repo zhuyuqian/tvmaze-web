@@ -24,13 +24,14 @@
   "Show All": "Show All",
   "Null": "null",
   "Gender": "Gender",
+  "order": {
+    "a-z": "A-Z",
+    "hot": "Hot",
+    "new": "New",
+    "premiered": "Premiered",
+    "birthday": "Birthday"
+  },
   "show": {
-    "order": {
-      "A-Z": "A-Z",
-      "Score": "Score",
-      "Lately": "Lately",
-      "Premiered": "Premiered"
-    },
     "type": {
       "Scripted": "Scripted",
       "Animation": "Animation",
@@ -140,11 +141,6 @@
       "Male": "Male",
       "Female": "Female"
     },
-    "order": {
-      "A-Z": "A-Z",
-      "Birthday": "Birthday",
-      "Lately": "Lately"
-    },
     "crew": {
       "Consulting Producer": "Consulting Producer",
       "Second Assistant Director": "Second Assistant Director",
@@ -169,7 +165,29 @@
       "Unit Manager": "Unit Manager",
       "Production Coordinator": "Production Coordinator",
       "Casting Director": "Casting Director",
-      "Production Assistant": "Production Assistant"
+      "Casting Associate": "Casting Associate",
+      "Production Assistant": "Production Assistant",
+      "Supervising Sound Editor": "Supervising Sound Editor",
+      "Supervising Art Director": "Supervising Art Director",
+      "Re-Recording Mixer": "Re-Recording Mixer",
+      "Art Director": "Art Director",
+      "Creative Consultant": "Creative Consultant",
+      "Based on the Novel Of": "Based on the Novel Of",
+      "Music Editor": "Music Editor",
+      "Costume Designer": "Costume Designer",
+      "Unit Production Manager": "Unit Production Manager",
+      "Sound Supervisor": "Sound Supervisor",
+      "Stunt Coordinator": "Stunt Coordinator",
+      "Visual Effects Supervisor": "Visual Effects Supervisor",
+      "Visual Effects Producer": "Visual Effects Producer",
+      "Story Editor": "Story Editor",
+      "Executive Story Editor": "Executive Story Editor",
+      "Consultant": "Consultant",
+      "Developer": "Developer",
+      "Script Supervisor": "Script Supervisor",
+      "Script Coordinator": "Script Coordinator",
+      "Production Supervisor": "Production Supervisor",
+      "Composer": "Composer"
     }
   }
 }

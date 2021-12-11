@@ -69,7 +69,7 @@ export default {
 
 .show-other-info {
   display: flex;
-  margin: 20px 0;
+  margin: 0 0 20px;
   padding: 30px 0;
   border-radius: 4px;
   @include border('border-base');

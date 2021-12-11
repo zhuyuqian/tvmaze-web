@@ -3,7 +3,7 @@
     <div class="banner-box" ref="swiper">
       <div class="swiper-wrapper">
         <div class="swiper-slide" v-for="image of showList" :key="image.imageId">
-          <img class="background-image swiper-lazy" :data-src="image.imageOriginal">
+          <image-plus class="background-image" :src="image.imageOriginal"/>
         </div>
       </div>
     </div>
@@ -25,11 +25,10 @@ export default {
   methods: {
     initSwiper() {
       if (!this.showList.length) return;
-      let mySwiper = new Swiper(this.$refs['swiper'], {
+      new Swiper(this.$refs['swiper'], {
         autoplay: true,
         disableOnInteraction: false,
-        loop: true,
-        lazy: true
+        loop: true
       })
     },
   },
@@ -53,11 +52,11 @@ export default {
 
   .banner-box {
     overflow: hidden;
+    font-size: 0;
 
     .background-image {
       width: 100%;
       height: 300px;
-      object-fit: cover;
     }
   }
 }

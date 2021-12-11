@@ -90,6 +90,11 @@ p {
       @include fontColor('color-title');
     }
 
+    .desc-box {
+      margin-top: 2px;
+      font-size: 12px;
+    }
+
     .other-box {
       display: flex;
       justify-content: space-between;
@@ -106,8 +111,15 @@ p {
   }
 
   &.list {
+    display: flex;
     margin-bottom: -1px;
     border-radius: 0;
+
+    .info-box {
+      flex: 1;
+      margin-left: 20px;
+      overflow: hidden;
+    }
   }
 
   &:hover, &.active {

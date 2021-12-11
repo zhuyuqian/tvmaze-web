@@ -33,11 +33,11 @@ export default {
       {data: {data: seasonList}},
       {data: {data: imageList}},
     ] = await Promise.all([
-      app.$axios.get('/show/info', {params: {showId: params.showId}}),
-      app.$axios.get('/cast/list', {params: {showId: params.showId}}),
-      app.$axios.get('/crew/list', {params: {showId: params.showId}}),
-      app.$axios.get('/season/list', {params: {showId: params.showId}}),
-      app.$axios.get('/image/list', {params: {showId: params.showId}})
+      app.$axios.get('/show/info', {params: {showId: params.id}}),
+      app.$axios.get('/cast/list', {params: {showId: params.id}}),
+      app.$axios.get('/crew/list', {params: {showId: params.id}}),
+      app.$axios.get('/season/list', {params: {showId: params.id}}),
+      app.$axios.get('/image/list', {params: {showId: params.id}})
     ])
     return {
       showInfo,

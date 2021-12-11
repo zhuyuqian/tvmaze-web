@@ -4,9 +4,10 @@
       <image-plus :src="info.showImageMedium"/>
     </div>
     <div class="info-box">
-      <div class="name-box pub-ellipsis-1">{{ info.showName }}</div>
-      <div v-for="episode of info.episodeList" :key="episode.episodeId" class="episode-name pub-ellipsis-1">
-        S{{ episode.seasonNo }}E{{ episode.episodeNo }}：{{ episode.episodeName }}
+      <div class="name-box pub-ellipsis-1">{{ info.showNameZh }} {{ info.showName }}</div>
+      <div class="episode-name pub-ellipsis-1"
+           v-for="episode of info.episodeList" :key="episode.episodeId">
+        S{{ episode.seasonNo }}E{{ episode.episodeNo }}：{{ episode.episodeNameZh }} {{ episode.episodeName }}
       </div>
     </div>
   </nuxt-link>

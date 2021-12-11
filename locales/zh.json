@@ -24,13 +24,14 @@
   "Show All": "显示全部",
   "Null": "无",
   "Gender": "性别",
+  "order": {
+    "a-z": "A-Z",
+    "hot": "最热",
+    "new": "最新",
+    "premiered": "首播",
+    "birthday": "生日"
+  },
   "show": {
-    "order": {
-      "A-Z": "A-Z",
-      "Score": "高分",
-      "Lately": "最近",
-      "Premiered": "首播"
-    },
     "type": {
       "Scripted": "剧情",
       "Animation": "动画",
@@ -140,11 +141,6 @@
       "Male": "汉纸",
       "Female": "妹纸"
     },
-    "order": {
-      "A-Z": "A-Z",
-      "Birthday": "生日",
-      "Lately": "最近"
-    },
     "crew": {
       "Consulting Producer": "顾问制片",
       "Second Assistant Director": "第二副导演",
@@ -169,7 +165,29 @@
       "Unit Manager": "经理人",
       "Production Coordinator": "协调制片",
       "Casting Director": "选角指导",
-      "Production Assistant": "布景师助理"
+      "Casting Associate": "选角联系人",
+      "Production Assistant": "布景师助理",
+      "Supervising Sound Editor": "声效剪辑",
+      "Supervising Art Director": "监督艺术总监",
+      "Re-Recording Mixer": "混录师",
+      "Art Director": "艺术总监",
+      "Creative Consultant": "创意顾问",
+      "Based on the Novel Of": "剧本创作",
+      "Music Editor": "音乐编辑",
+      "Costume Designer": "服装设计师",
+      "Unit Production Manager": "剧组制片主任",
+      "Sound Supervisor": "音效总监",
+      "Stunt Coordinator": "特技协调员",
+      "Visual Effects Supervisor": "视觉特效",
+      "Visual Effects Producer": "视觉特效生产商",
+      "Story Editor": "剧本编审",
+      "Executive Story Editor": "执行剧本编辑",
+      "Consultant": "顾问",
+      "Developer": "开发商",
+      "Script Supervisor": "剧本指导",
+      "Script Coordinator": "剧本协调员",
+      "Production Supervisor": "制片监制",
+      "Composer": "作曲家"
     }
   }
 }

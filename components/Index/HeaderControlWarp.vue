@@ -1,12 +1,13 @@
 <template>
   <div class="header-control-warp">
     <div class="content header-control-box">
-      <el-radio-group v-model="locale" @change="changeLocale">
-        <el-radio v-for="(name,value) in $dic.localeMap" :key="value" :label="value">{{ name }}</el-radio>
-      </el-radio-group>
+      <span></span>
+      <!--      <el-radio-group v-model="locale" @change="changeLocale">-->
+      <!--        <el-radio v-for="(name,value) in $dic.localeMap" :key="value" :label="value">{{ name }}</el-radio>-->
+      <!--      </el-radio-group>-->
       <nav class="theme-box">
-        <a class="item-box" v-for="(label,value) of $dic.themeMap" href="javascript:void 0"
-           :class="{active:THEME===value}" :key="value"
+        <a v-for="(label,value) of $dic.themeMap" href="javascript:void 0"
+           class="item-box" :class="{active:THEME===value}" :key="value"
            @click="$store.commit('SET_THEME',value)">{{ label }}</a>
       </nav>
     </div>
