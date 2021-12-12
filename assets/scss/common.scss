@@ -398,6 +398,10 @@ p {
   @include backgroundColor('color-page-background');
 
   .el-dialog__header {
+    .el-dialog__title {
+      @include fontColor('color-text');
+    }
+
     .el-dialog__headerbtn {
       .el-dialog__close {
         @include fontColor('color-text');
