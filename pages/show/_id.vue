@@ -55,10 +55,11 @@ export default {
   .base-warp {
     display: flex;
     align-items: center;
+    margin-bottom: 20px;
   }
 
   .nav-warp {
-    margin-top: 20px;
+    margin-top: 15px;
   }
 }
 </style>

@@ -7,7 +7,7 @@
           <people-item class="animate__animated animate__fadeInUp" :class="`delay-${index}`"
                        :jump-id="crew.peopleId"
                        :cover="crew.peopleImageMedium"
-                       :title="`${crew.peopleNameZh} ${crew.peopleName}`"
+                       :title="$store.getters.NAME_BY_LANG(crew.peopleName,crew.peopleNameZh)"
                        :desc="`负责：${ $t(`people.crew.${crew.crewType}`) }`"/>
 
         </el-col>

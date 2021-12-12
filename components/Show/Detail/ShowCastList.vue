@@ -8,7 +8,7 @@
                        :jump-id="cast.peopleId"
                        :cover="cast.characterImageMedium||cast.peopleImageMedium"
                        :title="cast.characterName"
-                       :desc="`${cast.peopleNameZh} ${ cast.peopleName }`"/>
+                       :desc="$store.getters.NAME_BY_LANG(cast.peopleName,cast.peopleNameZh)"/>
         </el-col>
       </template>
       <data-empty v-if="!list.length"/>

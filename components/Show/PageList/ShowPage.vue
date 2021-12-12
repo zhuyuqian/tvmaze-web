@@ -1,5 +1,5 @@
 <template>
-  <content-warp :name="title" :count="showInfo.count">
+  <content-warp :name="title" :desc="showInfo.count">
     <content-order-warp slot="rt" v-model="searchInfo.order" @change="searchInfoChange" :order-map="orderMap"/>
     <content-search-warp slot="rt" v-model="searchInfo.name" @change="searchInfoChange"/>
     <show-shape slot="rt"/>

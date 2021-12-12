@@ -1,5 +1,5 @@
 <template>
-  <content-warp :name="$t('Season')" :count="list.length">
+  <content-warp :name="$t('Season')" :desc="list.length">
     <show-season-shape v-model="shape" slot="rt" @change="shapeChange"/>
     <!--卡片展示-->
     <el-row :gutter="15" v-if="shape==='card'">

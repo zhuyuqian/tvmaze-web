@@ -7,11 +7,11 @@
       <div class="other-box">
         {{ $dayjs(info.episodeAirsTime).format('YYYY/MM/DD') }} S{{ info.seasonNo }} E{{ info.episodeNo }}
       </div>
-      <div class="name-box">{{ info.episodeNameZh }} {{ info.episodeName }}</div>
+      <div class="name-box">{{ $store.getters.NAME_BY_LANG(info.episodeName, info.episodeNameZh) }}</div>
       <div class="summary-box pub-ellipsis-2"
-           v-html="$store.getters.TEXT_BY_LANG(info.episodeSummary, info.episodeSummaryZh)"
-           :title="$store.getters.TEXT_BY_LANG(info.episodeSummary, info.episodeSummaryZh)"></div>
-      <div class="score-box">
+           v-html="$store.getters.TEXT_BY_LANG(info.episodeSummary, info.episodeSummaryZh)"></div>
+      <div class="other-box">
+        <span></span>
         <span>{{ info.tvmazeRatingAverage }}</span>
       </div>
     </div>
@@ -37,22 +37,6 @@ export default {
   .cover-box {
     width: 150px;
     height: 100px;
-  }
-
-  .info-box {
-    flex: 1;
-    margin-left: 10px;
-
-    .summary-box {
-      margin-top: 2px;
-      font-size: 14px;
-    }
-
-    .score-box {
-      text-align: right;
-      margin-top: 2px;
-      font-size: 12px;
-    }
   }
 }
 </style>

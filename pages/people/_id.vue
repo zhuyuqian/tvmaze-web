@@ -1,17 +1,8 @@
 <template>
   <content-warp :name="`${peopleInfo.peopleNameZh} ${peopleInfo.peopleName}`">
-    <el-row :gutter="15">
-      <el-col :span="3" class="stick-top">
-        <div class="common-card">
-          <image-plus :src="peopleInfo.peopleImageMedium"/>
-        </div>
-      </el-col>
-      <el-col :span="21">
-        <people-other-info :info="peopleInfo"/>
-        <people-cast-list :list="castList"/>
-        <people-crew-list :list="crewList"/>
-      </el-col>
-    </el-row>
+    <people-other-info :info="peopleInfo"/>
+    <people-cast-list :list="castList"/>
+    <people-crew-list :list="crewList"/>
   </content-warp>
 </template>
 

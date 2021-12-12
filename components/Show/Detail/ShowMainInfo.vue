@@ -1,6 +1,6 @@
 <template>
   <div class="main-info">
-    <h1 class="show-name">{{ info.showNameZh }} {{ info.showName }}</h1>
+    <h1 class="show-name">{{ $store.getters.NAME_BY_LANG(info.showName, info.showNameZh) }}</h1>
     <div class="show-genres">
       <template v-for="(genre,index) of info.showGenres">
         {{ $t(`show.genre.${genre.genreName}`) }} {{ index !== info.showGenres.length - 1 ? ' · ' : '' }}

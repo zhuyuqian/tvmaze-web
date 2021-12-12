@@ -3,7 +3,7 @@
     <div class="title-warp">
       <div class="name-box">
         {{ name }}
-        <div class="count" v-if="count">({{ count }})</div>
+        <div class="desc" v-if="desc">({{ desc }})</div>
       </div>
       <span class="rt" v-if="moreLink||$slots.rt">
         <nuxt-link v-if="moreLink" class="more" :to="moreLink">
@@ -21,7 +21,7 @@
 export default {
   props: {
     name: {type: String, default: ''},
-    count: {type: [String, Number], default: 0},
+    desc: {type: [String, Number], default: ''},
     moreLink: {type: String, default: ''},
     size: {type: String, default: 'big'}
   }
@@ -41,7 +41,7 @@ export default {
     @include backgroundColor('color-page-background');
 
     .name-box {
-      .count {
+      .desc {
         display: inline-block;
         font-size: 14px;
         @include fontColor("color-text");

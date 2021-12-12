@@ -90,6 +90,12 @@ p {
       @include fontColor('color-title');
     }
 
+    .summary-box {
+      margin-top: 2px;
+      font-size: 12px;
+      line-height: 20px;
+    }
+
     .desc-box {
       margin-top: 2px;
       font-size: 12px;
@@ -389,7 +395,19 @@ p {
 
 // 弹框
 .el-dialog {
-  @include backgroundColor('color-page-background')
+  @include backgroundColor('color-page-background');
+
+  .el-dialog__header {
+    .el-dialog__headerbtn {
+      .el-dialog__close {
+        @include fontColor('color-text');
+
+        &:hover {
+          @include fontColor('color-primary')
+        }
+      }
+    }
+  }
 }
 
 // 开关

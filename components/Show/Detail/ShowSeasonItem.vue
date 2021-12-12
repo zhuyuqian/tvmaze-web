@@ -4,7 +4,9 @@
       <image-plus :src="info.seasonImageMedium"/>
     </div>
     <div class="info-box">
-      <div class="name-box pub-ellipsis-1">S{{ info.seasonNo }}</div>
+      <div class="name-box pub-ellipsis-1" :title="`S${info.seasonNo} ${info.seasonName}`">
+        S{{ info.seasonNo }} {{ info.seasonName }}
+      </div>
       <div class="other-box pub-ellipsis-1">
         <span class="el-icon-date">
           {{ info.seasonPremiere ? $dayjs(info.seasonPremiere).format('YYYY-MM-DD') : '未开播' }}

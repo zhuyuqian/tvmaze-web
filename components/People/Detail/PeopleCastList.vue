@@ -2,11 +2,11 @@
   <content-warp name="参演作品" v-if="list.length">
     <el-row :gutter="15">
       <template v-for="(character,index) of list">
-        <el-col :xs="8" :sm="8" :md="6" :lg="4" :xl="4" :key="character.castId">
+        <el-col :xs="8" :sm="8" :md="6" :lg="4" :xl="3" :key="character.castId">
           <people-item class="animate__animated animate__fadeInUp" :class="`delay-${index}`"
                        jump="show" :jump-id="character.showId"
                        :cover="character.characterImageMedium"
-                       :title="`${character.showNameZh} ${ character.showName }`"
+                       :title="$store.getters.NAME_BY_LANG(character.showName,character.showNameZh)"
                        :desc="`饰演：${character.characterName}`"/>
         </el-col>
       </template>

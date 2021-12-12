@@ -1,6 +1,6 @@
 <template>
   <div class="page-box">
-    <content-warp name="全部频道" :count="pageInfo.count">
+    <content-warp name="全部频道" :desc="pageInfo.count">
       <content-search-warp slot="rt" v-model="searchInfo.name" @change="searchInfoChange"/>
       <el-row :gutter="15">
         <el-col :xs="8" :sm="8" :md="6" :lg="4" v-for="(network,index) of pageInfo.data" :key="network.networkId">

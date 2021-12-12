@@ -43,6 +43,17 @@ const mutations = {
 }
 
 const getters = {
+  // 根据语言返回拼接好的名称
+  NAME_BY_LANG: state => {
+    return (text, textZh) => {
+      if (state.locale === 'zh') {
+        return textZh ?
+          textZh + ' ' + text :
+          text
+      }
+      return text
+    }
+  },
   TEXT_BY_LANG: state => {
     return (text, textZh) => {
       if (state.locale === 'zh') return textZh || text;

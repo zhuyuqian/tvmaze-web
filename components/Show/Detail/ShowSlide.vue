@@ -3,7 +3,7 @@
     <div class="banner-box" ref="swiper">
       <div class="swiper-wrapper">
         <div class="swiper-slide" v-for="image of showList" :key="image.imageId">
-          <image-plus class="background-image" :src="image.imageOriginal"/>
+          <img class="background-image" :src="image.imageOriginal"/>
         </div>
       </div>
     </div>
@@ -57,6 +57,7 @@ export default {
     .background-image {
       width: 100%;
       height: 300px;
+      object-fit: cover;
     }
   }
 }
