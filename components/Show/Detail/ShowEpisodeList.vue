@@ -1,7 +1,7 @@
 <template>
-  <content-warp
-    :name="`S${this.seasonInfo.seasonNo} ${$store.getters.NAME_BY_LANG(seasonInfo.seasonName,seasonInfo.seasonNameZh)}`"
-    :desc="$store.getters.NAME_BY_LANG(seasonInfo.showName,seasonInfo.showNameZh)">
+  <content-warp v-if="seasonInfo"
+                :name="`S${this.seasonInfo.seasonNo} ${$store.getters.NAME_BY_LANG(seasonInfo.seasonName,seasonInfo.seasonNameZh)}`"
+                :desc="$store.getters.NAME_BY_LANG(seasonInfo.showName,seasonInfo.showNameZh)">
     <!--其他信息-->
     <span v-if="seasonInfo.seasonPremiere" slot="rt"
           class="el-icon-date">播出：{{ $dayjs(seasonInfo.seasonPremiere).format('YYYY-MM-DD') }}</span>
@@ -22,7 +22,7 @@
                            v-show="!onlyRegular||episode.episodeType==='regular'"
                            :key="episode.episodeId" :info="episode"/>
       </template>
-      <data-empty v-if="!loading && !episodeList.length"/>
+      <data-empty v-if="!episodeList.length" size="small"/>
     </content-warp>
   </content-warp>
 </template>
@@ -31,9 +31,8 @@
 export default {
   data() {
     return {
-      loading: false,
       onlyRegular: false,
-      seasonInfo: {},
+      seasonInfo: null,
       episodeList: []
     }
   },
@@ -44,7 +43,6 @@ export default {
   },
   methods: {
     async getData(seasonId) {
-      this.loading = true;
       let [
         {data: {data: seasonInfo}},
         {data: {data: episodeList}},
@@ -52,11 +50,12 @@ export default {
         this.$axios.get('/season/info', {params: {seasonId: seasonId}}),
         this.$axios.get('/episode/list', {params: {seasonId: seasonId}})
       ])
-      this.loading = false;
       this.seasonInfo = seasonInfo;
       this.episodeList = episodeList;
     },
     init(seasonId) {
+      this.seasonInfo = null;
+      this.episodeList = [];
       this.getData(seasonId)
     }
   }

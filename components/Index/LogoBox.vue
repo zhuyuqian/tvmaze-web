@@ -1,7 +1,6 @@
 <template>
-  <div class="logo-box">
-    <nuxt-link class="logo-text" to="/">{{ $dic.logoText }}</nuxt-link>
-  </div>
+  <nuxt-link class="logo-box iconfont icon-tvmaze" to="/"></nuxt-link>
+
 </template>
 
 <script>
@@ -12,8 +11,7 @@ export default {}
 @import "~assets/scss/_handle.scss";
 
 .logo-box {
-  .logo-text {
-    font-size: 26px;
-  }
+  font-size: 24px;
+  transition: 0.2s color;
 }
 </style>

@@ -13,7 +13,7 @@
     <show-episode-list-dialog ref="episode-dialog"/>
     <!--列表展示-->
     <el-row :gutter="15" v-if="shape==='list'">
-      <el-col :span="5" class="stick-top">
+      <el-col :span="5" class="stick-top season-list">
         <show-season-item v-for="season of list" :key="season.seasonId" :is-active="currentSeasonId===season.seasonId"
                           :shape="shape" :info="season" @open-episode="openEpisode"/>
       </el-col>
@@ -62,4 +62,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.season-list {
+  z-index: 3;
+}
 </style>

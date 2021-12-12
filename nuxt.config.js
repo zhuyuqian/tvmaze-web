@@ -1,12 +1,12 @@
 export default {
   head: {
-    title: 'TVmaze - 你的个人追剧指南',
+    title: 'TVMaze - 追剧日记 - 你的个人追剧指南',
     meta: [
       {charset: 'utf-8'},
       {name: 'viewport', content: 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no'},
       {
         hid: 'description', name: 'description',
-        content: '电视节目和网络连续剧数据库。创建个性化的时间表。剧集指南，演员，工作人员和角色信息。回顾，评论，预告片，名人照片。'
+        content: '电视节目和网络连续剧数据库。创建个性化的时间表。剧集指南，演员，工作人员和角色信息。回顾，预告，名人照片。'
       },
     ],
     script: [
@@ -14,7 +14,7 @@ export default {
     ],
     link: [
       {rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'},
-      {rel: "stylesheet", href: '//at.alicdn.com/t/font_2965179_bov1rdm0tm6.css'},
+      {rel: "stylesheet", href: '//at.alicdn.com/t/font_2965179_g1jsrm0sd2r.css'},
       {rel: 'stylesheet', href: "//cdn.bootcdn.net/ajax/libs/Swiper/6.8.0/swiper-bundle.css"}
     ]
   },
