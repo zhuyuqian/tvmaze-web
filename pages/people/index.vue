@@ -10,9 +10,8 @@
         <el-row :gutter="15">
           <el-col :xs="8" :sm="8" :md="6" :lg="4" v-for="(people,index) of pageInfo.data" :key="people.peopleId">
             <people-item class="animate__animated animate__fadeInUp" :class="`delay-${index}`"
-                         :jump-id="people.peopleId"
-                         :cover="people.peopleImageMedium"
-                         :title="`${people.peopleNameZh} ${people.peopleName}`"/>
+                         :jump-id="people.peopleId" :cover="people.peopleImageMedium"
+                         :title="$store.getters.NAME_BY_LANG(people.peopleName,people.peopleNameZh)"/>
           </el-col>
         </el-row>
         <data-empty v-if="!pageInfo.count"/>

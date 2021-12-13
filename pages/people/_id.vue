@@ -1,5 +1,5 @@
 <template>
-  <content-warp :name="`${peopleInfo.peopleNameZh} ${peopleInfo.peopleName}`">
+  <content-warp :name="$store.getters.NAME_BY_LANG(peopleInfo.peopleName,peopleInfo.peopleNameZh)">
     <people-other-info :info="peopleInfo"/>
     <people-cast-list :list="castList"/>
     <people-crew-list :list="crewList"/>
