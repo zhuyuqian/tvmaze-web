@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import LookImageOriginal from "@/components/Show/Detail/LookImageOriginal";
+import LookImageOriginal from "@/components/Image/LookImageOriginal";
 
 export default {
   components: {LookImageOriginal},

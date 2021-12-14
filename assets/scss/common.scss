@@ -119,6 +119,7 @@ p {
   &.list {
     display: flex;
     margin-bottom: -1px;
+    margin-left: -1px;
     border-radius: 0;
 
     .info-box {
@@ -130,7 +131,6 @@ p {
 
   &:hover, &.active {
     z-index: 2;
-    top: -10px;
     @include boxShadow('box-shadow');
 
     .info-box {
@@ -469,6 +469,21 @@ p {
 @keyframes rotate {
   100% {
     transform: rotate(1turn);
+  }
+}
+
+@keyframes text-animate {
+  0%, 100% {
+    text-shadow: -2px -2px 0 rgb(80, 161, 255), 2px 2px 0 rgb(255, 153, 0);
+  }
+  25% {
+    text-shadow: 2px 2px 0 rgb(80, 161, 255), -2px -2px 0 rgb(255, 153, 0);
+  }
+  50% {
+    text-shadow: 2px -2px 0 rgb(80, 161, 255), 2px -2px 0 rgb(255, 153, 0);
+  }
+  75% {
+    text-shadow: -2px 2px 0 rgb(80, 161, 255), -2px 2px 0 rgb(255, 153, 0);
   }
 }
 

@@ -1,6 +1,6 @@
 <template>
-  <show-page :title="pageInfo.webChannelName" :search-info="searchInfo" :search-info-change="searchInfoChange"
-             :show-info="showInfo"/>
+  <show-page :title="pageInfo.webChannelName" :search-info="searchInfo" :show-info="showInfo"
+             :search-info-change="searchInfoChange"/>
 </template>
 
 <script>

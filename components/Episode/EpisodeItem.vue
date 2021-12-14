@@ -1,5 +1,5 @@
 <template>
-  <div class="show-episode-item common-card list">
+  <div class="animate__animated animate__fadeInUp show-episode-item common-card" :class="card?'card':'list'">
     <div class="cover-box">
       <image-plus :src="info.episodeImageMedium"/>
     </div>
@@ -21,9 +21,8 @@
 <script>
 export default {
   props: {
-    info: {
-      type: Object, required: true
-    }
+    card: {type: Boolean, default: false},
+    info: {type: Object, required: true}
   }
 }
 </script>

@@ -12,12 +12,9 @@
       <el-col :span="21">
         <el-row :gutter="15">
           <el-col v-for="(show,index) of showInfo.data" :key="show.showId"
-                  :xs="SHOW_SHAPE==='list'?24:8"
-                  :sm="SHOW_SHAPE==='list'?24:8"
-                  :md="SHOW_SHAPE==='list'?24:6"
-                  :lg="SHOW_SHAPE==='list'?24:4">
-            <show-item :info="show" :shape="SHOW_SHAPE" class="animate__animated animate__fadeInUp"
-                       :class="`delay-${index}`"/>
+                  :xs="SHOW_SHAPE==='list'?24:8" :sm="SHOW_SHAPE==='list'?24:8"
+                  :md="SHOW_SHAPE==='list'?24:6" :lg="SHOW_SHAPE==='list'?24:4">
+            <show-item :info="show" :shape="SHOW_SHAPE" :class="`delay-${index}`"/>
           </el-col>
         </el-row>
         <data-empty v-if="!showInfo.count"/>

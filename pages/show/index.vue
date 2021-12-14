@@ -1,6 +1,6 @@
 <template>
-  <show-page :title="$t('Show')"
-             :search-info="searchInfo" :show-info="showInfo" :search-info-change="searchInfoChange"/>
+  <show-page :title="$t('Show')" :search-info="searchInfo" :show-info="showInfo"
+             :search-info-change="searchInfoChange"/>
 </template>
 
 <script>

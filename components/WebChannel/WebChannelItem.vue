@@ -1,5 +1,6 @@
 <template>
-  <nuxt-link class="card-item common-card" :to="`/webChannel/${info.webChannelId}`" :title="info.webChannelName">
+  <nuxt-link class="animate__animated animate__fadeInUp card-item common-card"
+             :to="`/webChannel/${info.webChannelId}`" :title="info.webChannelName">
     <div class="cover-box">
       <image-plus :src="info.webChannelCoverImgUrl"/>
     </div>

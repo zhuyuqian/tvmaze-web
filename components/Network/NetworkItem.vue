@@ -1,5 +1,6 @@
 <template>
-  <nuxt-link class="card-item common-card" :to="`/network/${info.networkId}`" :title="info.networkName">
+  <nuxt-link class="animate__animated animate__fadeInUp card-item common-card"
+             :to="`/network/${info.networkId}`" :title="info.networkName">
     <div class="cover-box">
       <image-plus :src="info.networkCoverImgUrl"/>
     </div>

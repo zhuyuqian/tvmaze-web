@@ -1,27 +1,28 @@
 <template>
-  <div class="show-season-item common-card" :class="{[shape]:true,active:isActive}" @click="$emit('open-episode',info)">
+  <nuxt-link class="animate__animated animate__fadeInUp show-season-item common-card"
+             :to="`/show/${info.showId}/season/${info.seasonNo}`">
     <div class="cover-box">
       <image-plus :src="info.seasonImageMedium"/>
     </div>
     <div class="info-box">
-      <div class="name-box pub-ellipsis-1" :title="`S${info.seasonNo} ${info.seasonName}`">
-        S{{ info.seasonNo }} {{ info.seasonName }}
+      <div class="name-box pub-ellipsis-1" :title="$store.getters.NAME_BY_LANG(info.seasonName, info.seasonNameZh)">
+        S{{ info.seasonNo }} {{ $store.getters.NAME_BY_LANG(info.seasonName, info.seasonNameZh) }}
       </div>
       <div class="other-box pub-ellipsis-1">
         <span class="el-icon-date">
           {{ info.seasonPremiere ? $dayjs(info.seasonPremiere).format('YYYY-MM-DD') : '未开播' }}
         </span>
       </div>
+      <div class="summary-box pub-ellipsis-2"
+           v-html="$store.getters.TEXT_BY_LANG(info.seasonSummary,info.seasonSummaryZh)"></div>
     </div>
-  </div>
+  </nuxt-link>
 </template>
 
 <script>
 
 export default {
   props: {
-    isActive: {type: Boolean, default: false},
-    shape: {type: String, default: 'card'},
     info: {type: Object, required: true}
   }
 }
@@ -31,7 +32,6 @@ export default {
 @import "~assets/scss/_handle.scss";
 
 .show-season-item {
-
   &.card {
     .cover-box {
       width: 100%;
@@ -40,17 +40,9 @@ export default {
   }
 
   &.list {
-    display: flex;
-
     .cover-box {
-      width: 60px;
-      height: 80px;
-    }
-
-    .info-box {
-      flex: 1;
-      overflow: hidden;
-      margin-left: 20px;
+      width: 70px;
+      height: 90px;
     }
   }
 }

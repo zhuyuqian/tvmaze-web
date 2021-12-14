@@ -1,5 +1,6 @@
 <template>
-  <nuxt-link class="show-item common-card" :to="`/show/${info.showId}`" :class="{[shape]:true}">
+  <nuxt-link class="animate__animated animate__fadeInUp show-item common-card"
+             :to="`/show/${info.showId}`" :class="{[shape]:true}">
     <div class="cover-box">
       <image-plus :src="info.showImageMedium"/>
     </div>

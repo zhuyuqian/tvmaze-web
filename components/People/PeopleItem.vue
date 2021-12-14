@@ -1,5 +1,6 @@
 <template>
-  <nuxt-link :to="`/${jump}/${jumpId}`" class="people-box common-card">
+  <nuxt-link class="animate__animated animate__fadeInUp people-box common-card"
+             :to="`/${jump}/${jumpId}`" :class="card?'card':'list'">
     <div class="cover-box">
       <image-plus :src="cover"/>
     </div>
@@ -13,6 +14,7 @@
 <script>
 export default {
   props: {
+    card: {type: Boolean, default: false},
     jump: {type: String, default: 'people'},
     jumpId: {type: Number, required: true},
     cover: {type: String, default: ''},
@@ -24,9 +26,18 @@ export default {
 
 <style lang="scss" scoped>
 .people-box {
-  .cover-box {
-    width: 100%;
-    height: 200px;
+  &.card {
+    .cover-box {
+      width: 100%;
+      height: 200px;
+    }
+  }
+
+  &.list {
+    .cover-box {
+      width: 70px;
+      height: 90px;
+    }
   }
 }
 </style>

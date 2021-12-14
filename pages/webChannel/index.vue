@@ -5,7 +5,7 @@
       <el-row :gutter="15">
         <el-col :xs="8" :sm="8" :md="6" :lg="4" v-for="(webChannel,index) of pageInfo.data"
                 :key="webChannel.webChannelId">
-          <web-channel-item :info="webChannel" class="animate__animated animate__fadeInUp" :class="`delay-${index}`"/>
+          <web-channel-item :info="webChannel" :class="`delay-${index}`"/>
         </el-col>
         <data-empty v-if="!pageInfo.count"/>
       </el-row>
