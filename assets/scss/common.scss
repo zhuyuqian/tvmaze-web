@@ -126,6 +126,14 @@ p {
       flex: 1;
       margin-left: 20px;
       overflow: hidden;
+
+      .summary-box {
+        margin-top: 4px;
+
+        &.pub-ellipsis-2 {
+          max-height: 38px;
+        }
+      }
     }
   }
 
@@ -180,21 +188,12 @@ p {
 }
 
 .pub-ellipsis-2 {
-  overflow: hidden;
   word-break: break-all;
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-box-orient: vertical;
+  overflow: hidden;
   -webkit-line-clamp: 2;
-}
-
-.pub-ellipsis-3 {
-  word-break: break-all;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
-  overflow: hidden;
 }
 
 //element-ui
