@@ -47,11 +47,11 @@ export default {
       }
       return null
     },
-    pre() {
+    next() {
       if (this.episodeIndex === null || this.episodeIndex === 0) return;
       return this.episodeList[this.episodeIndex - 1]
     },
-    next() {
+    pre() {
       if (this.episodeIndex === null || this.episodeIndex === this.episodeList.length - 1) return;
       return this.episodeList[this.episodeIndex + 1]
     }

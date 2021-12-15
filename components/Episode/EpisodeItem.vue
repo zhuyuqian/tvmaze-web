@@ -10,7 +10,7 @@
         {{ $dayjs(info.episodeAirsTime).format('YYYY/MM/DD') }} S{{ info.seasonNo }} E{{ info.episodeNo }}
         <span>{{ info.tvmazeRatingAverage }}</span>
       </div>
-      <div class="name-box">{{ $store.getters.NAME_BY_LANG(info.episodeName, info.episodeNameZh) }}</div>
+      <div class="name-box pub-ellipsis-1">{{ $store.getters.NAME_BY_LANG(info.episodeName, info.episodeNameZh) }}</div>
       <div class="summary-box pub-ellipsis-2"
            v-html="$store.getters.TEXT_BY_LANG(info.episodeSummary, info.episodeSummaryZh)"></div>
     </div>
