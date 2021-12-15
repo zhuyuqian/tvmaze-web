@@ -1,6 +1,6 @@
 <template>
   <nuxt-link class="animate__animated animate__fadeInUp show-item common-card"
-             :to="`/show/${info.showId}`" :class="{[shape]:true}">
+             :to="`/show/${info.showId}`" :class="{[shape]:true,[`delay-${delay}`]:true}">
     <div class="cover-box">
       <image-plus :src="info.showImageMedium"/>
     </div>
@@ -25,6 +25,7 @@
 <script>
 export default {
   props: {
+    delay: {type: Number, default: 0},
     shape: {type: String, default: 'card'},
     info: {type: Object, required: true}
   }

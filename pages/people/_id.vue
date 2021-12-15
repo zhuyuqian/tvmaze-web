@@ -5,7 +5,7 @@
       <el-row :gutter="15">
         <template v-for="(character,index) of castList">
           <el-col :xs="8" :sm="6" :md="6" :lg="4" :xl="3" :key="character.castId">
-            <people-item :class="`delay-${index}`" card jump="show" :jump-id="character.showId"
+            <people-item card jump="show" :jump-id="character.showId" :delay="index"
                          :cover="character.characterImageMedium" :desc="`饰演：${character.characterName}`"
                          :title="$store.getters.NAME_BY_LANG(character.showName,character.showNameZh)"/>
           </el-col>
@@ -16,7 +16,7 @@
       <el-row :gutter="15">
         <template v-for="(crew,index) of crewList">
           <el-col :xs="8" :sm="6" :md="6" :lg="4" :xl="3" :key="crew.crewId">
-            <people-item :class="`delay-${index}`" card jump="show" :jump-id="crew.showId"
+            <people-item card jump="show" :jump-id="crew.showId" :delay="index"
                          :cover="crew.showImageMedium" :title="`${crew.showNameZh} ${ crew.showName }`"
                          :desc="`负责：${ $t(`people.crew.${crew.crewType}`) }`"/>
           </el-col>

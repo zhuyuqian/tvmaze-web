@@ -1,6 +1,6 @@
 <template>
   <nuxt-link class="animate__animated animate__fadeInUp people-box common-card"
-             :to="`/${jump}/${jumpId}`" :class="card?'card':'list'">
+             :to="`/${jump}/${jumpId}`" :class="{card:card,list:!card,[`delay-${delay}`]:true}">
     <div class="cover-box">
       <image-plus :src="cover"/>
     </div>
@@ -14,6 +14,7 @@
 <script>
 export default {
   props: {
+    delay: {type: Number, default: 0},
     card: {type: Boolean, default: false},
     jump: {type: String, default: 'people'},
     jumpId: {type: Number, required: true},

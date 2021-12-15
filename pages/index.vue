@@ -4,14 +4,14 @@
     <content-warp :name="$t('Will Return')" more-link="/show">
       <el-row :gutter="15">
         <el-col :xs="8" :sm="8" :md="6" :lg="4" v-for="(show,index) of willReturnShowList" :key="show.showId">
-          <show-item :info="show" :class="`delay-${index}`"/>
+          <show-item :info="show" :delay="index"/>
         </el-col>
       </el-row>
     </content-warp>
     <content-warp :name="$t('Hot')" more-link="/show">
       <el-row :gutter="15">
         <el-col :xs="8" :sm="8" :md="6" :lg="4" v-for="(show,index) of hotShowList" :key="show.showId">
-          <show-item :info="show" :class="`delay-${index}`"/>
+          <show-item :info="show" :delay="index"/>
         </el-col>
       </el-row>
     </content-warp>

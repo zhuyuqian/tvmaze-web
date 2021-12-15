@@ -1,5 +1,5 @@
 <template>
-  <nuxt-link class="animate__animated animate__fadeInUp card-item common-card"
+  <nuxt-link class="animate__animated animate__fadeInUp card-item common-card" :class="{[`delay-${delay}`]:true}"
              :to="`/webChannel/${info.webChannelId}`" :title="info.webChannelName">
     <div class="cover-box">
       <image-plus :src="info.webChannelCoverImgUrl"/>
@@ -16,6 +16,7 @@ import ImagePlus from "@/components/ImagePlus";
 export default {
   components: {ImagePlus},
   props: {
+    delay: {type: Number, default: 0},
     info: {type: Object, required: true}
   }
 }

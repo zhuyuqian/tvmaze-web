@@ -2,7 +2,7 @@
   <content-warp :name="$t('Cast')" :desc="castList.length">
     <el-row :gutter="15">
       <el-col v-for="(cast,index) of castList" :xs="8" :sm="6" :md="6" :lg="4" :xl="3" :key="cast.castId">
-        <people-item :class="`delay-${index}`" jump="people" :jump-id="cast.peopleId" card
+        <people-item card jump="people" :jump-id="cast.peopleId" :delay="index"
                      :title="cast.characterName" :cover="cast.characterImageMedium||cast.peopleImageMedium"
                      :desc="$store.getters.NAME_BY_LANG(cast.peopleName,cast.peopleNameZh)"/>
       </el-col>

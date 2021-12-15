@@ -1,6 +1,7 @@
 <template>
   <nuxt-link class="animate__animated animate__fadeInUp show-season-item common-card"
-             :to="`/show/${info.showId}/season/${info.seasonNo}`">
+             :to="`/show/${info.showId}/season/${info.seasonNo}`"
+             :class="{card:card,list:!card,[`delay-${delay}`]:true}">
     <div class="cover-box">
       <image-plus :src="info.seasonImageMedium"/>
     </div>
@@ -23,6 +24,8 @@
 
 export default {
   props: {
+    delay: {type: Number, default: 0},
+    card: {type: Boolean, default: false},
     info: {type: Object, required: true}
   }
 }

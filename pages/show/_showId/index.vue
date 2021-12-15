@@ -10,7 +10,7 @@
       <el-row>
         <template v-for="(season,index) of seasonList">
           <el-col v-if="index<4" :xs="12" :sm="12" :md="12" :lg="6" :xl="6" :key="season.seasonId">
-            <season-item class="list" :class="`delay-${index}`" :info="season"/>
+            <season-item class="list" :info="season" :delay="index"/>
           </el-col>
         </template>
       </el-row>
@@ -21,7 +21,7 @@
       <el-row>
         <template v-for="(cast,index) of castList">
           <el-col v-if="index<6" :xs="12" :sm="12" :md="8" :lg="8" :xl="8" :key="cast.castId">
-            <people-item :class="`delay-${index}`" jump="people" :jump-id="cast.peopleId"
+            <people-item jump="people" :jump-id="cast.peopleId" :delay="index"
                          :title="cast.characterName" :cover="cast.characterImageMedium||cast.peopleImageMedium"
                          :desc="$store.getters.NAME_BY_LANG(cast.peopleName,cast.peopleNameZh)"/>
           </el-col>
@@ -34,7 +34,7 @@
       <el-row>
         <template v-for="(crew,index) of crewList">
           <el-col v-if="index<6" :xs="12" :sm="12" :md="8" :lg="8" :xl="8" :key="crew.crewId">
-            <people-item :class="`delay-${index}`" jump="people" :jump-id="crew.peopleId"
+            <people-item jump="people" :jump-id="crew.peopleId" :delay="index"
                          :cover="crew.peopleImageMedium" :desc="`负责：${ $t(`people.crew.${crew.crewType}`) }`"
                          :title="$store.getters.NAME_BY_LANG(crew.peopleName,crew.peopleNameZh)"/>
           </el-col>
