@@ -1,6 +1,6 @@
 <template>
   <div class="page-box">
-    <content-warp name="全部流媒" :desc="pageInfo.count">
+    <content-warp name="全部流媒">
       <content-search-warp slot="rt" v-model="searchInfo.name" @change="searchInfoChange"/>
       <el-row :gutter="15">
         <el-col :xs="8" :sm="8" :md="6" :lg="4" v-for="(webChannel,index) of pageInfo.data"
