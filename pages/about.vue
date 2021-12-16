@@ -1,18 +1,18 @@
 <template>
   <div class="page-box">
-    <h1>{{ $dic.logoText }} - 为追剧而生</h1>
-    <p>提供各类剧集资讯、更新信息、播放时间表、追剧时间线。</p>
+    <h1>{{ $dic.logoText }} - 追剧日记 - 为追剧而生</h1>
+    <p>剧集资讯、更新信息、播放时间表、追剧时间线、片单推荐</p>
     <div class="main-box">
-      <p>如果你是追剧爱好者，如果你最近剧慌</p>
+      <p>如果你是追剧爱好者</p>
+      <p>如果你不知道最近有什么好看的剧</p>
       <p>欢迎加入这里！</p>
       <br/>
-      <p>在<span>{{ $dic.logoText }}</span></p>
+      <p>在这里</p>
       <p>你可以找到各式各样的剧集信息</p>
       <br/>
       <p>有你爱的~</p>
       <p>有类似你爱的~</p>
       <br/>
-      <p>还有更多功能在开发中</p>
       <p>说不定还能找到更多一起追剧的小伙伴哦！</p>
     </div>
   </div>
@@ -39,7 +39,7 @@ export default {}
 
     p {
       font-size: 20px;
-      margin-bottom: 26px;
+      margin-bottom: 15px;
 
       span {
         font-weight: bold;

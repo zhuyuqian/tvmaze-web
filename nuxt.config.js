@@ -1,12 +1,12 @@
 export default {
   head: {
-    title: 'TVMaze - 追剧日记 - 你的个人追剧指南',
+    title: 'TVMaze - 追剧日记 - 为追剧而生 - 你的个人追剧指南',
     meta: [
       {charset: 'utf-8'},
       {name: 'viewport', content: 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no'},
       {
         hid: 'description', name: 'description',
-        content: '电视节目和网络连续剧数据库。创建个性化的时间表。剧集指南，演员，工作人员和角色信息。回顾，预告，名人照片。'
+        content: '电视节目和网剧、个性化的时间表、剧集指南，演员，工作人员和角色信息、回顾，预告，名人照片。'
       },
     ],
     script: [
