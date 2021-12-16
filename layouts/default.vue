@@ -16,7 +16,13 @@ import FooterMenuWarp from "@/components/Index/FooterMenuWarp";
 
 export default {
   mixins: [layoutMixin],
-  components: {HeaderControlWarp, HeaderMenuWarp, FooterMenuWarp}
+  components: {HeaderControlWarp, HeaderMenuWarp, FooterMenuWarp},
+  async mounted() {
+    if (!localStorage.getItem('look-about')) {
+      let method = await this.$msgbox({title: '哈喽~', message: '欢迎访问这个小站，先了解我一下吧~'}).catch(err => err);
+      if (method === 'confirm') return this.$router.push({path: '/about'});
+    }
+  }
 }
 </script>
 <style lang="scss" scoped>

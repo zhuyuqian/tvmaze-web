@@ -1,13 +1,24 @@
 <template>
   <div class="footer-menu-warp">
     <div class="content footer-menu-box">
-
-      <p class="name">友情链接</p>
-      <div class="link-box">
-        <a href="https://www.tvmaze.com/api" target="_blank">TvMaze.com</a>
+      <div class="link-warp">
+        <div class="link-flex">
+          <p class="name">友情链接</p>
+          <div class="link-box">
+            <a href="https://www.tvmaze.com/api" target="_blank">TVmaze.com</a>
+            <a href="https://www.nuxtjs.cn/" target="_blank">NuxtJs</a>
+            <a href="https://thinkjs.org/" target="_blank">ThinkJs</a>
+          </div>
+        </div>
+        <div class="link-flex">
+          <p class="name">站内导航</p>
+          <div class="link-box">
+            <nuxt-link to="/about">关于</nuxt-link>
+          </div>
+        </div>
       </div>
       <p class="slogan">
-        <nuxt-link to="/about">TvMaze.cn 追剧日记 为追剧而生</nuxt-link>
+        <nuxt-link to="/">Tvmaze.cn © 2021</nuxt-link>
       </p>
       <p class="beian-warp">
         <a href="https://beian.miit.gov.cn/" target="_blank">浙ICP备2021038749号-1</a>
@@ -58,26 +69,38 @@ export default {
     text-align: center;
     @include fontColor('color-text');
 
-    .slogan {
-      font-size: 14px;
-    }
 
-    .name {
-      text-align: left;
-      font-size: 12px;
-    }
+    .link-warp {
+      display: flex;
 
-    .link-box {
-      margin: 6px 0;
-      text-align: left;
+      .link-flex {
+        flex: 1;
 
-      a {
-        font-size: 13px;
+        .name {
+          text-align: left;
+          font-size: 12px;
+        }
+
+        .link-box {
+          margin: 6px 0;
+          text-align: left;
+
+          a {
+            margin-right: 20px;
+            font-size: 13px;
+          }
+        }
       }
     }
 
-    .beian-warp {
+    .slogan {
+      text-align: right;
       margin-top: 10px;
+      font-size: 14px;
+    }
+
+    .beian-warp {
+      text-align: right;
       font-size: 12px;
 
       a {
