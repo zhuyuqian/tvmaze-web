@@ -1,20 +1,21 @@
 <template>
   <div class="footer-menu-warp">
     <div class="content footer-menu-box">
-      <logo-box/>
-      <nav class="menu-warp">
-        <nuxt-link class="menu-box" to="/">{{ $t('Main') }}</nuxt-link>
-        <nuxt-link class="menu-box" to="/about">{{ $t('About') }}</nuxt-link>
-        <a href="javascript:void 0" class="menu-box" @click="thank">{{ $t('Thank') }}</a>
-      </nav>
-      <div class="beian-warp">
-        <span class="reserved">tvmaze.cn © 2021</span>
+
+      <p class="name">友情链接</p>
+      <div class="link-box">
+        <a href="https://www.tvmaze.com/api" target="_blank">TvMaze.com</a>
+      </div>
+      <p class="slogan">
+        <nuxt-link to="/about">TvMaze.cn 追剧日记 为追剧而生</nuxt-link>
+      </p>
+      <p class="beian-warp">
         <a href="https://beian.miit.gov.cn/" target="_blank">浙ICP备2021038749号-1</a>
         <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=33011002016134">
           <img src="~@/assets/image/beian.png"/>
           <span>浙公网安备 33011002016134号</span>
         </a>
-      </div>
+      </p>
     </div>
   </div>
 </template>
@@ -53,42 +54,34 @@ export default {
   @include borderColor("border-color");
 
   .footer-menu-box {
-    height: 76px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    line-height: 76px;
+    padding: 20px 0;
+    text-align: center;
+    @include fontColor('color-text');
 
-    .menu-warp {
-      .menu-box {
-        font-size: 16px;
-        font-weight: bold;
-        margin-right: 15px;
+    .slogan {
+      font-size: 14px;
+    }
 
-        &.nuxt-link-exact-active {
-          @include fontColor("color-primary")
-        }
+    .name {
+      text-align: left;
+      font-size: 12px;
+    }
+
+    .link-box {
+      margin: 6px 0;
+      text-align: left;
+
+      a {
+        font-size: 13px;
       }
     }
 
     .beian-warp {
-      display: flex;
-      align-items: center;
+      margin-top: 10px;
       font-size: 12px;
 
       a {
-        display: inline-flex;
-        align-items: center;
-        margin-left: 15px;
-
-        img {
-          width: 15px;
-          margin-right: 4px;
-        }
-      }
-
-      .reserved {
-        @include fontColor("color-text");
+        margin: 0 4px;
       }
     }
   }

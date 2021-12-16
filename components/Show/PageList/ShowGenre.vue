@@ -3,11 +3,13 @@
     <span slot="rt" class="show-all" @click="showAll=!showAll">{{ showAll ? '收起' : '展开' }}
       <i class="el-icon-d-arrow-right" :class="showAll?'up':'down'"></i>
     </span>
-    <el-checkbox-group v-model="newValue" @change="change">
-      <el-checkbox v-for="item of SHOW_GENRE_LIST" v-show="showAll||newValue.includes(item.id.toString())"
-                   :key="item.id" :label="item.id.toString()">{{ $t(`show.genre.${item.name}`) }}
-      </el-checkbox>
-    </el-checkbox-group>
+    <el-scrollbar :style="{height: showAll?'200px':'100%'}">
+      <el-checkbox-group v-model="newValue" @change="change">
+        <el-checkbox v-for="item of SHOW_GENRE_LIST" v-show="showAll||newValue.includes(item.id.toString())"
+                     :key="item.id" :label="item.id.toString()">{{ $t(`show.genre.${item.name}`) }}
+        </el-checkbox>
+      </el-checkbox-group>
+    </el-scrollbar>
   </content-warp>
 </template>
 
@@ -63,9 +65,6 @@ export default {
   }
 
   ::v-deep .el-checkbox-group {
-    max-height: 200px;
-    overflow-y: auto;
-
     .el-checkbox {
       width: 100%;
       margin-bottom: 10px;

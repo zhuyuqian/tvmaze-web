@@ -14,7 +14,8 @@ import {
   Button,
   Dialog,
   Switch,
-  MessageBox
+  MessageBox,
+  Scrollbar
 } from 'element-ui';
 
 Vue.prototype.$msgbox = MessageBox;
@@ -32,3 +33,4 @@ Vue.use(Popover);
 Vue.use(Button);
 Vue.use(Dialog);
 Vue.use(Switch);
+Vue.use(Scrollbar);

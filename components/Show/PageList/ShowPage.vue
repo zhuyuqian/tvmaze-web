@@ -4,16 +4,17 @@
     <content-search-warp slot="rt" v-model="searchInfo.name" @change="searchInfoChange"/>
     <show-shape slot="rt"/>
     <el-row :gutter="15">
-      <el-col :xs="5" :sm="5" :md="5" :lg="3" :xl="3" class="stick-top">
+      <el-col :xs="5" :sm="5" :md="5" :lg="4" :xl="3" class="stick-top">
         <show-language v-model="searchInfo.language" @change="searchInfoChange"/>
         <show-type v-model="searchInfo.type" @change="searchInfoChange"/>
         <show-genre v-model="searchInfo.genre" @change="searchInfoChange"/>
       </el-col>
-      <el-col :xs="19" :sm="19" :md="19" :lg="21" :xl="21">
+      <el-col :xs="19" :sm="19" :md="19" :lg="20" :xl="21">
         <el-row :gutter="15">
           <el-col v-for="(show,index) of showInfo.data" :key="show.showId"
                   :xs="SHOW_SHAPE==='list'?24:8" :sm="SHOW_SHAPE==='list'?24:8"
-                  :md="SHOW_SHAPE==='list'?24:6" :lg="SHOW_SHAPE==='list'?24:4">
+                  :md="SHOW_SHAPE==='list'?24:6" :lg="SHOW_SHAPE==='list'?24:4"
+                  :xl="SHOW_SHAPE==='list'?24:4">
             <show-item :info="show" :shape="SHOW_SHAPE" :class="`delay-${index}`"/>
           </el-col>
         </el-row>

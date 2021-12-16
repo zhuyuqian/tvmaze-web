@@ -465,6 +465,10 @@ p {
   }
 }
 
+.el-scrollbar__wrap {
+  overflow-x: hidden;
+}
+
 @keyframes rotate {
   100% {
     transform: rotate(1turn);

@@ -1,6 +1,6 @@
 <template>
   <div class="page-box">
-    <h1>{{ $dic.logoText }} - 追剧日记 - 为追剧而生</h1>
+    <h1>TvMaze.cn 追剧日记 为追剧而生</h1>
     <p>剧集资讯、更新信息、播放时间表、追剧时间线、片单推荐</p>
     <div class="main-box">
       <p>如果你是追剧爱好者</p>

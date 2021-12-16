@@ -3,12 +3,14 @@
     <span slot="rt" class="show-all" @click="showAll=!showAll">{{ showAll ? '收起' : '展开' }}
       <i class="el-icon-d-arrow-right" :class="showAll?'up':'down'"></i>
     </span>
-    <el-radio-group v-model="newValue" @change="change">
-      <el-radio label="">{{ $t('All') }}</el-radio>
-      <el-radio v-for="item of SHOW_TYPE_LIST" v-show="showAll||newValue===item"
-                :key="item" :label="item">{{ $t(`show.type.${item}`) }}
-      </el-radio>
-    </el-radio-group>
+    <el-scrollbar :style="{height: showAll?'200px':'100%'}">
+      <el-radio-group v-model="newValue" @change="change">
+        <el-radio label="">{{ $t('All') }}</el-radio>
+        <el-radio v-for="item of SHOW_TYPE_LIST" v-show="showAll||newValue===item"
+                  :key="item" :label="item">{{ $t(`show.type.${item}`) }}
+        </el-radio>
+      </el-radio-group>
+    </el-scrollbar>
   </content-warp>
 </template>
 
@@ -64,9 +66,6 @@ export default {
   }
 
   ::v-deep .el-radio-group {
-    max-height: 200px;
-    overflow-y: auto;
-
     .el-radio {
       width: 100%;
       margin-bottom: 10px;

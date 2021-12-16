@@ -2,7 +2,7 @@
   <div class="header-control-warp">
     <div class="content header-control-box">
       <el-radio-group v-model="locale" @change="changeLocale">
-        <el-radio v-for="(name,value) in $dic.localeMap" :key="value" :label="value">{{ name }}</el-radio>
+        <!--        <el-radio v-for="(name,value) in $dic.localeMap" :key="value" :label="value">{{ name }}</el-radio>-->
       </el-radio-group>
       <nav class="theme-box">
         <a v-for="(label,value) of $dic.themeMap" href="javascript:void 0"
