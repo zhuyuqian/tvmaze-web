@@ -32,27 +32,6 @@
 </template>
 
 <script>
-import LogoBox from "@/components/Index/LogoBox";
-
-export default {
-  components: {LogoBox},
-  methods: {
-    thank() {
-      const h = this.$createElement;
-      this.$msgbox({
-        title: this.$t('Thank'),
-        message: h('div', null, [
-          h('span', {}, '特别感谢'),
-          h('a', {
-            attrs: {href: 'https://www.tvmaze.com/api', target: '_black'},
-            style: {'fontWeight': "bold", 'fontSize': '20px', 'margin': '0 10px'}
-          }, 'tvmaze.com'),
-          h('span', {}, '提供的开放API！😄'),
-        ]),
-      })
-    }
-  }
-}
 </script>
 
 <style lang="scss" scoped>
@@ -105,6 +84,7 @@ export default {
 
       a {
         margin: 0 4px;
+        font-size: 12px !important;
       }
     }
   }

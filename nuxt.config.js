@@ -32,6 +32,7 @@ export default {
     '@/plugins/element-ui',
     '@/plugins/i18n.js',
     {src: '@/plugins/vue-lazyload', ssr: false},
+    {src: '@/plugins/analytic.js', ssr: false},
   ],
   components: true,
   buildModules: [],
