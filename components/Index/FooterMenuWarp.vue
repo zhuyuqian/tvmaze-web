@@ -58,6 +58,7 @@
         .name {
           text-align: left;
           font-size: 12px;
+          @include fontColor('color-placeholder')
         }
 
         .link-box {
