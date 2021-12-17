@@ -12,7 +12,9 @@ const state = () => ({
   // 节目风格列表
   showGenreList: [],
   // 节目语言列表
-  showLanguageList: []
+  showLanguageList: [],
+  // 友情链接
+  friendLinkList: []
 })
 
 const mutations = {
@@ -24,6 +26,9 @@ const mutations = {
   },
   SET_SHOW_LANGUAGE_LIST(state, showLanguageList) {
     state.showLanguageList = showLanguageList;
+  },
+  SET_FRIEND_LINK(state, friendLinkList) {
+    state.friendLinkList = friendLinkList;
   },
   SET_LOCALE(state, locale) {
     state.locale = locale;
@@ -66,6 +71,7 @@ const getters = {
   SHOW_TYPE_LIST: state => state.showTypeList,
   SHOW_GENRE_LIST: state => state.showGenreList,
   SHOW_LANGUAGE_LIST: state => state.showLanguageList,
+  FRIEND_LINK_LIST: state => state.friendLinkList
 }
 
 const getCookie = (cookie, tName) => {
@@ -92,14 +98,17 @@ const actions = {
       {data: {data: type}},
       {data: {data: genre}},
       {data: {data: language}},
+      {data: {data: friendLinkList}},
     ] = await Promise.all([
       app.$axios.get('/show/type'),
       app.$axios.get('/show/genre'),
       app.$axios.get('/show/language'),
+      app.$axios.get('/friendlyLink/list')
     ])
     commit('SET_SHOW_TYPE_LIST', type);
     commit('SET_SHOW_GENRE_LIST', genre);
     commit('SET_SHOW_LANGUAGE_LIST', language);
+    commit('SET_FRIEND_LINK', friendLinkList);
     let locale = getCookie(req.headers.cookie, 'locale');
     let showShape = getCookie(req.headers.cookie, 'showShape');
     let theme = getCookie(req.headers.cookie, 'theme');

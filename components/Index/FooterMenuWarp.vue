@@ -5,9 +5,8 @@
         <div class="link-flex">
           <p class="name">友情链接</p>
           <div class="link-box">
-            <a href="https://www.tvmaze.com/api" target="_blank">TVmaze.com</a>
-            <a href="https://www.nuxtjs.cn/" target="_blank">NuxtJs</a>
-            <a href="https://thinkjs.org/" target="_blank">ThinkJs</a>
+            <a v-for="link of $store.getters.FRIEND_LINK_LIST" :key="link.id" :href="`${link.link}#tvmaze.cn`"
+               target="_blank">{{ link.name }}</a>
           </div>
         </div>
         <div class="link-flex">
