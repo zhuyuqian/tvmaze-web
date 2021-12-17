@@ -15,6 +15,11 @@ import QunItem from "@/components/Contact/QunItem";
 
 export default {
   components: {QunItem},
+  head() {
+    return {
+      title: `联系 - ${this.$dic.logoText}`
+    }
+  },
   data() {
     return {
       qunList: []

@@ -35,6 +35,11 @@ export default {
       crewList: []
     }
   },
+  head() {
+    return {
+      title: `${this.$store.getters.NAME_BY_LANG(this.peopleInfo.peopleName, this.peopleInfo.peopleNameZh)} - ${this.$dic.logoText}`
+    }
+  },
   async asyncData({app, params}) {
     let [
       {data: {data: peopleInfo}},

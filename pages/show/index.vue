@@ -8,6 +8,11 @@ import showPageList, {getSearchInfo} from "@/mixins/showPageList";
 
 export default {
   mixins: [showPageList],
+  head() {
+    return {
+      title: `节目 - ${this.$dic.logoText}`
+    }
+  },
   async asyncData({app, query, params}) {
     let searchInfo = getSearchInfo(query, params);
     let [

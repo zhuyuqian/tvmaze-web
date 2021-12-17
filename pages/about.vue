@@ -12,7 +12,7 @@
       <p class="desc">偶然的一天，戳进了<a href="https://www.tvmaze.com/api" target="_blank">TVmaze.com</a>这个网站，就好像发现了一个宝藏一样，基本上剧作信息一应俱全了，这不就是我想做的东西么。后来发现网站开源了API，更棒了🤔
         于是就有了这个网站。😁 </p>
       <br/>
-      <p class="desc">因为也见证过很多视频网站的兴起，和衰落，也见证了"人人影视"的风波。所以，这个小站永远不会做一个视频资源站，承诺只做资讯，并且都是公开开放的资讯。</p>
+      <p class="desc">因为也见证过很多视频网站的兴起，和衰落，也见证了"人人影视"的风波。所以，这个小站<b>永远不会做一个视频资源站</b>，承诺只做推荐，并且都是公开开放的推荐信息。</p>
       <br/>
       <p class="desc">我会一直维护下去，还有很多有意思的功能我还在思考中。</p>
       <p class="desc">如果你喜欢，也欢迎你和我、和这个小站一起成长。</p>
@@ -24,6 +24,11 @@
 
 <script>
 export default {
+  head() {
+    return {
+      title: `关于 - ${this.$dic.logoText}`
+    }
+  },
   mounted() {
     localStorage.setItem('look-about', 1);
   }

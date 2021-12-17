@@ -28,6 +28,11 @@ export default {
       showInfo: {}
     }
   },
+  head() {
+    return {
+      title: `${this.$store.getters.NAME_BY_LANG(this.showInfo.showName, this.showInfo.showNameZh)} - ${this.$dic.logoText}`
+    }
+  },
   async asyncData({app, params}) {
     let {showId} = params;
     let [

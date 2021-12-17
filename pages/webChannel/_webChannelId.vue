@@ -13,6 +13,11 @@ export default {
       pageInfo: {}
     }
   },
+  head() {
+    return {
+      title: `${this.pageInfo.webChannelName} - 节目 - ${this.$dic.logoText}`
+    }
+  },
   async asyncData({app, query, params}) {
     let searchInfo = getSearchInfo(query, params);
     let [

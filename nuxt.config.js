@@ -1,12 +1,13 @@
 export default {
   head: {
-    title: 'TVMaze - 追剧日记 - 为追剧而生 - 你的个人追剧指南',
+    title: 'TvMaze.cn - 追剧日记 - 你的个人追剧指南',
     meta: [
       {charset: 'utf-8'},
       {name: 'viewport', content: 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no'},
+      {name: 'keywords', content: "追剧,预告,电视剧,美剧,日剧,韩剧,卡司,角色,追剧日记,追剧指南"},
       {
-        hid: 'description', name: 'description',
-        content: '电视节目和网剧、个性化的时间表、剧集指南，演员，工作人员和角色信息、回顾，预告，名人照片。'
+        name: 'description',
+        content: '电视剧和网剧、个性化的时间表、剧集指南，演员，工作人员和角色信息、回顾，预告，名人照片。'
       },
     ],
     script: [
@@ -18,6 +19,7 @@ export default {
       {rel: 'stylesheet', href: "//cdn.bootcdn.net/ajax/libs/Swiper/6.8.0/swiper-bundle.css"}
     ]
   },
+  globalName: "tvmaze",
   loading: {color: '#409EFF', height: '1px'},
   router: {
     scrollBehavior(to, from, savedPosition) {

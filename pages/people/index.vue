@@ -43,6 +43,11 @@ export default {
       }
     }
   },
+  head() {
+    return {
+      title: `卡司 - ${this.$dic.logoText}`
+    }
+  },
   watch: {
     $route() {
       this.getList()

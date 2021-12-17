@@ -30,6 +30,11 @@ export default {
       pageInfo: {data: [], count: 0}
     }
   },
+  head() {
+    return {
+      title: `流媒体 - ${this.$dic.logoText}`
+    }
+  },
   watch: {
     $route() {
       this.getList()

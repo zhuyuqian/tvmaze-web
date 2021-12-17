@@ -8,6 +8,11 @@ import showPageList, {getSearchInfo} from "@/mixins/showPageList";
 
 export default {
   mixins: [showPageList],
+  head() {
+    return {
+      title: `${this.pageInfo.networkName} - 节目 - ${this.$dic.logoText}`
+    }
+  },
   data() {
     return {
       pageInfo: {}

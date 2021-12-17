@@ -23,6 +23,11 @@
 <script>
 
 export default {
+  head() {
+    return {
+      title: `播放时间表 - ${this.$dayjs(this.pageInfo.date).format('YYYY/MM/DD')} - ${this.$dic.logoText}`
+    }
+  },
   data() {
     return {
       currentHours: null,
