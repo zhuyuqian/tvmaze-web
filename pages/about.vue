@@ -1,7 +1,7 @@
 <template>
   <div class="page-box">
-    <h1>TvMaze.cn 追剧日记 为追剧而生</h1>
-    <p>剧集资讯、更新信息、播放时间表、追剧时间线、片单推荐</p>
+    <h1 class="page-title">{{ $dic.logoText }} 追剧日记 为追剧而生</h1>
+    <p class="page-desc">剧集资讯、更新信息、播放时间表、追剧时间线、片单推荐</p>
     <div class="say-box">
       <p class="name">站长说：</p>
       <br/>
@@ -35,16 +35,26 @@ export default {
 
 .page-box {
   padding: 50px 0;
-  @include fontColor('color-text');
-  text-align: center;
+
+  .page-title {
+    text-align: center;
+    @include fontColor('color-title');
+  }
+
+  .page-desc {
+    text-align: center;
+    @include fontColor('color-text');
+  }
 
   .say-box {
-    width: 50%;
-    margin: 30px auto 0;
+    width: 80%;
+    margin: 50px auto 0;
     padding: 50px;
     border-radius: 10px;
     text-align: left;
     line-height: 30px;
+    font-size: 14px;
+    @include fontColor('color-text');
     @include backgroundColor('color-card-background');
 
     .desc {

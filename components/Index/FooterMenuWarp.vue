@@ -11,9 +11,11 @@
           </div>
         </div>
         <div class="link-flex">
-          <p class="name">站内导航</p>
+          <p class="name">站内</p>
           <div class="link-box">
             <nuxt-link to="/about">关于</nuxt-link>
+            <nuxt-link to="/contact">联系</nuxt-link>
+            <nuxt-link to="/people">卡司</nuxt-link>
           </div>
         </div>
       </div>

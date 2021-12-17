@@ -1,5 +1,5 @@
 <template>
-  <content-warp name="全部人员">
+  <content-warp name="卡司">
     <content-order-warp slot="rt" v-model="searchInfo.order" @change="searchInfoChange" :order-map="orderMap"/>
     <content-search-warp slot="rt" v-model="searchInfo.name" @change="searchInfoChange"/>
     <el-row :gutter="15">
