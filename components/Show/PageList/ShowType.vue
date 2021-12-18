@@ -6,7 +6,7 @@
     <el-scrollbar :style="{height: showAll?'200px':'100%'}">
       <el-radio-group v-model="newValue" @change="change">
         <el-radio label="">{{ $t('All') }}</el-radio>
-        <el-radio v-for="item of SHOW_TYPE_LIST" v-show="showAll||newValue===item"
+        <el-radio v-for="item of $store.getters.SHOW_TYPE_LIST" v-show="showAll||newValue===item"
                   :key="item" :label="item">{{ $t(`show.type.${item}`) }}
         </el-radio>
       </el-radio-group>
@@ -15,8 +15,6 @@
 </template>
 
 <script>
-import {mapGetters} from 'vuex';
-
 export default {
   props: {
     value: {type: String, default: ''}
@@ -31,9 +29,6 @@ export default {
     value(newValue) {
       this.newValue = newValue;
     }
-  },
-  computed: {
-    ...mapGetters(['SHOW_TYPE_LIST'])
   },
   methods: {
     change() {

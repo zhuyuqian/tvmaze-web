@@ -1,5 +1,5 @@
 <template>
-  <nuxt-link class="animate__animated animate__fadeInUp show-episode-item common-card"
+  <nuxt-link class="animate__animated animate__fadeInUp common-card"
              :class="{card:card,list:!card,[`delay-${delay}`]:true}"
              :to="`/show/${info.showId}/season/${info.seasonNo}/${info.episodeName.replace(new RegExp(' ','g'),'-')}`">
     <div class="cover-box">
@@ -30,12 +30,8 @@ export default {
 <style lang="scss" scoped>
 @import "~assets/scss/_handle.scss";
 
-.show-episode-item {
-  display: flex;
-
-  .cover-box {
-    width: 150px;
-    height: 100px;
-  }
+.cover-box {
+  width: 150px;
+  height: 100px;
 }
 </style>

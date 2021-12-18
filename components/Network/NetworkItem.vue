@@ -1,5 +1,5 @@
 <template>
-  <nuxt-link class="animate__animated animate__fadeInUp card-item common-card" :class="{[`delay-${delay}`]:true}"
+  <nuxt-link class="animate__animated animate__fadeInUp common-card card" :class="{[`delay-${delay}`]:true}"
              :to="`/network/${info.networkId}`" :title="info.networkName">
     <div class="cover-box">
       <image-plus :src="info.networkCoverImgUrl"/>
@@ -23,15 +23,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "~assets/scss/_handle.scss";
-
-.card-item {
+.cover-box {
+  width: 120px;
+  height: 80px;
+  margin: 0 auto;
+}
+.name-box{
   text-align: center;
-
-  .cover-box {
-    width: 120px;
-    height: 80px;
-    margin: 0 auto;
-  }
 }
 </style>

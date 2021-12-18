@@ -10,7 +10,7 @@
       <el-row>
         <template v-for="(season,index) of seasonList">
           <el-col v-if="index<4" :xs="12" :sm="12" :md="12" :lg="6" :xl="6" :key="season.seasonId">
-            <season-item class="list" :info="season" :delay="index"/>
+            <season-item :info="season" :delay="index"/>
           </el-col>
         </template>
       </el-row>

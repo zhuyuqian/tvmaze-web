@@ -1,19 +1,15 @@
 <template>
   <div class="show-shape">
     <el-tooltip v-for="(shape,key) of shapeMap" :key="key" :content="shape.desc" placement="top">
-      <i class="iconfont" :class="{active:SHOW_SHAPE===key,[`icon-${key}`]:true}"
+      <i class="iconfont" :class="{active:$store.getters.SHOW_SHAPE===key,[`icon-${key}`]:true}"
          @click="$store.commit('SET_SHOW_SHAPE',key)"></i>
     </el-tooltip>
   </div>
 </template>
 
 <script>
-import {mapGetters} from 'vuex';
 
 export default {
-  computed: {
-    ...mapGetters(['SHOW_SHAPE'])
-  },
   data() {
     return {
       shapeMap: {

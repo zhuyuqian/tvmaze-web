@@ -5,8 +5,8 @@
     </span>
     <el-scrollbar :style="{height: showAll?'200px':'100%'}">
       <el-checkbox-group v-model="newValue" @change="change">
-        <el-checkbox v-for="item of SHOW_GENRE_LIST" v-show="showAll||newValue.includes(item.id.toString())"
-                     :key="item.id" :label="item.id.toString()">{{ $t(`show.genre.${item.name}`) }}
+        <el-checkbox v-for="item of $store.getters.SHOW_GENRE_LIST" :key="item.id" :label="item.id.toString()"
+                     v-show="showAll||newValue.includes(item.id.toString())">{{ $t(`show.genre.${item.name}`) }}
         </el-checkbox>
       </el-checkbox-group>
     </el-scrollbar>
@@ -14,8 +14,6 @@
 </template>
 
 <script>
-import {mapGetters} from 'vuex';
-
 export default {
   props: {
     value: {type: String, default: ''}
@@ -25,9 +23,6 @@ export default {
       showAll: true,
       newValue: this.value ? this.value.split(',') : []
     }
-  },
-  computed: {
-    ...mapGetters(['SHOW_GENRE_LIST'])
   },
   watch: {
     value(newValue) {

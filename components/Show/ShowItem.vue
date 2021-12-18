@@ -1,6 +1,6 @@
 <template>
-  <nuxt-link class="animate__animated animate__fadeInUp show-item common-card"
-             :to="`/show/${info.showId}`" :class="{[shape]:true,[`delay-${delay}`]:true}">
+  <nuxt-link class="animate__animated animate__fadeInUp common-card" :to="`/show/${info.showId}`"
+             :class="{[shape]:true,[`delay-${delay}`]:true}">
     <div class="cover-box">
       <image-plus :src="info.showImageMedium"/>
     </div>
@@ -35,30 +35,27 @@ export default {
 <style lang="scss" scoped>
 @import "~assets/scss/_handle.scss";
 
-.show-item {
-
-  &.card {
-    .cover-box {
-      width: 100%;
-      height: 220px;
-    }
-
-    .info-box {
-      .summary-box {
-        display: none;
-      }
-
-      .other-box {
-        height: 17px;
-      }
-    }
+.card {
+  .cover-box {
+    width: 100%;
+    height: 220px;
   }
 
-  &.list {
-    .cover-box {
-      width: 80px;
-      height: 110px;
+  .info-box {
+    .summary-box {
+      display: none;
     }
+
+    .other-box {
+      height: 17px;
+    }
+  }
+}
+
+.list {
+  .cover-box {
+    width: 80px;
+    height: 110px;
   }
 }
 </style>

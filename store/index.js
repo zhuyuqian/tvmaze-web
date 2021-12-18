@@ -8,11 +8,35 @@ const state = () => ({
   // 节目列表展示方式
   showShape: 'card',
   // 节目类型列表
-  showTypeList: [],
+  showTypeList: [
+    'Scripted', 'Animation',
+    'Reality', 'Talk Show',
+    'Sports', 'News',
+    'Documentary', 'Award Show',
+    'Game Show', 'Variety',
+    'Panel Show'
+  ],
   // 节目风格列表
   showGenreList: [],
   // 节目语言列表
-  showLanguageList: [],
+  showLanguageList: [
+    'Chinese', 'English', 'Japanese',
+    'Norwegian', 'Russian', 'Hindi',
+    'Persian', 'Tagalog', 'Bulgarian',
+    'French', 'German', 'Korean',
+    'Spanish', 'Thai', 'Turkish',
+    'Dutch', 'Danish', 'Hungarian',
+    'Greek', 'Slovak', 'Italian',
+    'Finnish', 'Czech', 'Portuguese',
+    'Ukrainian', 'Polish', 'Romanian',
+    'Swedish', 'Icelandic', 'Welsh',
+    'Arabic', 'Galician', 'Hebrew',
+    'Lithuanian', 'Armenian', 'Irish',
+    'Croatian', 'Bengali', 'Vietnamese',
+    'Tamil', 'Scottish Gaelic', 'Serbian',
+    'Estonian', 'Urdu', 'Azerbaijani',
+    'Georgian', 'Pashto', 'Albanian'
+  ],
   // 友情链接
   friendLinkList: []
 })
@@ -95,19 +119,13 @@ const getCookie = (cookie, tName) => {
 const actions = {
   async nuxtServerInit({commit}, {app, req}) {
     let [
-      {data: {data: type}},
       {data: {data: genre}},
-      {data: {data: language}},
       {data: {data: friendLinkList}},
     ] = await Promise.all([
-      app.$axios.get('/show/type'),
       app.$axios.get('/show/genre'),
-      app.$axios.get('/show/language'),
       app.$axios.get('/friendlyLink/list')
     ])
-    commit('SET_SHOW_TYPE_LIST', type);
     commit('SET_SHOW_GENRE_LIST', genre);
-    commit('SET_SHOW_LANGUAGE_LIST', language);
     commit('SET_FRIEND_LINK', friendLinkList);
     let locale = getCookie(req.headers.cookie, 'locale');
     let showShape = getCookie(req.headers.cookie, 'showShape');

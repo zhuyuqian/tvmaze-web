@@ -1,12 +1,12 @@
 <template>
-  <nuxt-link :to="`/show/${info.showId}`" class="animate__animated animate__fadeInUp schedule-item common-card"
+  <nuxt-link :to="`/show/${info.showId}`" class="animate__animated animate__fadeInUp common-card list"
              :class="{[`delay-${delay}`]:true}">
     <div class="cover-box">
       <image-plus :src="info.showImageMedium"/>
     </div>
     <div class="info-box">
       <div class="name-box pub-ellipsis-1">{{ $store.getters.NAME_BY_LANG(info.showName, info.showNameZh) }}</div>
-      <div class="episode-name pub-ellipsis-1" v-for="episode of info.episodeList" :key="episode.episodeId">
+      <div class="desc-box pub-ellipsis-1" v-for="episode of info.episodeList" :key="episode.episodeId">
         S{{ episode.seasonNo }}E{{ episode.episodeNo }}：
         {{ $store.getters.NAME_BY_LANG(episode.episodeName, episode.episodeNameZh) }}
       </div>
@@ -26,24 +26,12 @@ export default {
 <style lang="scss" scoped>
 @import "~assets/scss/_handle.scss";
 
-.schedule-item {
-  display: flex;
+.cover-box {
+  width: 70px;
+  height: 100px;
+}
 
-  .cover-box {
-    width: 70px;
-    height: 100px;
-  }
-
-  .info-box {
-    flex: 1;
-    overflow: hidden;
-    margin-left: 10px;
-
-    .episode-name {
-      display: block;
-      font-size: 12px;
-      @include fontColor('color-text');
-    }
-  }
+.info-box {
+  margin-left: 10px;
 }
 </style>

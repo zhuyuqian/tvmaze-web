@@ -9,8 +9,9 @@
       </el-col>
       <el-col :span="22">
         <content-warp :ref="item.hours" v-for="item of pageInfo.list" :name="item.hours" :key="item.hours" size="small">
-          <el-row :gutter="15">
-            <el-col :span="6" v-for="(show,index) of item.showList" :key="show.showId">
+          <el-row>
+            <el-col v-for="(show,index) of item.showList" :key="show.showId"
+                    :xs="12" :sm="12" :md="8" :lg="6" :xl="6">
               <schedule-item :info="show" :delay="index"/>
             </el-col>
           </el-row>

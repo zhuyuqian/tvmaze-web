@@ -1,7 +1,7 @@
 <template>
-  <nuxt-link class="animate__animated animate__fadeInUp show-season-item common-card"
-             :to="`/show/${info.showId}/season/${info.seasonNo}`"
-             :class="{card:card,list:!card,[`delay-${delay}`]:true}">
+  <nuxt-link class="animate__animated animate__fadeInUp common-card"
+             :class="{card:card,list:!card,[`delay-${delay}`]:true}"
+             :to="`/show/${info.showId}/season/${info.seasonNo}`">
     <div class="cover-box">
       <image-plus :src="info.seasonImageMedium"/>
     </div>
@@ -32,21 +32,17 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "~assets/scss/_handle.scss";
-
-.show-season-item {
-  &.card {
-    .cover-box {
-      width: 100%;
-      height: 200px;
-    }
+.card {
+  .cover-box {
+    width: 100%;
+    height: 200px;
   }
+}
 
-  &.list {
-    .cover-box {
-      width: 70px;
-      height: 90px;
-    }
+.list {
+  .cover-box {
+    width: 70px;
+    height: 90px;
   }
 }
 </style>

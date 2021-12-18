@@ -16,8 +16,8 @@
       <el-row :gutter="15">
         <template v-for="(crew,index) of crewList">
           <el-col :xs="8" :sm="6" :md="6" :lg="4" :xl="3" :key="crew.crewId">
-            <people-item card jump="show" :jump-id="crew.showId" :delay="index"
-                         :cover="crew.showImageMedium" :title="`${crew.showNameZh} ${ crew.showName }`"
+            <people-item card jump="show" :jump-id="crew.showId" :delay="index" :cover="crew.showImageMedium"
+                         :title="$store.getters.NAME_BY_LANG(crew.showName,crew.showNameZh)"
                          :desc="`负责：${ $t(`people.crew.${crew.crewType}`) }`"/>
           </el-col>
         </template>
