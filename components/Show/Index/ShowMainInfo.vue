@@ -80,9 +80,8 @@ export default {
   }
 
   .show-summary {
-    margin-top: 10px;
     font-size: 14px;
-    line-height: 24px;
+    line-height: 28px;
     @include fontColor('color-text');
 
     ::v-deep p {

@@ -54,24 +54,31 @@ export default {
 @import "~@/assets/scss/_handle.scss";
 
 .album-page {
-  padding: 50px 0;
-
   .name-warp {
-    text-align: center;
+    width: 80%;
+    margin: 20px auto 0;
     @include fontColor('color-title');
 
     h1 {
+      font-size: 46px;
+      margin: 0;
       @include fontColor('color-title');
+
+      &:hover {
+        animation: text-animate 0.5s linear infinite;
+      }
     }
 
     p {
+      margin: 10px auto 0;
+      font-size: 14px;
       @include fontColor('color-text');
     }
   }
 
   .summary-warp {
     width: 80%;
-    margin: 30px auto;
+    margin: 30px auto 40px;
     overflow: hidden;
 
     .banner-box {
@@ -89,7 +96,7 @@ export default {
 
     .summary-box {
       font-size: 14px;
-      line-height: 24px;
+      line-height: 28px;
       @include fontColor('color-text');
 
       ::v-deep p {
