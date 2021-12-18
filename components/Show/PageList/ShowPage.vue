@@ -15,7 +15,7 @@
                   :xs="SHOW_SHAPE==='list'?24:8" :sm="SHOW_SHAPE==='list'?24:8"
                   :md="SHOW_SHAPE==='list'?24:6" :lg="SHOW_SHAPE==='list'?24:4"
                   :xl="SHOW_SHAPE==='list'?24:4">
-            <show-item :info="show" :shape="SHOW_SHAPE" :class="`delay-${index}`"/>
+            <show-item :info="show" :shape="SHOW_SHAPE" :delay="index"/>
           </el-col>
         </el-row>
         <data-empty v-if="!showInfo.count"/>
