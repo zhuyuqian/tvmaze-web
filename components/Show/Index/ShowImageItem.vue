@@ -21,7 +21,7 @@ export default {
 .image-box {
   .cover-box {
     width: 100%;
-    height: 200px;
+    height: 160px;
   }
 }
 </style>

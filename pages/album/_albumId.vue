@@ -78,7 +78,7 @@ export default {
       float: left;
       margin: 0 20px 4px 0;
       width: 50%;
-      height: 200px;
+      height: 250px;
       padding: 10px;
       border-radius: 4px;
       box-sizing: border-box;
@@ -88,7 +88,6 @@ export default {
     }
 
     .summary-box {
-      margin-top: 10px;
       font-size: 14px;
       line-height: 24px;
       @include fontColor('color-text');

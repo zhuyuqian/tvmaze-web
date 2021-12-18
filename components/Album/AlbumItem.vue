@@ -29,4 +29,10 @@ export default {
     height: 220px;
   }
 }
+.list{
+  .cover-box{
+    width: 70px;
+    height: 90px;
+  }
+}
 </style>
