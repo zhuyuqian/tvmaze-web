@@ -15,6 +15,8 @@
             <nuxt-link to="/about">关于</nuxt-link>
             <nuxt-link to="/contact">联系</nuxt-link>
             <nuxt-link to="/people">卡司</nuxt-link>
+            <nuxt-link to="/network">频道</nuxt-link>
+            <nuxt-link to="/webChannel">流媒体</nuxt-link>
           </div>
         </div>
       </div>
@@ -68,7 +70,7 @@
 
           a {
             margin-right: 20px;
-            font-size: 13px;
+            font-size: 14px;
           }
         }
       }

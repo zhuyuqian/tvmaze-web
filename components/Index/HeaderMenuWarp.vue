@@ -3,21 +3,10 @@
     <div class="content header-menu-box">
       <logo-box/>
       <nav class="menu-warp">
-        <nuxt-link class="menu-box" to="/" :class="{active:$route.path==='/'}">
-          {{ $t('Main') }}
-        </nuxt-link>
-        <nuxt-link class="menu-box" to="/show" :class="{active:$route.path.startsWith('/show')}">
-          {{ $t('Show') }}
-        </nuxt-link>
-        <nuxt-link class="menu-box" to="/network" :class="{active:$route.path.startsWith('/network')}">
-          {{ $t('Network') }}
-        </nuxt-link>
-        <nuxt-link class="menu-box" to="/webChannel" :class="{active:$route.path.startsWith('/webChannel')}">
-          {{ $t('WebChannel') }}
-        </nuxt-link>
-        <nuxt-link class="menu-box" to="/schedule" :class="{active:$route.path.startsWith('/schedule')}">
-          {{ $t('Schedule') }}
-        </nuxt-link>
+        <nuxt-link class="menu-box" to="/" :class="{active:$route.path==='/'}">首页</nuxt-link>
+        <nuxt-link class="menu-box" to="/show" :class="{active:$route.path.startsWith('/show')}">节目</nuxt-link>
+        <nuxt-link class="menu-box" to="/album" :class="{active:$route.path.startsWith('/album')}">片单</nuxt-link>
+        <nuxt-link class="menu-box" to="/schedule" :class="{active:$route.path.startsWith('/schedule')}">时间表</nuxt-link>
       </nav>
     </div>
   </div>

@@ -1,18 +1,16 @@
 <template>
-  <div class="page-box">
-    <content-warp name="全部流媒">
-      <content-search-warp slot="rt" v-model="searchInfo.name" @change="searchInfoChange"/>
-      <el-row :gutter="15">
-        <el-col :xs="8" :sm="8" :md="6" :lg="4" v-for="(webChannel,index) of pageInfo.data"
-                :key="webChannel.webChannelId">
-          <web-channel-item :info="webChannel" :delay="index"/>
-        </el-col>
-        <data-empty v-if="!pageInfo.count"/>
-      </el-row>
-    </content-warp>
+  <content-warp name="流媒体">
+    <content-search-warp slot="rt" v-model="searchInfo.name" @change="searchInfoChange"/>
+    <el-row :gutter="15">
+      <el-col :xs="8" :sm="8" :md="6" :lg="4" v-for="(webChannel,index) of pageInfo.data"
+              :key="webChannel.webChannelId">
+        <web-channel-item :info="webChannel" :delay="index"/>
+      </el-col>
+      <data-empty v-if="!pageInfo.count"/>
+    </el-row>
     <pagination-plus :current-page="searchInfo.page" :page-size="24" :total="pageInfo.count"
                      @change="searchInfoChange"/>
-  </div>
+  </content-warp>
 </template>
 
 <script>
@@ -66,7 +64,4 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.page-box {
-
-}
 </style>
