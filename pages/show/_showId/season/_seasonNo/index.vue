@@ -59,6 +59,7 @@ export default {
 
     ::v-deep p {
       text-indent: 26px;
+      line-height: 28px;
     }
   }
 }
