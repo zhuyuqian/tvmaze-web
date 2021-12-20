@@ -1,7 +1,7 @@
 <template>
   <content-warp :name="$t('Crew')" :desc="crewList.length">
     <el-row :gutter="15">
-      <el-col v-for="(crew,index) of crewList" :xs="8" :sm="6" :md="6" :lg="4" :xl="3" :key="crew.crewId">
+      <el-col v-for="(crew,index) of crewList" :xs="12" :sm="6" :md="6" :lg="4" :xl="3" :key="crew.crewId">
         <people-item jump="people" card :jump-id="crew.peopleId" :delay="index"
                      :cover="crew.peopleImageMedium" :desc="`负责：${ $t(`people.crew.${crew.crewType}`) }`"
                      :title="$store.getters.NAME_BY_LANG(crew.peopleName,crew.peopleNameZh)"/>

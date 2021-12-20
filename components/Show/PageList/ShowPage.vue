@@ -1,5 +1,14 @@
 <template>
-  <content-warp :name="title">
+  <!--移动-->
+  <content-warp v-if="$store.getters.IS_MOBILE" :name="title">
+    <content-search-warp slot="rt" v-model="searchInfo.name" @change="searchInfoChange"/>
+    <show-item v-for="(show,index) of showInfo.data" :key="show.showId" :info="show" shape="list" :delay="index"/>
+    <data-empty v-if="!showInfo.count"/>
+    <pagination-plus :current-page="searchInfo.page" :page-size="18" :total="showInfo.count"
+                     @change="searchInfoChange"/>
+  </content-warp>
+  <!--pc-->
+  <content-warp v-else :name="title">
     <content-order-warp slot="rt" v-model="searchInfo.order" @change="searchInfoChange" :order-map="orderMap"/>
     <content-search-warp slot="rt" v-model="searchInfo.name" @change="searchInfoChange"/>
     <show-shape slot="rt"/>

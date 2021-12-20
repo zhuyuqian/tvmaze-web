@@ -4,7 +4,7 @@
 @mixin themeify {
   @each $theme-name, $theme-map in $themes {
     $theme-map: $theme-map !global;
-    body[data-theme=#{$theme-name}] & {
+    html[data-theme=#{$theme-name}] & {
       @content;
     }
   }

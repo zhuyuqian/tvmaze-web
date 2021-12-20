@@ -1,6 +1,5 @@
 <template>
-  <nuxt-link class="logo-box iconfont icon-tvmaze" to="/"></nuxt-link>
-
+  <nuxt-link class="logo-box iconfont icon-tvmaze" to="/"/>
 </template>
 
 <script>

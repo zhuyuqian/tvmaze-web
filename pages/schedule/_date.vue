@@ -2,16 +2,16 @@
   <content-warp name="时间表">
     <schedule-date slot="rt" v-model="pageInfo.date" @change="searchInfoChange"/>
     <el-row :gutter="15">
-      <el-col :span="2" class="stick-top">
+      <el-col :xs="4" :sm="2" :md="2" :lg="2" :xl="2" class="stick-top">
         <content-warp size="small" name="定位">
           <schedule-time-list :list="pageInfo.list" :active="currentHours" @jump="jump"/>
         </content-warp>
       </el-col>
-      <el-col :span="22">
+      <el-col :xs="20" :sm="22" :md="22" :lg="22" :xl="22">
         <content-warp :ref="item.hours" v-for="item of pageInfo.list" :name="item.hours" :key="item.hours" size="small">
           <el-row>
             <el-col v-for="(show,index) of item.showList" :key="show.showId"
-                    :xs="12" :sm="12" :md="8" :lg="6" :xl="6">
+                    :xs="24" :sm="12" :md="8" :lg="6" :xl="6">
               <schedule-item :info="show" :delay="index"/>
             </el-col>
           </el-row>

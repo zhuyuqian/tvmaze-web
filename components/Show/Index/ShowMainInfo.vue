@@ -1,5 +1,5 @@
 <template>
-  <div class="show-main-info">
+  <div class="show-main-info" :class="{mobile:$store.getters.IS_MOBILE}">
     <div class="banner-warp" v-if="showImageList.length">
       <div class="banner-box" ref="swiper">
         <div class="swiper-wrapper">
@@ -95,9 +95,28 @@ export default {
 
     .item {
       display: inline-block;
-      font-size: 12px;
+      font-size: 14px;
       margin-right: 10px;
       @include fontColor('color-primary');
+    }
+  }
+
+  &.mobile {
+    width: 100%;
+    margin-top: 0;
+
+    .banner-warp {
+      float: none;
+      width: 100%;
+    }
+
+    .show-summary {
+      float: none;
+      margin-top: 10px;
+    }
+
+    .jump-web-site {
+      text-align: center;
     }
   }
 }

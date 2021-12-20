@@ -26,7 +26,7 @@ export default {
   },
   SET_THEME(state, theme) {
     if (process.browser) {
-      document.body.setAttribute('data-theme', theme);
+      document.querySelector('html').setAttribute('data-theme', theme);
     }
     state.theme = theme;
     Cookies.set('theme', theme);

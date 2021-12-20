@@ -1,6 +1,7 @@
 <template>
   <el-pagination class="pagination-plus" layout="prev, pager, next" v-bind="$attrs" v-on="$listeners"
-                 @current-change="page=>$emit('change','page',page)"/>
+                 :class="{mobile:$store.getters.IS_MOBILE}"
+                 :pager-count="$store.getters.IS_MOBILE?2:7" @current-change="page=>$emit('change','page',page)"/>
 </template>
 
 <script>
@@ -21,7 +22,6 @@ export default {}
     height: 50px;
     line-height: 50px;
     padding: 0;
-    border-radius: 50px;
     text-align: center;
     @include fontColor('color-text');
 
@@ -45,7 +45,6 @@ export default {}
       width: 50px;
       height: 50px;
       line-height: 50px;
-      border-radius: 50px;
       margin: 0 10px;
       text-align: center;
       font-size: 20px;
@@ -53,6 +52,28 @@ export default {}
 
       &.active, &:hover {
         @include fontColor('color-primary');
+      }
+    }
+  }
+
+  &.mobile {
+    ::v-deep .btn-prev, ::v-deep .btn-next {
+      width: 30px;
+      height: 30px;
+      line-height: 30px;
+
+      i {
+        font-size: 20px;
+      }
+    }
+
+    ::v-deep .el-pager {
+      li {
+        margin: 0 4px;
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        font-size: 14px;
       }
     }
   }

@@ -2,7 +2,7 @@
   <content-warp name="流媒体">
     <content-search-warp slot="rt" v-model="searchInfo.name" @change="searchInfoChange"/>
     <el-row :gutter="15">
-      <el-col :xs="8" :sm="8" :md="6" :lg="4" v-for="(webChannel,index) of pageInfo.data"
+      <el-col :xs="12" :sm="8" :md="6" :lg="4" v-for="(webChannel,index) of pageInfo.data"
               :key="webChannel.webChannelId">
         <web-channel-item :info="webChannel" :delay="index"/>
       </el-col>

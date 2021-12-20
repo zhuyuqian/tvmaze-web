@@ -1,6 +1,6 @@
 <template>
   <content-warp name="基本信息" size="small">
-    <div class="people-other-info">
+    <div class="people-other-info" :class="{mobile:$store.getters.IS_MOBILE}">
       <div class="other-box">
         <p class="label">出生</p>
         <p class="value">
@@ -30,10 +30,6 @@
           <span v-if="info.peopleGender">{{ $t(`people.gender.${info.peopleGender}`) }}</span>
           <span class="none" v-else>{{ $t('Null') }}</span>
         </p>
-      </div>
-      <div class="other-box">
-        <p class="label">最后更新时间</p>
-        <p class="value">{{ $dayjs(info.peopleUpdated).format('YYYY-MM-DD') }}</p>
       </div>
     </div>
   </content-warp>
@@ -95,6 +91,23 @@ export default {
     &:last-child {
       &:after {
         width: 0;
+      }
+    }
+  }
+
+  &.mobile {
+    padding: 10px 0;
+    flex-wrap: wrap;
+
+    .other-box {
+      flex: none;
+      width: 50%;
+      margin: 10px 0;
+
+      &:nth-child(2n) {
+        &:after {
+          width: 0;
+        }
       }
     }
   }

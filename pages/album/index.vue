@@ -2,9 +2,12 @@
   <content-warp name="片单">
     <content-order-warp slot="rt" v-model="searchInfo.order" @change="searchInfoChange" :order-map="orderMap"/>
     <content-search-warp slot="rt" v-model="searchInfo.name" @change="searchInfoChange"/>
-    <el-row :gutter="15">
-      <el-col v-for="(album,index) of pageInfo.data" :key="album.albumId"
-              :xs="8" :sm="8" :md="6" :lg="4" :xl="4">
+    <template v-if="$store.getters.IS_MOBILE">
+      <album-item v-for="(album,index) of pageInfo.data" :key="album.albumId" :info="album" :delay="index"
+                  :card="false"/>
+    </template>
+    <el-row v-else :gutter="15">
+      <el-col v-for="(album,index) of pageInfo.data" :key="album.albumId" :xs="8" :sm="8" :md="6" :lg="4" :xl="4">
         <album-item :info="album" :delay="index"/>
       </el-col>
     </el-row>

@@ -1,5 +1,5 @@
 <template>
-  <div class="show-other-info">
+  <div class="show-other-info" :class="{mobile:$store.getters.IS_MOBILE}">
     <div class="other-box">
       <p class="label">{{ $t('Status') }}</p>
       <p class="value">
@@ -112,6 +112,23 @@ export default {
     &:last-child {
       &:after {
         width: 0;
+      }
+    }
+  }
+
+  &.mobile {
+    padding: 10px 0;
+    flex-wrap: wrap;
+
+    .other-box {
+      flex: none;
+      width: 50%;
+      margin: 10px 0;
+
+      &:nth-child(2n) {
+        &:after {
+          width: 0;
+        }
       }
     }
   }

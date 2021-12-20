@@ -1,5 +1,5 @@
 <template>
-  <div class="show-page">
+  <div class="show-page" :class="{mobile:$store.getters.IS_MOBILE}">
     <div class="show-name-warp">
       <!--剧名-->
       <h1 class="show-name">
@@ -52,11 +52,12 @@ export default {
 
 .show-page {
   .show-name-warp {
+    margin-top: 30px;
     margin-bottom: 40px;
 
     .show-name {
       width: 80%;
-      margin: 30px auto 0;
+      margin: 0 auto;
       font-size: 46px;
       font-weight: bold;
 
@@ -74,6 +75,22 @@ export default {
       margin: 10px auto 0;
       font-size: 12px;
       @include fontColor('color-title')
+    }
+  }
+
+  &.mobile {
+    .show-name-warp {
+      margin-top: 0;
+      margin-bottom: 20px;
+
+      .show-name {
+        font-size: 30px;
+        width: 100%;
+      }
+
+      .show-genres {
+        width: 100%;
+      }
     }
   }
 }

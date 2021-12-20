@@ -1,8 +1,8 @@
 <template>
-  <div class="page-box">
+  <div class="page-box" :class="{mobile:$store.getters.IS_MOBILE}">
     <h1 class="page-title">{{ $dic.logoText }} 追剧日记 为追剧而生</h1>
     <p class="page-desc">剧集资讯、更新信息、播放时间表、追剧时间线、片单推荐</p>
-    <div class="say-box">
+    <div class="say-box animate__animated animate__fadeInLeft">
       <p class="name">站长说：</p>
       <br/>
       <p class="desc">我，是一个追剧狂热者，会时常追剧到忘了时间，由衷热爱科幻类型的，最爱《神秘博士》没有之一！</p>
@@ -47,11 +47,13 @@ export default {
   }
 
   .page-desc {
+    margin-top: 20px;
     text-align: center;
     @include fontColor('color-text');
   }
 
   .say-box {
+    box-sizing: border-box;
     width: 80%;
     margin: 50px auto 0;
     padding: 50px;
@@ -72,6 +74,27 @@ export default {
 
     .time {
       text-align: right;
+    }
+  }
+
+  &.mobile {
+    padding: 0;
+
+    .page-title {
+      font-size: 20px;
+    }
+
+    .page-desc {
+      margin-top: 10px;
+      font-size: 14px;
+    }
+
+    .say-box {
+      margin: 20px 0;
+      width: 100%;
+      padding: 25px;
+      border-radius: 0;
+      line-height: 28px;
     }
   }
 }

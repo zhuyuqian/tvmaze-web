@@ -4,8 +4,39 @@
     <show-main-info :info="showInfo" :image-list="imageList"/>
     <!--其他信息-->
     <show-other-info :info="showInfo"/>
-    <!--主体-->
-    <el-row :gutter="15">
+    <!--移动-->
+    <template v-if="$store.getters.IS_MOBILE">
+      <!--剧季列表-->
+      <content-warp v-if="seasonList.length" :name="$t('Season')"
+                    :more-link="seasonList.length>3?`/show/${showInfo.showId}/season`:''">
+        <season-item v-for="(season,index) of seasonList"
+                     :key="season.seasonId" v-if="index<3" :info="season" :delay="index"/>
+      </content-warp>
+      <!--演员列表-->
+      <content-warp v-if="castList.length" :name="$t('Cast')"
+                    :more-link="castList.length>3?`/show/${showInfo.showId}/cast`:''">
+        <people-item v-for="(cast,index) of castList" :key="cast.castId" v-if="index<3"
+                     jump="people" :jump-id="cast.peopleId" :delay="index"
+                     :title="cast.characterName" :cover="cast.characterImageMedium||cast.peopleImageMedium"
+                     :desc="$store.getters.NAME_BY_LANG(cast.peopleName,cast.peopleNameZh)"/>
+      </content-warp>
+      <!--主创列表-->
+      <content-warp v-if="crewList.length" :name="$t('Crew')"
+                    :more-link="crewList.length>3?`/show/${showInfo.showId}/crew`:''">
+        <people-item v-for="(crew,index) of crewList" v-if="index<3" :key="crew.crewId"
+                     jump="people" :jump-id="crew.peopleId" :delay="index"
+                     :cover="crew.peopleImageMedium" :desc="`负责：${ $t(`people.crew.${crew.crewType}`) }`"
+                     :title="$store.getters.NAME_BY_LANG(crew.peopleName,crew.peopleNameZh)"/>
+      </content-warp>
+      <!--相关片单-->
+      <content-warp name="相关片单" size="small" v-if="albumList.length">
+        <album-item v-for="album of albumList" :key="album.albumId" :info="album" :card="false"/>
+      </content-warp>
+      <!--图集列表-->
+      <show-image-list :list="imageList"/>
+    </template>
+    <!--PC主体-->
+    <el-row v-else :gutter="15">
       <el-col :xs="15" :sm="15" :md="17" :lg="18" :xl="19">
         <!--剧季列表-->
         <content-warp v-if="seasonList.length"

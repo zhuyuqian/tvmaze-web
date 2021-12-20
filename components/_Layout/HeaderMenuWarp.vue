@@ -1,5 +1,5 @@
 <template>
-  <div class="header-menu-warp">
+  <div class="header-menu-warp" :class="{mobile:$store.getters.IS_MOBILE}">
     <div class="container header-menu-box">
       <logo-box/>
       <nav class="menu-warp">
@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import LogoBox from "@/components/Index/LogoBox";
+import LogoBox from "@/components/_Layout/LogoBox";
 
 export default {
   components: {LogoBox}
@@ -48,6 +48,25 @@ export default {
 
         &:last-child {
           margin-right: 0;
+        }
+      }
+    }
+  }
+
+  &.mobile {
+    .header-menu-box {
+      .logo-box {
+        @include fontColor('color-primary');
+      }
+
+      .menu-warp {
+        .menu-box {
+          font-size: 14px;
+          margin-right: 15px;
+
+          &:last-child {
+            margin-right: 0;
+          }
         }
       }
     }

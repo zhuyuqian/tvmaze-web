@@ -1,5 +1,5 @@
 <template>
-  <div class="footer-menu-warp">
+  <div class="footer-menu-warp" :class="{mobile:$store.getters.IS_MOBILE}">
     <div class="container footer-menu-box">
       <div class="link-warp">
         <div class="link-flex">
@@ -89,6 +89,23 @@
       a {
         margin: 0 4px;
         font-size: 12px !important;
+      }
+    }
+  }
+
+  &.mobile {
+    .footer-menu-box {
+      .link-warp {
+        display: block;
+      }
+
+      .slogan {
+        margin-top: 20px;
+        text-align: center;
+      }
+      .beian-warp{
+        margin-top: 10px;
+        text-align: center;
       }
     }
   }

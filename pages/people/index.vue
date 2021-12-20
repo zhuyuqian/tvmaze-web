@@ -2,13 +2,20 @@
   <content-warp name="卡司">
     <content-order-warp slot="rt" v-model="searchInfo.order" @change="searchInfoChange" :order-map="orderMap"/>
     <content-search-warp slot="rt" v-model="searchInfo.name" @change="searchInfoChange"/>
-    <el-row :gutter="15">
-      <el-col :span="3" class="stick-top">
+    <!--手机-->
+    <template v-if="$store.getters.IS_MOBILE">
+      <people-item v-for="(people,index) of pageInfo.data" :key="people.peopleId" jump="people"
+                   :jump-id="people.peopleId" :delay="index" :cover="people.peopleImageMedium"
+                   :title="$store.getters.NAME_BY_LANG(people.peopleName,people.peopleNameZh)"/>
+    </template>
+    <!--pc-->
+    <el-row v-else :gutter="15">
+      <el-col :xs="5" :sm="5" :md="3" :lg="3" :xl="3" class="stick-top">
         <people-gender v-model="searchInfo.gender" @change="searchInfoChange"/>
       </el-col>
-      <el-col :span="21">
+      <el-col :xs="19" :sm="19" :md="21" :lg="21" :xl="21">
         <el-row :gutter="15">
-          <el-col :xs="8" :sm="8" :md="6" :lg="4" v-for="(people,index) of pageInfo.data" :key="people.peopleId">
+          <el-col :xs="12" :sm="8" :md="6" :lg="4" v-for="(people,index) of pageInfo.data" :key="people.peopleId">
             <people-item card jump="people" :jump-id="people.peopleId" :delay="index" :cover="people.peopleImageMedium"
                          :title="$store.getters.NAME_BY_LANG(people.peopleName,people.peopleNameZh)"/>
           </el-col>
@@ -18,6 +25,8 @@
                          @change="searchInfoChange"/>
       </el-col>
     </el-row>
+    <pagination-plus :current-page="searchInfo.page" :page-size="24" :total="pageInfo.count"
+                     @change="searchInfoChange"/>
   </content-warp>
 </template>
 

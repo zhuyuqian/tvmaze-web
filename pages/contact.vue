@@ -1,5 +1,5 @@
 <template>
-  <div class="page-box">
+  <div class="page-box" :class="{mobile:$store.getters.IS_MOBILE}">
     <h1 class="page-title">联系 {{ $dic.logoText }}</h1>
     <p class="page-desc">因为热爱，我们才能相遇</p>
     <el-row class="contact-box" :gutter="15">
@@ -50,6 +50,23 @@ export default {
 
   .contact-box {
     margin-top: 50px;
+  }
+
+  &.mobile {
+    padding: 0;
+
+    .page-title {
+      font-size: 20px;
+    }
+
+    .page-desc {
+      margin-top: 10px;
+      font-size: 14px;
+    }
+
+    .contact-box {
+      margin-top: 30px;
+    }
   }
 }
 </style>

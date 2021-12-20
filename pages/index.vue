@@ -1,6 +1,19 @@
 <!--首页-->
 <template>
-  <el-row :gutter="15">
+  <!--移动-->
+  <div v-if="$store.getters.IS_MOBILE">
+    <content-warp name="片单推荐" size="small" more-link="/album">
+      <album-item v-for="album of recommendedAlbumList" :key="album.albumId" :info="album" :card="false"/>
+    </content-warp>
+    <content-warp :name="$t('Hot')" size="small" more-link="/show">
+      <show-item v-for="(show,index) of hotShowList" :key="show.showId" shape="list" :info="show" :delay="index"/>
+    </content-warp>
+    <content-warp :name="$t('Will Return')" size="small" more-link="/show">
+      <show-item v-for="(show,index) of returnShowList" :key="show.showId" shape="list" :info="show" :delay="index"/>
+    </content-warp>
+  </div>
+  <!--pc-->
+  <el-row v-else :gutter="15">
     <el-col :xs="15" :sm="15" :md="17" :lg="18" :xl="19">
       <content-warp :name="$t('Hot')" size="small" more-link="/show">
         <el-row>
@@ -26,7 +39,6 @@
 </template>
 
 <script>
-
 
 export default {
   data() {

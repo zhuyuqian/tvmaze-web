@@ -1,5 +1,5 @@
 <template>
-  <div class="album-page">
+  <div class="album-page" :class="{mobile:$store.getters.IS_MOBILE}">
     <div class="name-warp">
       <h1>{{ albumInfo.albumName }}</h1>
       <p>{{ albumInfo.albumRecommend }}</p>
@@ -11,8 +11,12 @@
       <div class="summary-box" v-html="albumInfo.albumSummary"></div>
     </div>
     <content-warp name="节目">
-      <el-row :gutter="15">
-        <el-col :xs="8" :sm="8" :md="6" :lg="4" :xl="4" v-for="(show,index) of showList" :key="show.showId">
+      <!--移动-->
+      <template v-if="$store.getters.IS_MOBILE">
+        <show-item v-for="(show,index) of showList" :key="show.showId" shape="list" :info="show" :delay="index"/>
+      </template>
+      <el-row v-else :gutter="15">
+        <el-col :xs="12" :sm="8" :md="6" :lg="4" :xl="4" v-for="(show,index) of showList" :key="show.showId">
           <show-item shape="card" :info="show" :delay="index"/>
         </el-col>
       </el-row>
@@ -61,7 +65,6 @@ export default {
 
     h1 {
       font-size: 46px;
-      margin: 0;
       @include fontColor('color-title');
 
       &:hover {
@@ -101,6 +104,31 @@ export default {
 
       ::v-deep p {
         text-indent: 28px;
+      }
+    }
+  }
+
+  &.mobile {
+    .name-warp {
+      margin: 0;
+      width: 100%;
+
+      h1 {
+        font-size: 30px;
+      }
+    }
+
+    .summary-warp {
+      width: 100%;
+
+      .banner-box {
+        width: 100%;
+        float: none;
+      }
+
+      .summary-box {
+        float: none;
+        margin-top: 10px;
       }
     }
   }
