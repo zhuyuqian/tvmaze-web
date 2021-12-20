@@ -1,5 +1,28 @@
 <template>
-  <el-row class="show-season-page" :gutter="15">
+  <div class="show-season-page" v-if="$store.getters.IS_MOBILE">
+    <content-warp v-if="seasonInfo"
+                  :name="`S${seasonInfo.seasonNo} ${$store.getters.NAME_BY_LANG(seasonInfo.seasonName,seasonInfo.seasonNameZh)}`">
+      <template v-if="seasonInfo.seasonPremiere">
+        <span slot="rt" class="el-icon-date">开播：{{ $dayjs(seasonInfo.seasonPremiere).format('YYYY-MM-DD') }}</span>
+        <span slot="rt" class="el-icon-date">季终：{{ $dayjs(seasonInfo.seasonEnd).format('YYYY-MM-DD') }}</span>
+      </template>
+      <content-warp name="单季简介" size="small"
+                    v-if="$store.getters.TEXT_BY_LANG(seasonInfo.seasonSummary,seasonInfo.seasonSummaryZh)">
+        <div class="season-summary"
+             v-html="$store.getters.TEXT_BY_LANG(seasonInfo.seasonSummary,seasonInfo.seasonSummaryZh)"></div>
+      </content-warp>
+      <content-warp name="剧集列表" size="small">
+        <episode-item v-for="(episode,index) of episodeList" :key="episode.episodeId" :delay="index" :info="episode"/>
+      </content-warp>
+    </content-warp>
+    <data-empty v-else></data-empty>
+    <content-warp size="small" :name="`共${seasonList.length}季`">
+      <season-item v-for="season of seasonList" :key="season.seasonId" :info="season"
+                   :class="{'active':seasonInfo&&seasonInfo.seasonNo===season.seasonNo}"/>
+    </content-warp>
+  </div>
+  <!--PC-->
+  <el-row v-else class="show-season-page" :gutter="15">
     <el-col :xs="15" :sm="15" :md="16" :lg="18" :xl="18">
       <content-warp v-if="seasonInfo"
                     :name="`S${seasonInfo.seasonNo} ${$store.getters.NAME_BY_LANG(seasonInfo.seasonName,seasonInfo.seasonNameZh)}`">

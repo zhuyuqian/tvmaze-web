@@ -1,5 +1,26 @@
 <template>
-  <el-row class="show-episode-page" :gutter="15">
+  <!--移动-->
+  <div class="show-episode-page" v-if="$store.getters.IS_MOBILE">
+    <content-warp size="small" name="当前季" v-if="seasonInfo && seasonList.length>1">
+      <season-item :info="seasonInfo"/>
+    </content-warp>
+    <content-warp v-if="seasonInfo && episodeInfo"
+                  :name="`S${seasonInfo.seasonNo} E${episodeInfo.episodeNo||''} ${$store.getters.NAME_BY_LANG(seasonInfo.seasonName,seasonInfo.seasonNameZh)} ${$store.getters.NAME_BY_LANG(episodeInfo.episodeName,episodeInfo.episodeNameZh)}`">
+      <content-warp name="本集简介" size="small">
+        <div class="episode-summary"
+             v-html="$store.getters.TEXT_BY_LANG(episodeInfo.episodeSummary,episodeInfo.episodeSummaryZh)"></div>
+      </content-warp>
+      <content-warp v-if="pre" name="上一集" size="small">
+        <episode-item :info="pre"/>
+      </content-warp>
+      <content-warp v-if="next" name="下一集" size="small">
+        <episode-item :info="next"/>
+      </content-warp>
+    </content-warp>
+    <data-empty v-else></data-empty>
+  </div>
+  <!--PC-->
+  <el-row class="show-episode-page" :gutter="15" v-else>
     <el-col :xs="15" :sm="15" :md="16" :lg="18" :xl="18">
       <content-warp v-if="seasonInfo && episodeInfo"
                     :name="`S${seasonInfo.seasonNo} E${episodeInfo.episodeNo||''} ${$store.getters.NAME_BY_LANG(seasonInfo.seasonName,seasonInfo.seasonNameZh)} ${$store.getters.NAME_BY_LANG(episodeInfo.episodeName,episodeInfo.episodeNameZh)}`">
