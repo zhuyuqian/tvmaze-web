@@ -17,23 +17,24 @@
   </div>
   <!--pc-->
   <el-row v-else :gutter="15">
-    <el-col :xs="15" :sm="15" :md="17" :lg="18" :xl="19">
-      <content-warp name="即将回归" size="small" more-link="/show">
+    <el-col :xs="15" :sm="15" :md="17" :lg="18" :xl="18">
+      <content-warp name="即将回归" more-link="/show">
         <el-row>
-          <el-col :xs="24" :sm="24" :md="12" :lg="12" :xl="8" v-for="(show,index) of returnShowList" :key="show.showId">
+          <el-col :xs="24" :sm="24" :md="12" :lg="12" :xl="12" v-for="(show,index) of returnShowList"
+                  :key="show.showId">
             <show-item shape="list" :info="show" :delay="index"/>
           </el-col>
         </el-row>
       </content-warp>
-      <content-warp name="高分推荐" size="small" more-link="/show">
+      <content-warp name="高分推荐" more-link="/show">
         <el-row>
-          <el-col :xs="24" :sm="24" :md="12" :lg="12" :xl="8" v-for="(show,index) of hotShowList" :key="show.showId">
+          <el-col :xs="24" :sm="24" :md="12" :lg="12" :xl="12" v-for="(show,index) of hotShowList" :key="show.showId">
             <show-item shape="list" :info="show" :delay="index"/>
           </el-col>
         </el-row>
       </content-warp>
     </el-col>
-    <el-col :xs="9" :sm="9" :md="7" :lg="6" :xl="5" class="stick-top">
+    <el-col :xs="9" :sm="9" :md="7" :lg="6" :xl="6" class="stick-top">
       <content-warp name="本月热播" size="small" more-link="/show">
         <show-item shape="list" v-for="(show,index) of monthShowList" :key="show.showId" :info="show" :delay="index"/>
       </content-warp>
