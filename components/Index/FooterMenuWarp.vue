@@ -1,6 +1,6 @@
 <template>
   <div class="footer-menu-warp">
-    <div class="content footer-menu-box">
+    <div class="container footer-menu-box">
       <div class="link-warp">
         <div class="link-flex">
           <p class="name">友情链接</p>

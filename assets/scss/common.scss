@@ -44,7 +44,7 @@ p {
 }
 
 //主体区域
-.content {
+.container {
   margin: 0 auto;
 }
 
@@ -504,7 +504,7 @@ p {
   body {
     min-width: 1440px;
 
-    .content {
+    .container {
       width: 1440px;
     }
   }
@@ -515,7 +515,7 @@ p {
   body {
     min-width: 1440px;
 
-    .content {
+    .container {
       width: 1440px;
     }
   }
@@ -526,7 +526,7 @@ p {
   body {
     min-width: 1200px;
 
-    .content {
+    .container {
       width: 1200px;
     }
   }
@@ -554,13 +554,33 @@ p {
   }
 }
 
+.pc-tooltip {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  top: 50%;
+  display: none;
+  text-align: center;
+  transform: translateY(-50%);
+  @include fontColor('color-title');
+
+  h1 {
+    margin: 0;
+  }
+  p{
+    margin-top: 10px;
+  }
+}
+
 // xs
 @media screen and (max-width: 768px) {
   body {
-    min-width: 768px;
+    .pc-model {
+      display: none;
+    }
 
-    .content {
-      width: 768px;
+    .pc-tooltip {
+      display: block;
     }
   }
 }

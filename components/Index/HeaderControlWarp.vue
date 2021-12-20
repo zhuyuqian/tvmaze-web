@@ -1,6 +1,6 @@
 <template>
   <div class="header-control-warp">
-    <div class="content header-control-box">
+    <div class="container header-control-box">
       <el-radio-group v-model="locale" @change="changeLocale">
         <!--        <el-radio v-for="(name,value) in $dic.localeMap" :key="value" :label="value">{{ name }}</el-radio>-->
       </el-radio-group>

@@ -1,6 +1,6 @@
 <template>
   <div class="header-menu-warp">
-    <div class="content header-menu-box">
+    <div class="container header-menu-box">
       <logo-box/>
       <nav class="menu-warp">
         <nuxt-link class="menu-box" to="/" :class="{active:$route.path==='/'}">首页</nuxt-link>
