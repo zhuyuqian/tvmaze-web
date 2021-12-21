@@ -38,12 +38,6 @@ export default {
         console.groupEnd()
     }
   },
-  async mounted() {
-    if (!localStorage.getItem('look-about')) {
-      let method = await this.$msgbox({title: '哈喽~', message: '欢迎访问这个小站，先了解我一下吧~'}).catch(err => err);
-      if (method === 'confirm') return this.$router.push({path: '/about'});
-    }
-  },
   created() {
     if (process.browser) {
       this.$store.commit('SET_THEME', this.$store.getters.THEME);
