@@ -21,6 +21,23 @@ import FooterMenuWarp from "@/components/_Layout/FooterMenuWarp";
 
 export default {
   components: {HeaderControlWarp, HeaderMenuWarp, FooterMenuWarp},
+  methods: {
+    async consoleSelf() {
+      let {data: {data}} = await this.$axios.get('/user/self');
+      console.log("-----------"),
+        console.log("唉呀你好呀，来自 %c" + data.address.address + " %c的朋友！", "color: #50a1ff; font-family: monoscope; font-weight: bold", ""),
+        console.log("\n%c网站简单说明：\n", "font-weight: bold"),
+        console.log("\n后端：ThinkJs (基于NodeJs) + MySQL\n"),
+        console.log("\n前端：Nuxt.js (基于 VUE.js) + 16个 ElementUI 组件 + 手撸\n"),
+        console.log("\n界面：自己瞎搞的\n"),
+        console.log("\n核心：整合美剧播出资讯、片单推荐、演员、主创、高清海报快速检索\n"),
+        console.log("\n建立时间：2012年12月至今\n"),
+        console.groupEnd(),
+        console.log("\n%c怎么联系我？\n", "font-weight: bold"),
+        console.log("发邮件呀： %ctvmaze-cn@qq.com%c", "color: #65c86e; font-weight: bold", ''),
+        console.groupEnd()
+    }
+  },
   async mounted() {
     if (!localStorage.getItem('look-about')) {
       let method = await this.$msgbox({title: '哈喽~', message: '欢迎访问这个小站，先了解我一下吧~'}).catch(err => err);
@@ -32,6 +49,7 @@ export default {
       this.$store.commit('SET_THEME', this.$store.getters.THEME);
       this.$store.commit('SET_SHOW_SHAPE', this.$store.getters.SHOW_SHAPE);
       this.$store.commit('SET_LOCALE', this.$store.getters.LOCALE);
+      this.consoleSelf();
     }
   },
 }
