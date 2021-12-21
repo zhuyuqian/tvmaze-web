@@ -31,7 +31,7 @@ export default {
         console.log("\n前端：Nuxt.js (基于 VUE.js) + 16个 ElementUI 组件 + 手撸\n"),
         console.log("\n界面：自己瞎搞的\n"),
         console.log("\n核心：整合美剧播出资讯、片单推荐、演员、主创、高清海报快速检索\n"),
-        console.log("\n建立时间：2012年12月至今\n"),
+        console.log("\n建立时间：2021年12月至今\n"),
         console.groupEnd(),
         console.log("\n%c怎么联系我？\n", "font-weight: bold"),
         console.log("发邮件呀： %ctvmaze-cn@qq.com%c", "color: #65c86e; font-weight: bold", ''),
