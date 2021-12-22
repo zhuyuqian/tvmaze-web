@@ -22,6 +22,7 @@ const getSearchInfo = (query = {}) => {
 }
 
 export default {
+  watchQuery: true,
   head() {
     return {
       title: `频道 - ${this.$dic.logoText}`
@@ -31,11 +32,6 @@ export default {
     return {
       searchInfo: getSearchInfo(),
       pageInfo: {data: [], count: 0}
-    }
-  },
-  watch: {
-    $route() {
-      this.getList()
     }
   },
   methods: {

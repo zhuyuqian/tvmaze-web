@@ -22,6 +22,7 @@ const getSearchInfo = (query = {}) => {
 }
 
 export default {
+  watchQuery: true,
   data() {
     return {
       searchInfo: getSearchInfo(),
@@ -31,11 +32,6 @@ export default {
   head() {
     return {
       title: `流媒体 - ${this.$dic.logoText}`
-    }
-  },
-  watch: {
-    $route() {
-      this.getList()
     }
   },
   methods: {

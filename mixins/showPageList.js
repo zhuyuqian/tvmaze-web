@@ -14,6 +14,7 @@ export const getSearchInfo = (query = {}, params = {}) => {
 }
 
 export default {
+  watchQuery: true,
   computed: {
     ...mapGetters(['THEME', 'SHOW_SHAPE'])
   },
@@ -21,11 +22,6 @@ export default {
     return {
       searchInfo: getSearchInfo(),
       showInfo: {data: [], count: 0}
-    }
-  },
-  watch: {
-    $route() {
-      this.getList()
     }
   },
   methods: {

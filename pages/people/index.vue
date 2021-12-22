@@ -41,6 +41,7 @@ const getSearchInfo = (query = {}) => {
 }
 
 export default {
+  watchQuery: true,
   data() {
     return {
       searchInfo: getSearchInfo(),
@@ -55,11 +56,6 @@ export default {
   head() {
     return {
       title: `卡司 - ${this.$dic.logoText}`
-    }
-  },
-  watch: {
-    $route() {
-      this.getList()
     }
   },
   methods: {
