@@ -20,7 +20,6 @@ const isMobile = (ua) => {
 }
 export default {
   async nuxtServerInit({commit}, {app, req}) {
-    commit('SET_IS_MOBILE', isMobile(req.headers['user-agent']));
     let [
       {data: {data: genre}},
       {data: {data: friendLinkList}},
@@ -28,13 +27,18 @@ export default {
       app.$axios.get('/show/genre'),
       app.$axios.get('/friendlyLink/list')
     ])
+
+    let locale = getCookie(req.headers.cookie, 'locale') || 'zh';
+    let showShape = getCookie(req.headers.cookie, 'showShape') || 'list';
+    let theme = getCookie(req.headers.cookie, 'theme') || 'black';
+
+    commit('SET_IS_MOBILE', isMobile(req.headers['user-agent']));
     commit('SET_SHOW_GENRE_LIST', genre);
     commit('SET_FRIEND_LINK', friendLinkList);
-    let locale = getCookie(req.headers.cookie, 'locale');
-    let showShape = getCookie(req.headers.cookie, 'showShape');
-    let theme = getCookie(req.headers.cookie, 'theme');
     locale && commit('SET_LOCALE', locale);
     showShape && commit('SET_SHOW_SHAPE', showShape);
     theme && commit('SET_THEME', theme);
+
+    app.head.htmlAttrs['data-theme'] = theme
   }
 }

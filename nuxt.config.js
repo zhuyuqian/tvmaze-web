@@ -17,7 +17,10 @@ export default {
       {rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'},
       {rel: "stylesheet", href: '//at.alicdn.com/t/font_2965179_hv6bqurhlmg.css'},
       {rel: 'stylesheet', href: "//cdn.bootcdn.net/ajax/libs/Swiper/6.8.0/swiper-bundle.css"}
-    ]
+    ],
+    htmlAttrs: {
+      'data-theme': "black",
+    }
   },
   globalName: "tvmaze",
   loading: {color: '#409EFF', height: '1px'},

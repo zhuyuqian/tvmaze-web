@@ -38,14 +38,9 @@ export default {
         console.groupEnd()
     }
   },
-  created() {
-    if (process.browser) {
-      this.$store.commit('SET_THEME', this.$store.getters.THEME);
-      this.$store.commit('SET_SHOW_SHAPE', this.$store.getters.SHOW_SHAPE);
-      this.$store.commit('SET_LOCALE', this.$store.getters.LOCALE);
-      this.consoleSelf();
-    }
-  },
+  mounted() {
+    this.consoleSelf();
+  }
 }
 </script>
 <style lang="scss" scoped>

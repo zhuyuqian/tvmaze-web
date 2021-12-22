@@ -28,14 +28,6 @@ html::-webkit-scrollbar-track {
   background: linear-gradient(90deg, #201c29, #201c29 1px, #100e17 0, #100e17);
 }
 
-html {
-  display: none;
-
-  &[data-theme] {
-    display: block;
-  }
-}
-
 @each $theme-name, $theme-map in $themes {
   html[data-theme=#{$theme-name}] {
     background-color: map-get($theme-map, 'color-page-background');
