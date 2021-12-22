@@ -28,9 +28,6 @@ export default {
     return {
       title: `关于 - ${this.$dic.logoText}`
     }
-  },
-  mounted() {
-    localStorage.setItem('look-about', 1);
   }
 }
 </script>

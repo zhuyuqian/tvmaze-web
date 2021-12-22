@@ -17,6 +17,7 @@
             <nuxt-link to="/people">卡司</nuxt-link>
             <nuxt-link to="/network">频道</nuxt-link>
             <nuxt-link to="/webChannel">流媒体</nuxt-link>
+            <nuxt-link to="/changelog">更新日志</nuxt-link>
           </div>
         </div>
       </div>
@@ -103,7 +104,8 @@
         margin-top: 20px;
         text-align: center;
       }
-      .beian-warp{
+
+      .beian-warp {
         margin-top: 10px;
         text-align: center;
       }
