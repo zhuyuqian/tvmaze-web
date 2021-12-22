@@ -6,7 +6,7 @@
     <template v-if="$store.getters.IS_MOBILE">
       <people-item v-for="(people,index) of pageInfo.data" :key="people.peopleId" jump="people"
                    :jump-id="people.peopleId" :delay="index" :cover="people.peopleImageMedium"
-                   :title="$store.getters.NAME_BY_LANG(people.peopleName,people.peopleNameZh)"/>
+                   :title="people.peopleName"/>
     </template>
     <!--pc-->
     <el-row v-else :gutter="15">
@@ -17,7 +17,7 @@
         <el-row :gutter="15">
           <el-col :xs="12" :sm="8" :md="6" :lg="4" v-for="(people,index) of pageInfo.data" :key="people.peopleId">
             <people-item card jump="people" :jump-id="people.peopleId" :delay="index" :cover="people.peopleImageMedium"
-                         :title="$store.getters.NAME_BY_LANG(people.peopleName,people.peopleNameZh)"/>
+                         :title="people.peopleName"/>
           </el-col>
         </el-row>
         <data-empty v-if="!pageInfo.count"/>

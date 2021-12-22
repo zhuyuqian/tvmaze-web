@@ -5,10 +5,9 @@
       <season-item :info="seasonInfo"/>
     </content-warp>
     <content-warp v-if="seasonInfo && episodeInfo"
-                  :name="`S${seasonInfo.seasonNo} E${episodeInfo.episodeNo||''} ${$store.getters.NAME_BY_LANG(seasonInfo.seasonName,seasonInfo.seasonNameZh)} ${$store.getters.NAME_BY_LANG(episodeInfo.episodeName,episodeInfo.episodeNameZh)}`">
+                  :name="`S${seasonInfo.seasonNo} E${episodeInfo.episodeNo||''} ${seasonInfo.seasonName} ${episodeInfo.episodeName}`">
       <content-warp name="本集简介" size="small">
-        <div class="episode-summary"
-             v-html="$store.getters.TEXT_BY_LANG(episodeInfo.episodeSummary,episodeInfo.episodeSummaryZh)"></div>
+        <div class="episode-summary" v-html="episodeInfo.episodeSummary"></div>
       </content-warp>
       <content-warp v-if="pre" name="上一集" size="small">
         <episode-item :info="pre"/>
@@ -23,12 +22,11 @@
   <el-row class="show-episode-page" :gutter="15" v-else>
     <el-col :xs="15" :sm="15" :md="16" :lg="18" :xl="18">
       <content-warp v-if="seasonInfo && episodeInfo"
-                    :name="`S${seasonInfo.seasonNo} E${episodeInfo.episodeNo||''} ${$store.getters.NAME_BY_LANG(seasonInfo.seasonName,seasonInfo.seasonNameZh)} ${$store.getters.NAME_BY_LANG(episodeInfo.episodeName,episodeInfo.episodeNameZh)}`">
+                    :name="`S${seasonInfo.seasonNo} E${episodeInfo.episodeNo||''} ${seasonInfo.seasonName} ${episodeInfo.episodeName}`">
         <el-row :gutter="15">
           <el-col :span="24">
             <content-warp name="本集简介" size="small">
-              <div class="episode-summary"
-                   v-html="$store.getters.TEXT_BY_LANG(episodeInfo.episodeSummary,episodeInfo.episodeSummaryZh)"></div>
+              <div class="episode-summary" v-html="episodeInfo.episodeSummary"></div>
             </content-warp>
           </el-col>
           <el-col :span="12" v-if="pre">

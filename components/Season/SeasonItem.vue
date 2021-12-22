@@ -6,16 +6,15 @@
       <image-plus :src="info.seasonImageMedium"/>
     </div>
     <div class="info-box">
-      <div class="name-box pub-ellipsis-1" :title="$store.getters.NAME_BY_LANG(info.seasonName, info.seasonNameZh)">
-        S{{ info.seasonNo }} {{ $store.getters.NAME_BY_LANG(info.seasonName, info.seasonNameZh) }}
+      <div class="name-box pub-ellipsis-1" :title="info.seasonName">
+        S{{ info.seasonNo }} {{ info.seasonName }}
       </div>
       <div class="other-box pub-ellipsis-1">
         <span class="el-icon-date">
           {{ info.seasonPremiere ? $dayjs(info.seasonPremiere).format('YYYY-MM-DD') : '未开播' }}
         </span>
       </div>
-      <div class="summary-box pub-ellipsis-2"
-           v-html="$store.getters.TEXT_BY_LANG(info.seasonSummary,info.seasonSummaryZh)"></div>
+      <div class="summary-box pub-ellipsis-2" v-html="info.seasonSummary"></div>
     </div>
   </nuxt-link>
 </template>

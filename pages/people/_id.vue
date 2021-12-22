@@ -1,5 +1,5 @@
 <template>
-  <content-warp :name="$store.getters.NAME_BY_LANG(peopleInfo.peopleName,peopleInfo.peopleNameZh)">
+  <content-warp :name="peopleInfo.peopleName">
     <people-other-info :info="peopleInfo"/>
     <content-warp name="参演作品" v-if="castList.length">
       <!--移动-->
@@ -7,7 +7,7 @@
         <people-item v-for="(character,index) of castList" :key="character.castId"
                      :card="false" jump="show" :jump-id="character.showId" :delay="index"
                      :cover="character.characterImageMedium" :desc="`饰演：${character.characterName}`"
-                     :title="$store.getters.NAME_BY_LANG(character.showName,character.showNameZh)"/>
+                     :title="character.showName"/>
       </template>
       <!--PC-->
       <el-row v-else :gutter="15">
@@ -15,7 +15,7 @@
           <el-col :xs="12" :sm="6" :md="6" :lg="4" :xl="3" :key="character.castId">
             <people-item card jump="show" :jump-id="character.showId" :delay="index"
                          :cover="character.characterImageMedium" :desc="`饰演：${character.characterName}`"
-                         :title="$store.getters.NAME_BY_LANG(character.showName,character.showNameZh)"/>
+                         :title="character.showName"/>
           </el-col>
         </template>
       </el-row>
@@ -24,7 +24,7 @@
       <template v-if="$store.getters.IS_MOBILE">
         <people-item v-for="(crew,index) of crewList" :key="crew.crewId"
                      :card="false" jump="show" :jump-id="crew.showId" :delay="index" :cover="crew.showImageMedium"
-                     :title="$store.getters.NAME_BY_LANG(crew.showName,crew.showNameZh)"
+                     :title="crew.showName"
                      :desc="`负责：${ $t(`people.crew.${crew.crewType}`) }`"/>
       </template>
       <!--PC-->
@@ -32,8 +32,7 @@
         <template v-for="(crew,index) of crewList">
           <el-col :xs="12" :sm="6" :md="6" :lg="4" :xl="3" :key="crew.crewId">
             <people-item card jump="show" :jump-id="crew.showId" :delay="index" :cover="crew.showImageMedium"
-                         :title="$store.getters.NAME_BY_LANG(crew.showName,crew.showNameZh)"
-                         :desc="`负责：${ $t(`people.crew.${crew.crewType}`) }`"/>
+                         :title="crew.showName" :desc="`负责：${ $t(`people.crew.${crew.crewType}`) }`"/>
           </el-col>
         </template>
       </el-row>
@@ -52,7 +51,7 @@ export default {
   },
   head() {
     return {
-      title: `${this.$store.getters.NAME_BY_LANG(this.peopleInfo.peopleName, this.peopleInfo.peopleNameZh)} - ${this.$dic.logoText}`
+      title: `${this.peopleInfo.peopleName} - ${this.$dic.logoText}`
     }
   },
   async asyncData({app, params}) {

@@ -1,22 +1,4 @@
 export default {
-  // 根据语言返回拼接好的名称
-  NAME_BY_LANG: state => {
-    return (text, textZh) => {
-      if (state.locale === 'zh') {
-        return textZh ?
-          textZh + ' ' + text :
-          text
-      }
-      return text
-    }
-  },
-  // 根据语言返回拼接好的字符串
-  TEXT_BY_LANG: state => {
-    return (text, textZh) => {
-      if (state.locale === 'zh') return textZh || text;
-      return text
-    }
-  },
   // 是否是手机
   IS_MOBILE: state => state.mobile,
   // 语言

@@ -4,7 +4,7 @@
       <el-col v-for="(cast,index) of castList" :xs="12" :sm="6" :md="6" :lg="4" :xl="3" :key="cast.castId">
         <people-item card jump="people" :jump-id="cast.peopleId" :delay="index"
                      :title="cast.characterName" :cover="cast.characterImageMedium||cast.peopleImageMedium"
-                     :desc="$store.getters.NAME_BY_LANG(cast.peopleName,cast.peopleNameZh)"/>
+                     :desc="cast.peopleName"/>
       </el-col>
     </el-row>
   </content-warp>

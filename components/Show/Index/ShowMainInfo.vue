@@ -9,7 +9,7 @@
         </div>
       </div>
     </div>
-    <div class="show-summary" v-html="$store.getters.TEXT_BY_LANG(info.showSummary, info.showSummaryZh)"></div>
+    <div class="show-summary" v-html="info.showSummary"></div>
     <div class="jump-web-site">
       <a class="item" v-if="info.showOfficialSite" :href="info.showOfficialSite"
          target="_blank">官网</a>

@@ -3,10 +3,7 @@
     <div class="show-name-warp">
       <!--剧名-->
       <h1 class="show-name">
-        <nuxt-link :title="$store.getters.NAME_BY_LANG(showInfo.showName, showInfo.showNameZh)"
-                   :to="`/show/${showInfo.showId}`">
-          {{ $store.getters.NAME_BY_LANG(showInfo.showName, showInfo.showNameZh) }}
-        </nuxt-link>
+        <nuxt-link :title="showInfo.showName" :to="`/show/${showInfo.showId}`">{{ showInfo.showName }}</nuxt-link>
       </h1>
       <!--题材-->
       <div class="show-genres">
@@ -30,7 +27,7 @@ export default {
   },
   head() {
     return {
-      title: `${this.$store.getters.NAME_BY_LANG(this.showInfo.showName, this.showInfo.showNameZh)} - ${this.$dic.logoText}`
+      title: `${this.showInfo.showName} - ${this.$dic.logoText}`
     }
   },
   async asyncData({app, params}) {

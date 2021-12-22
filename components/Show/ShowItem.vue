@@ -5,11 +5,8 @@
       <image-plus :src="info.showImageMedium"/>
     </div>
     <div class="info-box">
-      <div class="name-box pub-ellipsis-1" :title="$store.getters.NAME_BY_LANG(info.showName, info.showNameZh)">
-        {{ $store.getters.NAME_BY_LANG(info.showName, info.showNameZh) }}
-      </div>
-      <div class="summary-box pub-ellipsis-2"
-           v-html="$store.getters.TEXT_BY_LANG(info.showSummary,info.showSummaryZh)"></div>
+      <div class="name-box pub-ellipsis-1" :title="info.showName">{{ info.showName }}</div>
+      <div class="summary-box pub-ellipsis-2" v-html="info.showSummary"></div>
       <div class="other-box pub-ellipsis-1">
         <span>
           <template v-for="(genre,index) of info.showGenres">

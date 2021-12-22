@@ -16,17 +16,15 @@
       <content-warp v-if="castList.length" :name="$t('Cast')"
                     :more-link="castList.length>3?`/show/${showInfo.showId}/cast`:''">
         <people-item v-for="(cast,index) of castList" :key="cast.castId" v-if="index<3"
-                     jump="people" :jump-id="cast.peopleId" :delay="index"
-                     :title="cast.characterName" :cover="cast.characterImageMedium||cast.peopleImageMedium"
-                     :desc="$store.getters.NAME_BY_LANG(cast.peopleName,cast.peopleNameZh)"/>
+                     jump="people" :jump-id="cast.peopleId" :delay="index" :title="cast.characterName"
+                     :desc="cast.peopleName" :cover="cast.characterImageMedium||cast.peopleImageMedium"/>
       </content-warp>
       <!--主创列表-->
       <content-warp v-if="crewList.length" :name="$t('Crew')"
                     :more-link="crewList.length>3?`/show/${showInfo.showId}/crew`:''">
         <people-item v-for="(crew,index) of crewList" v-if="index<3" :key="crew.crewId"
-                     jump="people" :jump-id="crew.peopleId" :delay="index"
-                     :cover="crew.peopleImageMedium" :desc="`负责：${ $t(`people.crew.${crew.crewType}`) }`"
-                     :title="$store.getters.NAME_BY_LANG(crew.peopleName,crew.peopleNameZh)"/>
+                     jump="people" :jump-id="crew.peopleId" :delay="index" :title="crew.peopleName"
+                     :desc="`负责：${ $t(`people.crew.${crew.crewType}`) }`" :cover="crew.peopleImageMedium"/>
       </content-warp>
       <!--相关片单-->
       <content-warp name="相关片单" size="small" v-if="albumList.length">
@@ -55,9 +53,8 @@
           <el-row>
             <template v-for="(cast,index) of castList">
               <el-col v-if="index<6" :xs="24" :sm="24" :md="12" :lg="8" :xl="8" :key="cast.castId">
-                <people-item jump="people" :jump-id="cast.peopleId" :delay="index"
-                             :title="cast.characterName" :cover="cast.characterImageMedium||cast.peopleImageMedium"
-                             :desc="$store.getters.NAME_BY_LANG(cast.peopleName,cast.peopleNameZh)"/>
+                <people-item jump="people" :jump-id="cast.peopleId" :delay="index" :title="cast.characterName"
+                             :desc="cast.peopleName" :cover="cast.characterImageMedium||cast.peopleImageMedium"/>
               </el-col>
             </template>
           </el-row>
@@ -68,9 +65,8 @@
           <el-row>
             <template v-for="(crew,index) of crewList">
               <el-col v-if="index<6" :xs="24" :sm="24" :md="12" :lg="8" :xl="8" :key="crew.crewId">
-                <people-item jump="people" :jump-id="crew.peopleId" :delay="index"
-                             :cover="crew.peopleImageMedium" :desc="`负责：${ $t(`people.crew.${crew.crewType}`) }`"
-                             :title="$store.getters.NAME_BY_LANG(crew.peopleName,crew.peopleNameZh)"/>
+                <people-item jump="people" :jump-id="crew.peopleId" :delay="index" :title="crew.peopleName"
+                             :desc="`负责：${ $t(`people.crew.${crew.crewType}`) }`" :cover="crew.peopleImageMedium"/>
               </el-col>
             </template>
           </el-row>

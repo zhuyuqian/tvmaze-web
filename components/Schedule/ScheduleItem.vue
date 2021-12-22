@@ -5,10 +5,9 @@
       <image-plus :src="info.showImageMedium"/>
     </div>
     <div class="info-box">
-      <div class="name-box pub-ellipsis-1">{{ $store.getters.NAME_BY_LANG(info.showName, info.showNameZh) }}</div>
+      <div class="name-box pub-ellipsis-1">{{ info.showName }}</div>
       <div class="desc-box pub-ellipsis-1" v-for="episode of info.episodeList" :key="episode.episodeId">
-        S{{ episode.seasonNo }}E{{ episode.episodeNo }}：
-        {{ $store.getters.NAME_BY_LANG(episode.episodeName, episode.episodeNameZh) }}
+        S{{ episode.seasonNo }}E{{ episode.episodeNo }}：{{ episode.episodeName }}
       </div>
     </div>
   </nuxt-link>
