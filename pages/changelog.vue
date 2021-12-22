@@ -3,7 +3,7 @@
     <h1 class="page-title">{{ $dic.logoText }} 优化记录</h1>
     <p class="page-desc">了解 {{ $dic.logoText }} 在改进用户体验的过程中做了哪些努力</p>
     <el-steps direction="vertical" class="logs-warp">
-      <el-step v-for="log of logList" :title="log.logTitle" :key="log.logId">
+      <el-step v-for="log of logList" :title="log.logTitle" :key="log.logId" icon="el-icon-alarm-clock">
         <div slot="description" class="log-box">
           <p class="desc-box">{{ log.logDesc }}</p>
           <p class="time-box">{{ $dayjs(log.logTime).format('YYYY-MM-DD') }}</p>
@@ -63,6 +63,7 @@ export default {
       }
 
       .el-step__icon {
+        @include fontColor('color-text');
         @include backgroundColor('color-deep-background');
         @include borderColor('border-color');
       }
