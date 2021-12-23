@@ -105,6 +105,10 @@ p {
       margin-top: 2px;
       font-size: 12px;
       line-height: 20px;
+
+      p {
+        text-indent: 0 !important;
+      }
     }
 
     .desc-box {

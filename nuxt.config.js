@@ -58,6 +58,9 @@ export default {
   build: {
     // cache: true,
     // parallel: true,
+    extend(config, {isClient}) {
+      config.resolve.alias['vue$'] = 'vue/dist/vue.js'
+    },
     babel: {
       "plugins": [
         [
