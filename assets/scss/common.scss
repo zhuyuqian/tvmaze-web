@@ -84,6 +84,7 @@ p {
   margin-bottom: 15px;
   cursor: pointer;
   transition: 0.3s all;
+  box-sizing: border-box;
   @include border("border-base");
   @include backgroundColor("color-card-background");
 
@@ -105,10 +106,6 @@ p {
       margin-top: 2px;
       font-size: 12px;
       line-height: 20px;
-
-      p {
-        text-indent: 0 !important;
-      }
     }
 
     .desc-box {

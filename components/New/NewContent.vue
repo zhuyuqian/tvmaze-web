@@ -1,6 +1,9 @@
 <template>
   <component :is="newComponent">
-    <show-item v-for="show of showList" shape="list" :key="show.showId" :info="show" :slot="`show-${show.showId}`"/>
+    <show-item class="new-show" target="_blank" v-for="show of showList"
+               :key="show.showId" :info="show"
+               :shape="$store.getters.IS_MOBILE?'list':'card'"
+               :slot="`show-${show.showId}`"/>
   </component>
 </template>
 
@@ -9,6 +12,8 @@ const HTML = process.server ? require('html-parse-stringify') : require('html-pa
 
 const handleTags = (tags) => {
   for (let tag of tags) {
+    if (!tag.attrs) tag.attrs = {};
+    tag.attrs.class = `new-${tag.name}`
     if (tag.attrs && tag.attrs['data-type'] === 'show') {
       tag.name = 'slot';
       tag.attrs = {'name': `show-${tag.attrs['data-id']}`}
@@ -30,7 +35,7 @@ export default {
   computed: {
     newComponent() {
       return {
-        template: handleHtml(this.html)
+        template: `<div>${handleHtml(this.html)}</div>`
       }
     }
   },

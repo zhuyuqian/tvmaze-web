@@ -1,0 +1,35 @@
+<template>
+  <a class="animate__animated animate__fadeInUp common-card list" :class="{[`delay-${delay}`]:true}"
+     :target="info.newType==='INSTATION'?'':'_blank'"
+     :href="info.newType==='INSTATION'?`/new/${info.newId}`:info.newOriginalLink">
+    <div class="cover-box" v-if="info.newCover">
+      <image-plus :src="info.newCover"></image-plus>
+    </div>
+    <div class="info-box">
+      <div class="other-box">
+        <span>{{ $dayjs(info.newPublishTime).format('YYYY-MM-DD') }}</span>
+        <span>{{ info.newPublishUser }}</span>
+      </div>
+      <div class="name-box">{{ info.newTitle }}</div>
+      <div class="summary-box">{{ info.newAbstract }}</div>
+    </div>
+  </a>
+</template>
+
+<script>
+export default {
+  props: {
+    delay: {type: Number, default: 0},
+    info: {type: Object, required: true}
+  }
+}
+</script>
+
+<style lang="scss" scoped>
+.list {
+  .cover-box {
+    width: 150px;
+    height: 100px;
+  }
+}
+</style>
