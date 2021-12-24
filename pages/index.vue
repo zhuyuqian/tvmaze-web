@@ -69,6 +69,7 @@ export default {
       app.$axios.get('/album/recommended')
     ])
     return {
+      head: app.head,
       monthShowList,
       returnShowList,
       hotShowList,

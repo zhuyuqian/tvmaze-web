@@ -11,7 +11,8 @@ export default {
       },
     ],
     script: [
-      {type: 'text/javascript', src: '//cdn.bootcdn.net/ajax/libs/Swiper/6.8.0/swiper-bundle.min.js'}
+      {type: 'text/javascript', src: '//cdn.bootcdn.net/ajax/libs/Swiper/6.8.0/swiper-bundle.min.js'},
+      {src: '//res.wx.qq.com/open/js/jweixin-1.4.0.js'}
     ],
     link: [
       {rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'},
@@ -38,6 +39,7 @@ export default {
     '@/plugins/i18n.js',
     {src: '@/plugins/vue-lazyload', ssr: false},
     {src: '@/plugins/analytic.js', ssr: false},
+    {src: '@/plugins/wx-share.js', ssr: false},
   ],
   components: true,
   buildModules: [],
