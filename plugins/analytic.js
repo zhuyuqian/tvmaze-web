@@ -8,8 +8,9 @@ if (process.client && process.env.NODE_ENV === 'production') {
   })();
 }
 
-export default ({app: {router}}) => {
+export default ({app: {router, $axios}}) => {
   router.afterEach((to, form) => {
+    $axios.get('/common/site', {params: {path: location.href}});
     _hmt.push(['_trackPageview', to.fullPath]);
   });
 }
