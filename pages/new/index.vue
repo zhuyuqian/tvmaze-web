@@ -1,6 +1,6 @@
 <template>
   <content-warp name="资讯">
-    <new-item v-for="(item,index) of pageInfo.data" :key="item.newId" :info="item"/>
+    <new-item v-for="(item,index) of pageInfo.data" :key="item.newId" :info="item" :delay="index"/>
     <pagination-plus :current-page="searchInfo.page" :page-size="18" :total="pageInfo.count"
                      @change="searchInfoChange"/>
   </content-warp>
