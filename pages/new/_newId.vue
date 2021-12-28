@@ -117,17 +117,6 @@ export default {
       margin-bottom: 30px;
       @include fontColor('color-text');
     }
-
-    ::v-deep .new-p {
-      text-indent: 20px;
-      margin: 10px 0 15px;
-      font-size: 16px;
-    }
-
-    ::v-deep .new-show {
-      width: 200px;
-      margin: 0 auto;
-    }
   }
 
   &.mobile {
@@ -147,15 +136,6 @@ export default {
 
       .info-box {
         margin-bottom: 15px;
-      }
-
-      ::v-deep .new-p {
-        text-indent: 20px;
-        font-size: 14px;
-      }
-
-      ::v-deep .new-show {
-        width: 100%;
       }
     }
   }

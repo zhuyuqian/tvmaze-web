@@ -2,8 +2,8 @@
   <component :is="newComponent">
     <show-item class="new-show" target="_blank" v-for="show of showList"
                :key="show.showId" :info="show"
-               :shape="$store.getters.IS_MOBILE?'list':'card'"
-               :slot="`show-${show.showId}`"/>
+               :slot="`show-${show.showId}`"
+               :shape="$store.getters.IS_MOBILE?'list':'card'"/>
   </component>
 </template>
 
@@ -35,7 +35,7 @@ export default {
   computed: {
     newComponent() {
       return {
-        template: `<div>${handleHtml(this.html)}</div>`
+        template: `<div class="new-article-content">${handleHtml(this.html)}</div>`
       }
     }
   },
@@ -43,4 +43,24 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "~@/assets/scss/_handle.scss";
+
+.new-article-content {
+  ::v-deep .new-p {
+    text-indent: 20px;
+    margin: 10px 0 15px;
+    font-size: 16px;
+  }
+
+  ::v-deep .new-show {
+    width: 200px;
+    margin: 0 auto;
+  }
+
+  ::v-deep .new-img {
+    padding: 10px;
+    border-radius: 4px;
+    @include border('border-base');
+  }
+}
 </style>
