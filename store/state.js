@@ -37,6 +37,8 @@ export default () => ({
     'Estonian', 'Urdu', 'Azerbaijani',
     'Georgian', 'Pashto', 'Albanian'
   ],
+  // 资讯分类列表
+  newCategoryList: [],
   // 友情链接
   friendLinkList: []
 })

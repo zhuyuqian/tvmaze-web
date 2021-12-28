@@ -136,9 +136,12 @@ p {
     margin-left: -1px;
     border-radius: 0;
 
+    .cover-box {
+      margin-right: 20px;
+    }
+
     .info-box {
       flex: 1;
-      margin-left: 20px;
       overflow: hidden;
 
       .summary-box {

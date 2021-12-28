@@ -1,10 +1,26 @@
 <template>
-  <div class="new-page" :class="{mobile:$store.getters.IS_MOBILE}">
+  <div class="new-page mobile" v-if="$store.getters.IS_MOBILE">
     <div class="name-warp">
       <h1>{{ newInfo.newTitle }}</h1>
-      <p>{{ newInfo.newAbstract }}</p>
+      <p>{{ newInfo.categoryName }} · {{ newInfo.newAbstract }}</p>
     </div>
-    <el-row :gutter="15" v-if="!$store.getters.IS_MOBILE">
+    <div class="new-content-warp">
+      <div class="info-box">
+        <span>{{ newInfo.newPublishUser }} 发布于 {{ $dayjs(newInfo.newPublishTime).format('YYYY-MM-DD') }}</span>
+        <a v-if="newInfo.newOriginalLink" :href="newInfo.newOriginalLink" target="_blank">查看原文</a>
+      </div>
+      <new-content :html="newInfo.newHtml" :show-list="newInfo.showList"/>
+    </div>
+    <content-warp name="相关动态" size="small" v-if="relatedNewList.length">
+      <new-item v-for="item of relatedNewList" :key="item.newId" :info="item" :cover="false"/>
+    </content-warp>
+  </div>
+  <div class="new-page" v-else>
+    <div class="name-warp">
+      <h1>{{ newInfo.newTitle }}</h1>
+      <p>{{ newInfo.categoryName }} · {{ newInfo.newAbstract }}</p>
+    </div>
+    <el-row :gutter="15">
       <el-col :xs="15" :sm="15" :md="17" :lg="18" :xl="18">
         <div class="new-content-warp">
           <div class="info-box">
@@ -18,15 +34,11 @@
         <content-warp name="相关节目" size="small">
           <show-item v-for="show of newInfo.showList" shape="list" :key="show.showId" :info="show"/>
         </content-warp>
+        <content-warp name="相关动态" size="small" v-if="relatedNewList.length">
+          <new-item v-for="item of relatedNewList" :key="item.newId" :info="item" :cover="false"/>
+        </content-warp>
       </el-col>
     </el-row>
-    <div v-else class="new-content-warp">
-      <div class="info-box">
-        <span>{{ newInfo.newPublishUser }} 发布于 {{ $dayjs(newInfo.newPublishTime).format('YYYY-MM-DD') }}</span>
-        <a v-if="newInfo.newOriginalLink" :href="newInfo.newOriginalLink" target="_blank">查看原文</a>
-      </div>
-      <new-content :html="newInfo.newHtml" :show-list="newInfo.showList"/>
-    </div>
   </div>
 </template>
 
@@ -34,12 +46,13 @@
 export default {
   data() {
     return {
-      newInfo: {}
+      newInfo: {}, // 资讯详情
+      relatedNewList: [] // 相关动态
     }
   },
   head() {
     return {
-      title: `${this.newInfo.newTitle} - ${this.$dic.logoText}`,
+      title: `${this.newInfo.newTitle} - ${this.newInfo.categoryName} - ${this.$dic.logoText}`,
       meta: [{hid: 'description', name: 'description', content: this.newInfo.newAbstract}]
     }
   },
@@ -47,11 +60,14 @@ export default {
     let {newId} = params;
     let [
       {data: {data: newInfo}},
+      {data: {data: relatedNewList}}
     ] = await Promise.all([
       app.$axios.get('/new/info', {params: {newId}}),
+      app.$axios.get('/new/related', {params: {newId}})
     ])
     return {
       newInfo,
+      relatedNewList
     }
   }
 }

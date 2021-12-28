@@ -1,8 +1,23 @@
 <template>
-  <content-warp name="动态">
+  <!--移动-->
+  <content-warp name="动态" v-if="$store.getters.IS_MOBILE">
     <new-item v-for="(item,index) of pageInfo.data" :key="item.newId" :info="item" :delay="index"/>
     <pagination-plus :current-page="searchInfo.page" :page-size="18" :total="pageInfo.count"
                      @change="searchInfoChange"/>
+  </content-warp>
+  <!--pc-->
+  <content-warp v-else name="动态">
+    <content-search-warp slot="rt" v-model="searchInfo.title" placeholder="标题搜索" @change="searchInfoChange"/>
+    <el-row :gutter="15">
+      <el-col :xs="5" :sm="5" :md="5" :lg="4" :xl="3" class="stick-top">
+        <new-category v-model="searchInfo.category" @change="searchInfoChange"/>
+      </el-col>
+      <el-col :xs="19" :sm="19" :md="19" :lg="20" :xl="21">
+        <new-item v-for="(item,index) of pageInfo.data" :key="item.newId" :info="item" :delay="index"/>
+        <pagination-plus :current-page="searchInfo.page" :page-size="18" :total="pageInfo.count"
+                         @change="searchInfoChange"/>
+      </el-col>
+    </el-row>
   </content-warp>
 </template>
 
@@ -10,6 +25,8 @@
 const getSearchInfo = (query = {}) => {
   return {
     page: query.page ? Number(query.page) : 1,
+    title: query.title || undefined,
+    category: query.category || undefined
   }
 }
 export default {

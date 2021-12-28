@@ -4,14 +4,11 @@ export default {
   SET_IS_MOBILE(state, flag) {
     state.mobile = flag;
   },
-  SET_SHOW_TYPE_LIST(state, showTypeList) {
-    state.showTypeList = showTypeList;
+  SET_NEW_CATEGORY_LIST(state, list) {
+    state.newCategoryList = list;
   },
   SET_SHOW_GENRE_LIST(state, showGenreList) {
     state.showGenreList = showGenreList;
-  },
-  SET_SHOW_LANGUAGE_LIST(state, showLanguageList) {
-    state.showLanguageList = showLanguageList;
   },
   SET_FRIEND_LINK(state, friendLinkList) {
     state.friendLinkList = friendLinkList;

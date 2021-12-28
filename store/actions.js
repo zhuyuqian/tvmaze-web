@@ -22,9 +22,11 @@ export default {
   async nuxtServerInit({commit}, {app, req}) {
     let [
       {data: {data: genre}},
+      {data: {data: newCategory}},
       {data: {data: friendLinkList}},
     ] = await Promise.all([
       app.$axios.get('/show/genre'),
+      app.$axios.get('/new/category'),
       app.$axios.get('/friendlyLink/list')
     ])
 
@@ -34,6 +36,7 @@ export default {
 
     commit('SET_IS_MOBILE', isMobile(req.headers['user-agent']));
     commit('SET_SHOW_GENRE_LIST', genre);
+    commit('SET_NEW_CATEGORY_LIST', newCategory);
     commit('SET_FRIEND_LINK', friendLinkList);
     locale && commit('SET_LOCALE', locale);
     showShape && commit('SET_SHOW_SHAPE', showShape);
