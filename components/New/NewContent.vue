@@ -1,5 +1,5 @@
 <template>
-  <component :is="newComponent">
+  <component :is="newComponent" class="new-article-content" :class="{mobile:$store.getters.IS_MOBILE}">
     <show-item class="new-show" target="_blank" v-for="show of showList"
                :key="show.showId" :info="show"
                :slot="`show-${show.showId}`"
@@ -35,7 +35,7 @@ export default {
   computed: {
     newComponent() {
       return {
-        template: `<div class="new-article-content">${handleHtml(this.html)}</div>`
+        template: `<div>${handleHtml(this.html)}</div>`
       }
     }
   },
@@ -61,6 +61,12 @@ export default {
     padding: 10px;
     border-radius: 4px;
     @include border('border-base');
+  }
+
+  &.mobile {
+    ::v-deep .new-show {
+      width: 100%;
+    }
   }
 }
 </style>
