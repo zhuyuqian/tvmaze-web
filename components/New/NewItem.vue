@@ -10,8 +10,8 @@
         <span>{{ info.categoryName }} · {{ $dayjs(info.newPublishTime).format('YYYY-MM-DD') }}</span>
         <span>{{ info.newPublishUser }}</span>
       </div>
-      <div class="name-box">{{ info.newTitle }}</div>
-      <div class="summary-box">{{ info.newAbstract }}</div>
+      <div class="name-box pub-ellipsis-1">{{ info.newTitle }}</div>
+      <div class="summary-box pub-ellipsis-2">{{ info.newAbstract }}</div>
     </div>
   </a>
 </template>
