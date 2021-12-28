@@ -37,6 +37,12 @@ export default {
       newInfo: {}
     }
   },
+  head() {
+    return {
+      title: `${this.newInfo.newTitle} - ${this.$dic.logoText}`,
+      meta: [{hid: 'description', name: 'description', content: this.newInfo.newAbstract}]
+    }
+  },
   async asyncData({app, params}) {
     let {newId} = params;
     let [
