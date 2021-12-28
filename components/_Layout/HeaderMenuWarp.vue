@@ -7,7 +7,7 @@
         <nuxt-link class="menu-box" to="/show" :class="{active:$route.path.startsWith('/show')}">节目</nuxt-link>
         <nuxt-link class="menu-box" to="/album" :class="{active:$route.path.startsWith('/album')}">片单</nuxt-link>
         <nuxt-link class="menu-box" to="/schedule" :class="{active:$route.path.startsWith('/schedule')}">时间表</nuxt-link>
-        <nuxt-link class="menu-box" to="/new" :class="{active:$route.path.startsWith('/new')}">资讯</nuxt-link>
+        <nuxt-link class="menu-box" to="/new" :class="{active:$route.path.startsWith('/new')}">动态</nuxt-link>
       </nav>
     </div>
   </div>

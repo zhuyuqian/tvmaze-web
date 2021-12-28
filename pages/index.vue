@@ -18,7 +18,7 @@
   <!--pc-->
   <el-row v-else :gutter="15">
     <el-col :xs="15" :sm="15" :md="17" :lg="18" :xl="18">
-      <content-warp name="最新资讯" more-link="/new">
+      <content-warp name="最新动态" more-link="/new">
         <new-item v-for="(item,index) of newList" :key="item.newId" :info="item" :delay="index"/>
       </content-warp>
       <content-warp name="即将回归" more-link="/show">

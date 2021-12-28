@@ -1,5 +1,5 @@
 <template>
-  <content-warp name="资讯">
+  <content-warp name="动态">
     <new-item v-for="(item,index) of pageInfo.data" :key="item.newId" :info="item" :delay="index"/>
     <pagination-plus :current-page="searchInfo.page" :page-size="18" :total="pageInfo.count"
                      @change="searchInfoChange"/>
@@ -16,7 +16,7 @@ export default {
   watchQuery: true,
   head() {
     return {
-      title: `资讯 - ${this.$dic.logoText}`
+      title: `动态 - ${this.$dic.logoText}`
     }
   },
   data() {
