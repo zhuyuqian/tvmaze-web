@@ -1,6 +1,6 @@
 <template>
   <div class="page-box" :class="{mobile:$store.getters.IS_MOBILE}">
-    <h1 class="page-title">联系 {{ $dic.logoText }}</h1>
+    <h1 class="page-title">{{ $dic.logoText }} 联系</h1>
     <p class="page-desc">因为热爱，我们才能相遇</p>
     <el-row class="contact-box" :gutter="15">
       <el-col :xs="24" :sm="12" :md="8" :lg="6" v-for="(qun,index) of qunList" :key="qun.qunId">
@@ -44,6 +44,7 @@ export default {
   }
 
   .page-desc {
+    margin-top: 20px;
     text-align: center;
     @include fontColor('color-text');
   }

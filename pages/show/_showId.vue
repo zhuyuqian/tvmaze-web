@@ -25,11 +25,6 @@ export default {
       showInfo: {}
     }
   },
-  head() {
-    return {
-      title: `${this.showInfo.showName} - ${this.$dic.logoText}`
-    }
-  },
   async asyncData({app, params}) {
     let {showId} = params;
     let [

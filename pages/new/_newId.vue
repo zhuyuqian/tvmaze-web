@@ -11,7 +11,7 @@
       </div>
       <new-content :html="newInfo.newHtml" :show-list="newInfo.showList"/>
     </div>
-    <content-warp name="相关动态" size="small" v-if="relatedNewList.length">
+    <content-warp name="同类动态" size="small" v-if="relatedNewList.length">
       <new-item v-for="item of relatedNewList" :key="item.newId" :info="item" :cover="false"/>
     </content-warp>
   </div>
@@ -34,7 +34,7 @@
         <content-warp name="相关节目" size="small">
           <show-item v-for="show of newInfo.showList" shape="list" :key="show.showId" :info="show"/>
         </content-warp>
-        <content-warp name="相关动态" size="small" v-if="relatedNewList.length">
+        <content-warp name="同类动态" size="small" v-if="relatedNewList.length">
           <new-item v-for="item of relatedNewList" :key="item.newId" :info="item" :cover="false"/>
         </content-warp>
       </el-col>

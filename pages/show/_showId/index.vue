@@ -75,6 +75,9 @@
         <show-image-list :list="imageList"/>
       </el-col>
       <el-col :xs="9" :sm="9" :md="7" :lg="6" :xl="5" class="stick-top">
+        <content-warp name="相关动态" size="small" :more-link="`/show/${showInfo.showId}/new`" v-if="relatedNewList.length">
+          <new-item v-for="item of relatedNewList" :key="item.newId" :info="item" :cover="false"/>
+        </content-warp>
         <content-warp name="相关片单" size="small" v-if="albumList.length">
           <album-item v-for="album of albumList" :key="album.albumId" :info="album" :card="false"/>
         </content-warp>
@@ -88,13 +91,19 @@ export default {
   props: {
     showInfo: {type: Object, required: true}
   },
+  head() {
+    return {
+      title: `${this.showInfo.showName} - 基本信息 -  ${this.$dic.logoText}`
+    }
+  },
   data() {
     return {
       castList: [], // 卡司列表
       crewList: [], // 主创列表
       seasonList: [], // 剧季列表
       imageList: [], // 图片列表
-      albumList: [] // 相关片单
+      albumList: [], // 相关片单
+      relatedNewList: [] // 相关动态
     }
   },
   computed: {
@@ -115,20 +124,23 @@ export default {
       {data: {data: crewList}},
       {data: {data: seasonList}},
       {data: {data: imageList}},
-      {data: {data: {data: albumList}}}
+      {data: {data: {data: albumList}}},
+      {data: {data: relatedNewList}}
     ] = await Promise.all([
       app.$axios.get('/cast/list', {params: {showId}}),
       app.$axios.get('/crew/list', {params: {showId}}),
       app.$axios.get('/season/list', {params: {showId}}),
       app.$axios.get('/image/list', {params: {showId}}),
-      app.$axios.get('/album/list', {params: {showId}})
+      app.$axios.get('/album/list', {params: {showId}}),
+      app.$axios.get('/new/related', {params: {showId}})
     ])
     return {
       castList,
       crewList,
       seasonList,
       imageList,
-      albumList
+      albumList,
+      relatedNewList
     }
   }
 }

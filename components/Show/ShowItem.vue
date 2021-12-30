@@ -1,12 +1,13 @@
 <template>
   <nuxt-link class="animate__animated animate__fadeInUp common-card"
              :class="{[shape]:true,[`delay-${delay}`]:true}"
-             :target="target" :to="`/show/${info.showId}`">
+             :target="target" :to="`/show/${info.showId}`"
+             :title="info.showName">
     <div class="cover-box">
       <image-plus :src="info.showImageMedium"/>
     </div>
     <div class="info-box">
-      <div class="name-box pub-ellipsis-1" :title="info.showName">{{ info.showName }}</div>
+      <div class="name-box pub-ellipsis-1">{{ info.showName }}</div>
       <div class="summary-box pub-ellipsis-2" v-html="info.showSummary"></div>
       <div class="other-box pub-ellipsis-1">
         <span>

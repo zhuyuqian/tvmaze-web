@@ -1,13 +1,17 @@
 <template>
   <div class="header-control-warp">
     <div class="container header-control-box">
-      <el-radio-group v-model="locale" @change="changeLocale">
-        <!--        <el-radio v-for="(name,value) in $dic.localeMap" :key="value" :label="value">{{ name }}</el-radio>-->
-      </el-radio-group>
+      <span class="link-box">
+        <nuxt-link to="/about">关于</nuxt-link>
+        <nuxt-link to="/contact">联系</nuxt-link>
+      </span>
+      <!--      <el-radio-group v-model="locale" @change="changeLocale">-->
+      <!--        &lt;!&ndash;        <el-radio v-for="(name,value) in $dic.localeMap" :key="value" :label="value">{{ name }}</el-radio>&ndash;&gt;-->
+      <!--      </el-radio-group>-->
       <nav class="theme-box">
         <a v-for="(label,value) of $dic.themeMap" href="javascript:void 0"
            class="item-box" :class="{active:THEME===value}" :key="value"
-           @click="$store.commit('SET_THEME',value)">{{ label }}</a>
+           @click="$store.commit('SET_THEME',value,this)">{{ label }}</a>
       </nav>
     </div>
   </div>
@@ -50,10 +54,23 @@ export default {
     justify-content: space-between;
     align-items: center;
 
+    .link-box {
+      font-size: 14px;
+
+      a {
+        display: inline-block;
+        margin-right: 15px;
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+
     .theme-box {
       .item-box {
-        font-size: 14px;
-        margin-left: 20px;
+        font-size: 12px;
+        margin-left: 15px;
 
         &.active {
           @include fontColor("color-primary");

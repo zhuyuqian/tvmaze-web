@@ -11,6 +11,14 @@
 
 <script>
 export default {
+  head() {
+    return {
+      title: `${this.showInfo.showName} - 主创 - ${this.$dic.logoText}`
+    }
+  },
+  props: {
+    showInfo: {type: Object, required: true}
+  },
   data() {
     return {
       crewList: []

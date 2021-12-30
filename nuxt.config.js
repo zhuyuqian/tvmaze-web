@@ -19,9 +19,7 @@ export default {
       {rel: "stylesheet", href: '//at.alicdn.com/t/font_2965179_hv6bqurhlmg.css'},
       {rel: 'stylesheet', href: "//cdn.bootcdn.net/ajax/libs/Swiper/6.8.0/swiper-bundle.css"}
     ],
-    htmlAttrs: {
-      'data-theme': "black",
-    }
+    htmlAttrs: {}
   },
   globalName: "tvmaze",
   loading: {color: '#409EFF', height: '1px'},
@@ -37,8 +35,9 @@ export default {
     '@/plugins/tool',
     '@/plugins/element-ui',
     '@/plugins/i18n.js',
+    '@/plugins/ctx-baidu.js',
+    '@/plugins/ctx-theme.js',
     {src: '@/plugins/vue-lazyload', ssr: false},
-    {src: '@/plugins/analytic.js', ssr: false},
     {src: '@/plugins/wx-share.js', ssr: false},
   ],
   components: true,

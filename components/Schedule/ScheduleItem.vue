@@ -29,8 +29,4 @@ export default {
   width: 70px;
   height: 100px;
 }
-
-.info-box {
-  margin-left: 10px;
-}
 </style>

@@ -7,9 +7,12 @@ import NewPageList from "@/mixins/NewPageList";
 
 export default {
   mixins: [NewPageList],
+  props: {
+    showInfo: {type: Object, required: true}
+  },
   head() {
     return {
-      title: `动态 - ${this.$dic.logoText}`
+      title: `${this.showInfo.showName} - 全部动态 - ${this.$dic.logoText}`
     }
   }
 }

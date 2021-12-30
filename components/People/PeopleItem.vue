@@ -1,6 +1,6 @@
 <template>
   <nuxt-link class="animate__animated animate__fadeInUp common-card" :to="`/${jump}/${jumpId}`"
-             :class="{card:card,list:!card,[`delay-${delay}`]:true}">
+             :class="{card:card,list:!card,[`delay-${delay}`]:true}" :title="title">
     <div class="cover-box">
       <image-plus :src="cover"/>
     </div>

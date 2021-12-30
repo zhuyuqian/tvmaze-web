@@ -1,4 +1,7 @@
 export default {
+  props: {
+    showInfo: {type: Object, required: true}
+  },
   data() {
     return {
       seasonNo: null,

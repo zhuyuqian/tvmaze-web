@@ -1,6 +1,6 @@
 <template>
   <nuxt-link class="animate__animated animate__fadeInUp common-card"
-             :class="{card:card,list:!card,[`delay-${delay}`]:true}"
+             :class="{card:card,list:!card,[`delay-${delay}`]:true}" :title="info.episodeName"
              :to="`/show/${info.showId}/season/${info.seasonNo}/${info.episodeName.replace(new RegExp(' ','g'),'-')}`">
     <div class="cover-box">
       <image-plus :src="info.episodeImageMedium"/>

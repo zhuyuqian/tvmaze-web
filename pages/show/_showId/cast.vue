@@ -12,6 +12,14 @@
 
 <script>
 export default {
+  head() {
+    return {
+      title: `${this.showInfo.showName} - 演员卡司 - ${this.$dic.logoText}`
+    }
+  },
+  props: {
+    showInfo: {type: Object, required: true}
+  },
   data() {
     return {
       castList: []

@@ -1,12 +1,13 @@
 <template>
-  <el-input class="content-search"
-            v-bind="$attrs" v-on="$listeners" :placeholder="placeholder" suffix-icon="el-icon-search" size="small"
+  <el-input class="content-search" :placeholder="placeholder" suffix-icon="el-icon-search" size="small"
+            :value="value" @input="newValue=>$emit('input',newValue)"
             @change="newValue=>$emit('change','name',newValue)" clearable/>
 </template>
 
 <script>
 export default {
   props: {
+    value: {type: [String], default: ''},
     placeholder: {type: String, default: '名称搜索'}
   }
 }

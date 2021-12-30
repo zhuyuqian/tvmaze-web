@@ -121,7 +121,7 @@ export default {
           box-sizing: border-box;
           display: block;
           margin-top: 10px;
-          padding: 10px;
+          padding: 4px;
           width: 100%;
           border-radius: 4px;
           @include backgroundColor('color-card-background');

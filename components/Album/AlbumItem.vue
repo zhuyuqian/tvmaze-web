@@ -1,7 +1,6 @@
 <template>
   <nuxt-link class="animate__animated animate__fadeInUp common-card" :to="`/album/${info.albumId}`"
-             :class="{card:card,list:!card,[`delay-${delay}`]:true}"
-             :title="info.albumName">
+             :class="{card:card,list:!card,[`delay-${delay}`]:true}" :title="info.albumName">
     <div class="cover-box">
       <image-plus :src="info.albumCover"/>
     </div>
@@ -29,8 +28,9 @@ export default {
     height: 220px;
   }
 }
-.list{
-  .cover-box{
+
+.list {
+  .cover-box {
     width: 70px;
     height: 90px;
   }

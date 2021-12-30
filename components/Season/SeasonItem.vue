@@ -1,7 +1,8 @@
 <template>
   <nuxt-link class="animate__animated animate__fadeInUp common-card"
              :class="{card:card,list:!card,[`delay-${delay}`]:true}"
-             :to="`/show/${info.showId}/season/${info.seasonNo}`">
+             :to="`/show/${info.showId}/season/${info.seasonNo}`"
+             :title="`S${ info.seasonNo } ${ info.seasonName }`">
     <div class="cover-box">
       <image-plus :src="info.seasonImageMedium"/>
     </div>

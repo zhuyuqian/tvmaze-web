@@ -2,6 +2,8 @@
 <template>
   <!--移动-->
   <div v-if="$store.getters.IS_MOBILE">
+    <!--资讯轮播图-->
+    <new-swiper :list="newList"/>
     <content-warp name="片单推荐" size="small" more-link="/album">
       <album-item v-for="album of recommendedAlbumList" :key="album.albumId" :info="album" :card="false"/>
     </content-warp>
@@ -18,9 +20,8 @@
   <!--pc-->
   <el-row v-else :gutter="15">
     <el-col :xs="15" :sm="15" :md="17" :lg="18" :xl="18">
-      <content-warp name="最新动态" more-link="/new">
-        <new-item v-for="(item,index) of newList" :key="item.newId" :info="item" :delay="index"/>
-      </content-warp>
+      <!--资讯轮播图-->
+      <new-swiper :list="newList"/>
       <content-warp name="即将回归" more-link="/show">
         <el-row>
           <el-col :xs="24" :sm="24" :md="12" :lg="12" :xl="12" v-for="(show,index) of returnShowList"
@@ -49,8 +50,10 @@
 </template>
 
 <script>
+import NewSwiper from "@/components/Index/NewSwiper";
 
 export default {
+  components: {NewSwiper},
   data() {
     return {
       hotShowList: [], // 热门

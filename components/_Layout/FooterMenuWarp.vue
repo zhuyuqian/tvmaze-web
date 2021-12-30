@@ -3,21 +3,19 @@
     <div class="container footer-menu-box">
       <div class="link-warp">
         <div class="link-flex">
-          <p class="name">友情链接</p>
-          <div class="link-box">
-            <a v-for="link of $store.getters.FRIEND_LINK_LIST" :key="link.id" :href="`${link.link}#tvmaze.cn`"
-               target="_blank">{{ link.name }}</a>
-          </div>
-        </div>
-        <div class="link-flex">
           <p class="name">站内</p>
           <div class="link-box">
-            <nuxt-link to="/about">关于</nuxt-link>
-            <nuxt-link to="/contact">联系</nuxt-link>
             <nuxt-link to="/people">卡司</nuxt-link>
             <nuxt-link to="/network">频道</nuxt-link>
             <nuxt-link to="/webChannel">流媒体</nuxt-link>
             <nuxt-link to="/changelog">更新日志</nuxt-link>
+          </div>
+        </div>
+        <div class="link-flex">
+          <p class="name">友情链接</p>
+          <div class="link-box">
+            <a v-for="link of $store.getters.FRIEND_LINK_LIST" :key="link.id" :href="`${link.link}#tvmaze.cn`"
+               target="_blank">{{ link.name }}</a>
           </div>
         </div>
       </div>

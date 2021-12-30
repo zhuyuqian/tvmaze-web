@@ -42,6 +42,6 @@ export default {
     showShape && commit('SET_SHOW_SHAPE', showShape);
     theme && commit('SET_THEME', theme);
 
-    app.head.htmlAttrs['data-theme'] = theme
+    app.head.htmlAttrs['data-theme'] = theme;
   }
 }

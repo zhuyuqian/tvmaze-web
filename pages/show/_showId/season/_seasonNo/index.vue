@@ -51,7 +51,18 @@
 import seasonPage from "@/mixins/seasonPage";
 
 export default {
-  mixins: [seasonPage]
+  head() {
+    if (!this.seasonInfo) {
+      return {
+        title: `${this.showInfo.showName} - 全部剧集 - ${this.$dic.logoText}`
+      }
+    } else {
+      return {
+        title: `${this.showInfo.showName} - S${this.seasonInfo.seasonNo} ${this.seasonInfo.seasonName} - ${this.$dic.logoText}`
+      }
+    }
+  },
+  mixins: [seasonPage],
 }
 </script>
 

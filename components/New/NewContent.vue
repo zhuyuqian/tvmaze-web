@@ -71,7 +71,7 @@ export default {
 
   ::v-deep .new-img {
     margin: 10px auto;
-    padding: 10px;
+    padding: 4px;
     border-radius: 4px;
     @include border('border-base');
   }
