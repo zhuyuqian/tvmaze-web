@@ -31,7 +31,7 @@ export default {
       if (this.info.qunPlatform === 'WECHAT' && !this.info.qunIsFull) {
         const h = this.$createElement;
         this.$msgbox({
-          title: '加群',
+          title: '加入',
           message: h('img', {
             style: {width: '100%'},
             attrs: {src: this.info.qunQrCover}
