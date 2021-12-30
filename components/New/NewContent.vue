@@ -82,6 +82,8 @@ export default {
     }
 
     ::v-deep .new-img {
+      display: block;
+      box-sizing: border-box;
       width: 100% !important;
     }
 
