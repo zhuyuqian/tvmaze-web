@@ -40,19 +40,5 @@ $themes: (
     border-base:1px solid rgba(71, 105, 183, 0.2), // 边框
     border-color:rgba(71, 105, 183, 0.2), // 边框
     box-shadow:0 0 20px rgba(71, 105, 183, 0.2), // 投影
-  ),
-  "fugu":(// 复古
-    color-primary:rgb(6, 109, 117), // 主题色
-    color-primary-light:rgba(6, 109, 117, 0.8), // 主题色（亮)
-    color-page-background:rgba(131, 130, 115, 1), // 页面背景
-    color-deep-background:rgb(131, 130, 115), // 深色背景
-    color-card-background:rgb(148, 147, 133), // 有内容的背景色
-    color-title:rgb(54, 54, 47), // 标题颜色
-    color-text:rgba(54, 54, 47, 0.5), // 文字颜色
-    color-placeholder:rgba(224, 222, 201, 0.3), // 输入框没有文字的颜色
-    color-disabled:rgba(224, 222, 201, 0.2), // 禁用颜色
-    border-base:1px solid rgba(224, 222, 201, 0.2), // 边框
-    border-color:rgba(224, 222, 201, 0.2), // 边框
-    box-shadow:0 0 20px rgba(54, 54, 47, 0.2), // 投影
   )
 );

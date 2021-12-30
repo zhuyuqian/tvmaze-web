@@ -4,6 +4,7 @@
       <span class="link-box">
         <nuxt-link to="/about">关于</nuxt-link>
         <nuxt-link to="/contact">联系</nuxt-link>
+        <nuxt-link to="/changelog">更新日志</nuxt-link>
       </span>
       <!--      <el-radio-group v-model="locale" @change="changeLocale">-->
       <!--        &lt;!&ndash;        <el-radio v-for="(name,value) in $dic.localeMap" :key="value" :label="value">{{ name }}</el-radio>&ndash;&gt;-->
@@ -55,11 +56,11 @@ export default {
     align-items: center;
 
     .link-box {
-      font-size: 14px;
+      font-size: 13px;
 
       a {
         display: inline-block;
-        margin-right: 15px;
+        margin-right: 10px;
 
         &:last-child {
           margin-right: 0;

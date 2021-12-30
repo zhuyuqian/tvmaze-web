@@ -1,36 +1,28 @@
 <template>
-  <show-page :title="pageInfo.networkName" :search-info="searchInfo" :search-info-change="searchInfoChange"
-             :show-info="showInfo"/>
+  <nuxt-child :network-info="networkInfo"/>
 </template>
 
 <script>
-import showPageList, {getSearchInfo} from "@/mixins/showPageList";
 
 export default {
-  mixins: [showPageList],
   head() {
     return {
-      title: `${this.pageInfo.networkName} - 节目 - ${this.$dic.logoText}`
+      title: `${this.networkInfo.networkName} - 全部节目 - ${this.$dic.logoText}`
     }
   },
   data() {
     return {
-      pageInfo: {}
+      networkInfo: {}
     }
   },
-  async asyncData({app, query, params}) {
-    let searchInfo = getSearchInfo(query, params);
+  async asyncData({app, params}) {
     let [
-      {data: {data: showInfo}},
-      {data: {data: pageInfo}}
+      {data: {data: networkInfo}}
     ] = await Promise.all([
-      app.$axios.get('/show/list', {params: searchInfo}),
       app.$axios.get('/network/info', {params: {networkId: params.networkId}})
     ])
     return {
-      pageInfo,
-      showInfo,
-      searchInfo
+      networkInfo
     }
   }
 }

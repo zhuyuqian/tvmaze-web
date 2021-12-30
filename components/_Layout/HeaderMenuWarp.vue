@@ -3,7 +3,6 @@
     <div class="container header-menu-box">
       <logo-box/>
       <nav class="menu-warp">
-        <nuxt-link class="menu-box" to="/" :class="{active:$route.path==='/'}">首页</nuxt-link>
         <nuxt-link class="menu-box" to="/show" :class="{active:$route.path.startsWith('/show')}">节目</nuxt-link>
         <nuxt-link class="menu-box" to="/album" :class="{active:$route.path.startsWith('/album')}">片单</nuxt-link>
         <nuxt-link class="menu-box" to="/schedule" :class="{active:$route.path.startsWith('/schedule')}">时间表</nuxt-link>
@@ -35,7 +34,7 @@ export default {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 60px;
+    padding: 15px 0;
 
     .menu-warp {
       .menu-box {
@@ -56,11 +55,15 @@ export default {
 
   &.mobile {
     .header-menu-box {
+      display: block;
+      text-align: center;
+
       .logo-box {
         @include fontColor('color-primary');
       }
 
       .menu-warp {
+        margin-top: 10px;
         .menu-box {
           font-size: 14px;
           margin-right: 15px;

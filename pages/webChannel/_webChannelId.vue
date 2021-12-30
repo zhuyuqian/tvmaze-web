@@ -1,36 +1,29 @@
 <template>
-  <show-page :title="pageInfo.webChannelName" :search-info="searchInfo" :show-info="showInfo"
-             :search-info-change="searchInfoChange"/>
+  <nuxt-child :web-channel-info="webChannelInfo"/>
 </template>
 
 <script>
-import showPageList, {getSearchInfo} from "@/mixins/showPageList";
 
 export default {
-  mixins: [showPageList],
   data() {
     return {
-      pageInfo: {}
+      webChannelInfo: {}
     }
   },
   head() {
     return {
-      title: `${this.pageInfo.webChannelName} - 节目 - ${this.$dic.logoText}`
+      title: `${this.webChannelInfo.webChannelName} - 全部节目 - ${this.$dic.logoText}`
     }
   },
-  async asyncData({app, query, params}) {
-    let searchInfo = getSearchInfo(query, params);
+  async asyncData({app, params}) {
     let [
-      {data: {data: showInfo}},
-      {data: {data: pageInfo}}
+      {data: {data: webChannelInfo}}
     ] = await Promise.all([
-      app.$axios.get('/show/list', {params: searchInfo}),
       app.$axios.get('/webChannel/info', {params: {webChannelId: params.webChannelId}})
     ])
+    console.log(webChannelInfo)
     return {
-      pageInfo,
-      showInfo,
-      searchInfo
+      webChannelInfo
     }
   }
 }

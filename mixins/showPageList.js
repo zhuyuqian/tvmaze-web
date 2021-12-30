@@ -1,6 +1,6 @@
 import {mapGetters} from 'vuex'
 
-export const getSearchInfo = (query = {}, params = {}) => {
+export const getQueryInfo = (query = {}, params = {}) => {
   return {
     page: query.page ? Number(query.page) : 1,
     order: query.order || 'a-z',
@@ -8,6 +8,11 @@ export const getSearchInfo = (query = {}, params = {}) => {
     genre: query.genre || undefined,
     name: query.name || undefined,
     language: query.language || undefined,
+  }
+}
+
+export const getParamsInfo = (params = {}) => {
+  return {
     network: params.networkId || undefined,
     webChannel: params.webChannelId || undefined
   }
@@ -16,33 +21,34 @@ export const getSearchInfo = (query = {}, params = {}) => {
 export default {
   watchQuery: true,
   computed: {
-    ...mapGetters(['THEME', 'SHOW_SHAPE'])
+    ...mapGetters(['SHOW_SHAPE'])
   },
   data() {
     return {
-      searchInfo: getSearchInfo(),
-      showInfo: {data: [], count: 0}
+      queryInfo: {},
+      pageInfo: {data: [], count: 0}
     }
   },
   methods: {
-    searchInfoChange(name, value) {
-      let assign = {[name]: value};
-      // 如果不是页码，则页码变回1
-      if (name !== 'page') assign.page = 1;
-      // 合并搜索条件
-      Object.assign(this.searchInfo, assign);
-      // 从query中去除params的参数
-      let query = JSON.parse(JSON.stringify(this.searchInfo))
+    queryInfoChange(name, value) {
+      let query = Object.assign({}, getQueryInfo(this.$route.query), {[name]: value});
       for (let key in query) {
-        if (this.$route.params[key]) delete query[key]
+        if (query[key] === undefined || query[key] === '') delete query[key]
       }
-      // 跳转
       this.$router.push({path: this.$route.path, query: query});
     },
-    async getList() {
-      this.searchInfo = getSearchInfo(this.$route.query, this.$route.params);
-      let {data: {data: showInfo}} = await this.$axios.get('/show/list', {params: this.searchInfo});
-      this.showInfo = showInfo;
+  },
+  async asyncData({app, query, params}) {
+    let queryInfo = getQueryInfo(query);
+    let paramInfo = getParamsInfo(params);
+    let [
+      {data: {data: pageInfo}},
+    ] = await Promise.all([
+      app.$axios.get('/show/list', {params: Object.assign({}, queryInfo, paramInfo)}),
+    ])
+    return {
+      pageInfo,
+      queryInfo
     }
   }
 }

@@ -12,7 +12,6 @@ Vue.prototype.$valid = {}
 Vue.prototype.$dic = {
   logoText: 'TvMaze.cn',
   themeMap: {
-    fugu: "复古",
     haitian: '海天',
     dark: "深邃",
     black: "暗黑",
