@@ -46,18 +46,31 @@ export default {
 @import "~@/assets/scss/_handle.scss";
 
 .new-article-content {
+  ::v-deep .new-h3, .new-h1, .new-h2, .new-h4, .new-h5 {
+    margin: 10px 0;
+    @include fontColor('color-title');
+  }
+
+  ::v-deep .new-hr {
+    margin: 20px 0;
+    height: 0;
+    border: none;
+    @include border('border-base');
+  }
+
   ::v-deep .new-p {
-    text-indent: 20px;
-    margin: 10px 0 15px;
+    margin: 10px 0;
+    text-indent: 32px;
     font-size: 16px;
   }
 
   ::v-deep .new-show {
+    margin: 10px auto;
     width: 200px;
-    margin: 0 auto;
   }
 
   ::v-deep .new-img {
+    margin: 10px auto;
     padding: 10px;
     border-radius: 4px;
     @include border('border-base');
@@ -66,6 +79,15 @@ export default {
   &.mobile {
     ::v-deep .new-show {
       width: 100%;
+    }
+
+    ::v-deep .new-img {
+      width: 100% !important;
+    }
+
+    ::v-deep .new-p {
+      font-size: 14px;
+      text-indent: 28px;
     }
   }
 }

@@ -93,6 +93,7 @@ export default {
 
     p {
       margin: 10px auto 0;
+      line-height: 28px;
       font-size: 14px;
       @include fontColor('color-text');
     }
