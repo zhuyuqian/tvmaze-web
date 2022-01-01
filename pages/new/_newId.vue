@@ -11,6 +11,7 @@
       </div>
       <new-content :html="newInfo.newHtml" :show-list="newInfo.showList"/>
     </div>
+    <common-focus/>
     <content-warp name="同类动态" size="small" v-if="relatedNewList.length">
       <new-item v-for="item of relatedNewList" :key="item.newId" :info="item" :cover="false"/>
     </content-warp>
@@ -31,7 +32,8 @@
         </div>
       </el-col>
       <el-col :xs="9" :sm="9" :md="7" :lg="6" :xl="6" class="stick-top">
-        <content-warp name="相关节目" size="small">
+        <common-focus/>
+        <content-warp name="相关节目" size="small" v-if="newInfo.showList">
           <show-item v-for="show of newInfo.showList" shape="list" :key="show.showId" :info="show"/>
         </content-warp>
         <content-warp name="同类动态" size="small" v-if="relatedNewList.length">

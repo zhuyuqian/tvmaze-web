@@ -32,6 +32,7 @@
       </content-warp>
       <!--图集列表-->
       <show-image-list :list="imageList"/>
+      <common-focus/>
     </template>
     <!--PC主体-->
     <el-row v-else :gutter="15">
@@ -81,6 +82,7 @@
         <content-warp name="相关片单" size="small" v-if="albumList.length">
           <album-item v-for="album of albumList" :key="album.albumId" :info="album" :card="false"/>
         </content-warp>
+        <common-focus/>
       </el-col>
     </el-row>
   </div>

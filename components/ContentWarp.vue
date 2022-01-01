@@ -7,7 +7,7 @@
       </div>
       <span class="rt" v-if="moreLink||$slots.rt">
         <nuxt-link v-if="moreLink" class="more" :to="moreLink">
-          {{ $t('More') }}<i class="iconfont icon-more"></i></nuxt-link>
+          {{ moreText || $t('More') }}<i class="iconfont icon-more"></i></nuxt-link>
         <slot v-if="$slots.rt" name="rt"></slot>
       </span>
     </div>
@@ -23,6 +23,7 @@ export default {
     name: {type: String, default: ''},
     desc: {type: [String, Number], default: ''},
     moreLink: {type: String, default: ''},
+    moreText: {type: String, default: ''},
     size: {type: String, default: 'big'}
   }
 }
@@ -53,7 +54,7 @@ export default {
       align-items: center;
 
       .more {
-        font-size: 14px;
+        font-size: 12px;
         display: flex;
         align-items: center;
 

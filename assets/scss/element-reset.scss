@@ -183,11 +183,13 @@
 
   .popper__arrow {
     @include themeify {
+      border-top-color: themed('border-color');
       border-bottom-color: themed('border-color');
     }
 
     &::after {
       @include themeify {
+        border-top-color: themed('color-card-background');
         border-bottom-color: themed('color-card-background');
       }
     }
