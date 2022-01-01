@@ -1,10 +1,10 @@
 <template>
   <div class="new-page mobile" v-if="$store.getters.IS_MOBILE">
+    <common-focus/>
     <div class="name-warp">
       <h1>{{ newInfo.newTitle }}</h1>
       <p>{{ newInfo.categoryName }} · {{ newInfo.newAbstract }}</p>
     </div>
-    <common-focus/>
     <div class="new-content-warp">
       <div class="info-box">
         <span>{{ newInfo.newPublishUser }} 发布于 {{ $dayjs(newInfo.newPublishTime).format('YYYY-MM-DD') }}</span>
