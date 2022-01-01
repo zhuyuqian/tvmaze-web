@@ -20,7 +20,7 @@
   <el-row v-else :gutter="15">
     <el-col :xs="15" :sm="15" :md="17" :lg="18" :xl="18">
       <!--资讯轮播图-->
-      <new-swiper :list="newList" v-if="newList"/>
+      <new-swiper :list="newList" v-if="newList.length"/>
       <content-warp name="即将回归" more-link="/show" v-if="returnShowList.length">
         <el-row>
           <el-col :xs="24" :sm="24" :md="12" :lg="12" :xl="12" v-for="(show,index) of returnShowList"
