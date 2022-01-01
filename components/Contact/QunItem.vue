@@ -14,7 +14,7 @@ export default {
   },
   computed: {
     target() {
-      if (this.info.qunIsFull || this.info.qunPlatform === 'WECHAT') return null;
+      if (this.info.qunIsFull || this.info.qunPlatform === 'WECHAT' || this.info.qunPlatform === 'WECHAT_VIDEO') return null;
       return '_blank';
     },
     href() {
@@ -24,11 +24,12 @@ export default {
     icon() {
       if (this.info.qunPlatform === 'QQ') return 'iconfont icon-qq-qun';
       if (this.info.qunPlatform === 'WECHAT') return 'iconfont icon-wechat-qun';
+      if (this.info.qunPlatform === 'WECHAT_VIDEO') return 'iconfont icon-wechat-video';
     }
   },
   methods: {
     clickHandle() {
-      if (this.info.qunPlatform === 'WECHAT' && !this.info.qunIsFull) {
+      if (this.info.qunQrCover && !this.info.qunIsFull) {
         const h = this.$createElement;
         this.$msgbox({
           title: '加入',
