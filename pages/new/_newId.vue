@@ -4,6 +4,7 @@
       <h1>{{ newInfo.newTitle }}</h1>
       <p>{{ newInfo.categoryName }} · {{ newInfo.newAbstract }}</p>
     </div>
+    <common-focus/>
     <div class="new-content-warp">
       <div class="info-box">
         <span>{{ newInfo.newPublishUser }} 发布于 {{ $dayjs(newInfo.newPublishTime).format('YYYY-MM-DD') }}</span>
@@ -11,7 +12,6 @@
       </div>
       <new-content :html="newInfo.newHtml" :show-list="newInfo.showList"/>
     </div>
-    <common-focus/>
     <content-warp name="同类动态" size="small" v-if="relatedNewList.length">
       <new-item v-for="item of relatedNewList" :key="item.newId" :info="item" :cover="false"/>
     </content-warp>

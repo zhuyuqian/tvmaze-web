@@ -60,7 +60,6 @@ export default {
 
   ::v-deep .new-p {
     margin: 10px 0;
-    text-indent: 32px;
     font-size: 16px;
   }
 
@@ -89,7 +88,6 @@ export default {
 
     ::v-deep .new-p {
       font-size: 14px;
-      text-indent: 28px;
     }
   }
 }
