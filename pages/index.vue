@@ -37,8 +37,8 @@
         </el-row>
       </content-warp>
     </el-col>
-    <el-col :xs="9" :sm="9" :md="7" :lg="6" :xl="6" class="stick-top" v-if="monthShowList.length">
-      <content-warp name="本月热播" size="small" more-link="/show">
+    <el-col :xs="9" :sm="9" :md="7" :lg="6" :xl="6" class="stick-top">
+      <content-warp name="本月热播" size="small" more-link="/show" v-if="monthShowList.length">
         <show-item shape="list" v-for="(show,index) of monthShowList" :key="show.showId" :info="show" :delay="index"/>
       </content-warp>
       <content-warp name="片单推荐" size="small" more-link="/album" v-if="recommendedAlbumList.length">
