@@ -3,6 +3,16 @@
     <div class="common-focus">
       <el-popover placement="bottom">
         <div slot="reference" class="focus-item">
+          <i class="iconfont icon-douyin"></i>
+          <p class="name">抖音号</p>
+          <p class="text">tvwhat</p>
+        </div>
+        <div class="focus-image">
+          <image-plus src="https://s4.ax1x.com/2022/01/02/Toruzn.png"></image-plus>
+        </div>
+      </el-popover>
+      <el-popover placement="bottom">
+        <div slot="reference" class="focus-item">
           <i class="iconfont icon-wechat-video"></i>
           <p class="name">视频号</p>
           <p class="text">预告片、短片剪辑</p>
@@ -21,6 +31,7 @@
           <image-plus src="https://s4.ax1x.com/2022/01/01/T5bxXT.png"></image-plus>
         </div>
       </el-popover>
+
     </div>
   </content-warp>
 </template>
