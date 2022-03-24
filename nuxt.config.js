@@ -11,13 +11,15 @@ export default {
       },
     ],
     script: [
-      {type: 'text/javascript', src: '//cdn.bootcdn.net/ajax/libs/Swiper/6.8.0/swiper-bundle.min.js'},
+      {type: 'text/javascript', src: '/lib/swiper.min.js'},
+      {type: 'text/javascript', src: '/lib/echarts.min.js'},
+      {type: 'text/javascript', src: '/lib/echarts.theme.chalk.js'},
       {src: '//res.wx.qq.com/open/js/jweixin-1.4.0.js'}
     ],
     link: [
       {rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'},
       {rel: "stylesheet", href: '//at.alicdn.com/t/font_2965179_zk9wc7giae.css'},
-      {rel: 'stylesheet', href: "//cdn.bootcdn.net/ajax/libs/Swiper/6.8.0/swiper-bundle.css"}
+      {rel: 'stylesheet', href: "/lib/swiper.min.css"}
     ],
     htmlAttrs: {}
   },
@@ -39,6 +41,7 @@ export default {
     '@/plugins/ctx-theme.js',
     {src: '@/plugins/vue-lazyload', ssr: false},
     {src: '@/plugins/wx-share.js', ssr: false},
+    {src: '@/plugins/screen-display.js', ssr: false},
   ],
   components: true,
   buildModules: [],

@@ -1,5 +1,5 @@
 <template>
-  <content-warp size="small" name="关注我呀😄" more-link="/contact" more-text="更多方式">
+  <content-warp size="small" name="关注我呀😄" more-link="/contact" more-text="更多方式" v-if="false">
     <div class="common-focus">
       <el-popover placement="bottom">
         <div slot="reference" class="focus-item">

@@ -7,6 +7,7 @@
         <nuxt-link class="menu-box" to="/album" :class="{active:$route.path.startsWith('/album')}">片单</nuxt-link>
         <nuxt-link class="menu-box" to="/schedule" :class="{active:$route.path.startsWith('/schedule')}">时间表</nuxt-link>
         <nuxt-link class="menu-box" to="/new" :class="{active:$route.path.startsWith('/new')}">动态</nuxt-link>
+        <nuxt-link class="menu-box" to="/dashboard" :class="{active:$route.path.startsWith('/dashboard')}">大屏</nuxt-link>
       </nav>
     </div>
   </div>
