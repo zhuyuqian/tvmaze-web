@@ -25,3 +25,17 @@ Vue.prototype.$dic = {
     Female: '妹纸'
   }
 }
+
+Vue.prototype.$tool = {
+  // 打开外链
+  openLink: (link, target = '_black') => {
+    let a = document.createElement("a");
+    a.style.display = 'none'
+    if (target == '_black') target += ('_' + new Date().getTime());
+    a.target = target;
+    a.href = link;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+  }
+}
