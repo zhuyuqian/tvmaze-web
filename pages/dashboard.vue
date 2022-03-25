@@ -260,7 +260,7 @@ export default {
       this.yearAirsChart.setOption({
         tooltip: {position: 'top', formatter: ({value}) => `${value[0]}：${value[1]}`},
         visualMap: {
-          min: 0, max: 150,
+          min: 0, max: 500,
           type: 'piecewise', orient: 'horizontal',
           right: 20, top: 0,
           textStyle: {color: '#999'}
