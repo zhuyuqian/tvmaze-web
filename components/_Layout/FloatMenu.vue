@@ -3,7 +3,7 @@
     <a class="iconfont icon-dashboard animate__animated animate__heartBeat animate__infinite" target="_blank" href="/dashboard"></a>
     <el-popover placement="left" width="200" trigger="click" :visible-arrow="false">
       <i class="iconfont icon-wechat-qun" slot="reference"></i>
-      <img class="contact-image" src="https://s1.ax1x.com/2022/03/25/qYsYfs.jpg">
+      <img class="contact-image" src="@/assets/image/author-wechat.png">
     </el-popover>
   </div>
 </template>
