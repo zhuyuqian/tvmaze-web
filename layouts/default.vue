@@ -10,17 +10,19 @@
       <div class="container">
         <nuxt/>
       </div>
+      <float-menu/>
       <footer-menu-warp/>
     </div>
   </div>
 </template>
 <script>
+import FloatMenu from "@/components/_Layout/FloatMenu";
 import HeaderControlWarp from "@/components/_Layout/HeaderControlWarp";
 import HeaderMenuWarp from "@/components/_Layout/HeaderMenuWarp";
 import FooterMenuWarp from "@/components/_Layout/FooterMenuWarp";
 
 export default {
-  components: {HeaderControlWarp, HeaderMenuWarp, FooterMenuWarp},
+  components: {FloatMenu, HeaderControlWarp, HeaderMenuWarp, FooterMenuWarp},
   methods: {
     async consoleSelf() {
       let {data: {data}} = await this.$axios.get('/user/self');
