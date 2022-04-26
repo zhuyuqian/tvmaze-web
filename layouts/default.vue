@@ -36,7 +36,8 @@ export default {
         console.log("\n建立时间：2021年12月至今\n"),
         console.groupEnd(),
         console.log("\n%c怎么联系我？\n", "font-weight: bold"),
-        console.log("发邮件呀： %ctvmaze-cn@qq.com%c", "color: #65c86e; font-weight: bold", ''),
+        console.log("发邮件呀： %c416556102@qq.com%c", "color: #65c86e; font-weight: bold", ''),
+        console.log("或者微信： %czyq_dxq%c", "color: #65c86e; font-weight: bold", ''),
         console.groupEnd()
     }
   },
