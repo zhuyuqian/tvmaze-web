@@ -1,0 +1,229 @@
+html {
+  background: var(--color-background-page);
+
+  &::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 30px;
+    box-shadow: inset 2px 2px 2px hsla(0, 0%, 100%, .25), inset -2px -2px 2px rgba(0, 0, 0, .25);
+  }
+
+  &::-webkit-scrollbar-track {
+    background: linear-gradient(90deg, #201c29, #201c29 1px, #100e17 0, #100e17);
+  }
+}
+
+//链接
+a {
+  text-decoration: none;
+  color: var(--color-font-text);
+
+  &:hover {
+    color: var(--color-primary);
+  }
+}
+
+//主体区域
+.container {
+  margin: 0 auto;
+}
+
+// 卡片
+.common-card {
+  position: relative;
+  top: 0;
+  display: block;
+  padding: 15px;
+  overflow: hidden;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  transition: 0.3s all;
+  box-sizing: border-box;
+  border: var(--border-base);
+  background: var(--color-background-card);
+
+  .cover-box {
+    font-size: 0;
+  }
+
+  .info-box {
+    color: var(--color-font-text);
+
+    .name-box {
+      margin-top: 6px;
+      line-height: 24px;
+      font-size: 15px;
+      color: var(--color-font-title);
+    }
+
+    .summary-box {
+      margin-top: 2px;
+      font-size: 12px;
+      line-height: 20px;
+    }
+
+    .desc-box {
+      margin-top: 2px;
+      font-size: 12px;
+      line-height: 20px;
+    }
+
+    .other-box {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 2px;
+      font-size: 12px;
+      line-height: 20px;
+
+      span {
+        &:before {
+          margin-right: 2px;
+        }
+      }
+    }
+  }
+
+  &.list {
+    display: flex;
+    margin-bottom: -1px;
+    margin-left: -1px;
+    border-radius: 0;
+
+    .cover-box {
+      margin-right: 15px;
+    }
+
+    .info-box {
+      flex: 1;
+      overflow: hidden;
+
+      .summary-box {
+        margin-top: 4px;
+
+        &.pub-ellipsis-2 {
+          max-height: 38px;
+        }
+      }
+    }
+  }
+
+  &:hover, &.active {
+    z-index: 2;
+    box-shadow: var(--box-shadow-base);
+
+    .info-box {
+      .name-box {
+        color: var(--color-primary);
+      }
+    }
+
+    &:not(.list)::before {
+      position: absolute;
+      content: '';
+      z-index: -2;
+      left: -50%;
+      top: -50%;
+      width: 200%;
+      height: 200%;
+      background-repeat: no-repeat;
+      background-position: 0 0;
+      animation: rotate 2s linear infinite;
+      background-image: conic-gradient(transparent, var(--color-primary), transparent 30%);
+    }
+
+    &:not(.list)::after {
+      position: absolute;
+      content: '';
+      z-index: -1;
+      left: 6px;
+      top: 6px;
+      width: calc(100% - 12px);
+      height: calc(100% - 12px);
+      border-radius: 4px;
+      background: var(--color-background-card);
+    }
+  }
+}
+
+// xl
+@media screen and (min-width: 1920px) {
+  body {
+    min-width: 1440px;
+
+    .container {
+      width: 1440px;
+    }
+  }
+}
+
+// xl-lg
+@media screen and (max-width: 1920px) and (min-width: 1440px) {
+  body {
+    min-width: 1440px;
+
+    .container {
+      width: 1440px;
+    }
+  }
+}
+
+// lg
+@media screen and (max-width: 1440px) and (min-width: 1200px) {
+  body {
+    min-width: 1200px;
+
+    .container {
+      width: 1200px;
+    }
+  }
+}
+
+// md
+@media screen and (max-width: 1200px) and (min-width: 992px) {
+  body {
+    min-width: 992px;
+
+    .container {
+      width: 992px;
+    }
+  }
+}
+
+// sm
+@media screen and (max-width: 992px) and (min-width: 768px) {
+  body {
+    min-width: 768px;
+
+    .container {
+      width: 768px;
+    }
+  }
+}
+
+
+@keyframes text-animate {
+  0%, 100% {
+    text-shadow: -2px -2px 0 rgb(80, 161, 255), 2px 2px 0 rgb(255, 153, 0);
+  }
+  25% {
+    text-shadow: 2px 2px 0 rgb(80, 161, 255), -2px -2px 0 rgb(255, 153, 0);
+  }
+  50% {
+    text-shadow: 2px -2px 0 rgb(80, 161, 255), 2px -2px 0 rgb(255, 153, 0);
+  }
+  75% {
+    text-shadow: -2px 2px 0 rgb(80, 161, 255), -2px 2px 0 rgb(255, 153, 0);
+  }
+}
+
+// 列表动画
+@for $i from 1 to 50 {
+  .animate__animated.delay-#{$i} {
+    animation-delay: 50ms * $i;
+  }
+}
