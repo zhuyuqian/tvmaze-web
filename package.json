@@ -9,9 +9,11 @@
     "preview": "nuxt preview"
   },
   "dependencies": {
+    "@element-plus/icons-vue": "^1.1.1",
+    "@pinia/nuxt": "^0.1.8",
     "element-plus": "^2.0.5",
     "normalize.css": "^8.0.1",
-    "@element-plus/icons-vue": "^1.1.1"
+    "pinia": "^2.0.13"
   },
   "devDependencies": {
     "nuxt": "3.0.0-rc.1",

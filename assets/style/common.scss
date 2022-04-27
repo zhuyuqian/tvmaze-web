@@ -26,6 +26,12 @@ a {
   }
 }
 
+//p标签
+p {
+  margin: 0
+}
+
+
 //主体区域
 .container {
   margin: 0 auto;
@@ -205,6 +211,22 @@ a {
   }
 }
 
+// xs
+@media screen and (max-width: 768px) {
+  body {
+    .container {
+      width: 96%;
+    }
+
+    .pc-model {
+      display: none !important;;
+    }
+
+    .pc-tooltip {
+      display: block !important;
+    }
+  }
+}
 
 @keyframes text-animate {
   0%, 100% {

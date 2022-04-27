@@ -3,7 +3,7 @@
   <div class="header-control-warp">
     <div class="container header-control-box">
       <span class="link-box">
-        <!--<nuxt-link to="/about">关于</nuxt-link>-->
+        <NuxtLink to="/about">关于</NuxtLink>
         <!--<nuxt-link to="/contact">加入</nuxt-link>-->
         <!--<nuxt-link to="/changelog">更新日志</nuxt-link>-->
       </span>

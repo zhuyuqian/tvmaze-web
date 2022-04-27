@@ -14,7 +14,9 @@ export default defineNuxtConfig({
                 },
             ],
             script: [],
-            link: [],
+            link: [
+                {rel: "stylesheet", href: '//at.alicdn.com/t/font_2965179_uy6rfm84t89.css'},
+            ],
         },
     },
     css: [
@@ -22,5 +24,8 @@ export default defineNuxtConfig({
         'normalize.css',
         '@/assets/style/common.scss',
         '@/assets/style/theme.scss',
+    ],
+    buildModules: [
+        ['@pinia/nuxt', {disableVuex: true}]
     ]
 })
