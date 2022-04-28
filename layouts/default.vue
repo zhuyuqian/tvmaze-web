@@ -6,6 +6,7 @@
       <div class="container">
         <slot/>
       </div>
+      <common-footer-warp></common-footer-warp>
     </div>
     <div v-if="!isMobile" class="pc-tooltip">
       <h1>哇，窗口太小啦</h1>
