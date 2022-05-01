@@ -1,7 +1,5 @@
-<!--首页-->
 <template>
-  <nuxt-layout>
-  </nuxt-layout>
+  <slot/>
 </template>
 
 <script setup lang="ts">

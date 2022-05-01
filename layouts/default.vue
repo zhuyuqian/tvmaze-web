@@ -1,14 +1,15 @@
 <template>
   <div class="tvmaze-page">
-    <div :class="{'pc-model':!isMobile}">
-      <common-header-control></common-header-control>
-      <common-header-nav></common-header-nav>
+    <div :class="{'pc-model':!IS_MOBILE}">
+      <common-header-control/>
+      <common-header-nav/>
       <div class="container">
         <slot/>
       </div>
-      <common-footer-warp></common-footer-warp>
+      <common-footer-warp/>
+      <common-float-menu/>
     </div>
-    <div v-if="!isMobile" class="pc-tooltip">
+    <div v-if="!IS_MOBILE" class="pc-tooltip">
       <h1>哇，窗口太小啦</h1>
       <p>请调整浏览器窗口大小或者请使用手机查看！</p>
     </div>
@@ -18,7 +19,7 @@
 <script setup lang="ts">
 import {useStore} from "../stores";
 
-const {isMobile} = useStore();
+const {IS_MOBILE} = useStore();
 </script>
 
 <style lang="scss" scoped>

@@ -11,7 +11,7 @@ export const useStore = defineStore('main', {
         }
     },
     getters: {
-        isMobile(state) { // 是否是手机访问
+        IS_MOBILE(state) { // 是否是手机访问
             return isMobile(state.userAgent)
         }
     },

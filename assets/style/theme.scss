@@ -2,24 +2,30 @@
   --color-background-page: rgba(23, 23, 23, 1); // 背景色
   --color-background-deep: rgba(17, 17, 17, 1); // 深色背景
   --color-background-card: rgba(32, 32, 32, 1); // 卡片背景
+  --color-border-base: rgba(68, 68, 68, 0.3); // 边框颜色
   --color-primary: rgb(255, 153, 0); // 主题色
   --color-font-title: rgba(212, 212, 213, 1); // 标题颜色
   --color-font-text: rgb(147, 147, 148); // 文字颜色
+  --color-font-placeholder: rgba(68, 68, 68, 1); // 输入框没有文字的颜色
   --box-shadow-base: 0 0 20px rgb(0, 0, 0); // 基础投影
-  --border-base: 1px solid rgba(68, 68, 68, 0.3); // 边框
 }
 
 :root[data-theme="light"] {
   --color-background-page: rgba(220, 226, 241, 1); // 背景色
   --color-background-deep: rgba(211, 218, 237, 1); // 深色背景
   --color-background-card: rgba(233, 237, 246, 1); // 卡片背景
+  --color-border-base: rgba(71, 105, 183, 0.2); // 边框颜色
   --color-primary: rgba(71, 105, 183, 1); // 主题色
   --color-font-title: rgba(88, 117, 183, 1); // 标题颜色
   --color-font-text: rgb(129, 147, 189); // 文字颜色
+  --color-font-placeholder: rgba(71, 105, 183, 0.2); // 输入框没有文字的颜色
   --box-shadow-base: 0 0 20px rgba(71, 105, 183, 0.2); // 基础投影
-  --border-base: 1px solid rgba(71, 105, 183, 0.2); // 边框
 }
 
 :root {
+  --border-base: 1px solid var(--color-border-base); // 边框
   --el-color-primary: var(--color-primary);
+  --el-bg-color-overlay: var(--color-background-card);
+  --el-border-color-light: var(--color-border-base);
+  --el-text-color-placeholder: var(--color-border-base);
 }

@@ -5,7 +5,7 @@
       <span class="link-box">
         <NuxtLink to="/about">关于</NuxtLink>
         <!--<nuxt-link to="/contact">加入</nuxt-link>-->
-        <!--<nuxt-link to="/changelog">更新日志</nuxt-link>-->
+        <nuxt-link to="/changelog">优化记录</nuxt-link>
       </span>
       <nav class="theme-box">
         <a href="javascript:void 0" class="item-box" v-for="(label,value) of themeMap" :key="value"

@@ -1,5 +1,5 @@
 <template>
-  <div class="header-menu-warp" :class="{mobile:isMobile}">
+  <div class="header-menu-warp" :class="{mobile:IS_MOBILE}">
     <div class="container header-menu-box">
       <common-logo/>
       <nav class="menu-warp">
@@ -16,7 +16,7 @@
 import {useStore} from "../../stores";
 
 const route = useRoute();
-const {isMobile} = useStore();
+const {IS_MOBILE} = useStore();
 </script>
 
 <style lang="scss" scoped>

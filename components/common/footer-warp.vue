@@ -1,5 +1,5 @@
 <template>
-  <div class="footer-menu-warp" :class="{mobile:isMobile}">
+  <div class="footer-menu-warp" :class="{mobile:IS_MOBILE}">
     <div class="container footer-menu-box">
       <div class="link-warp">
         <div class="link-flex">
@@ -24,7 +24,7 @@
       <p class="beian-warp">
         <a href="https://beian.miit.gov.cn/" target="_blank">浙ICP备2021038749号-1</a>
         <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=33011002016134">
-          <!--<img src="~@/assets/image/beian.png"/>-->
+          <img src="~@/assets/image/beian.png"/>
           <span>浙公网安备 33011002016134号</span>
         </a>
       </p>
@@ -35,7 +35,7 @@
 <script setup>
 import {useStore} from "../../stores";
 
-const {isMobile} = useStore();
+const {IS_MOBILE} = useStore();
 
 const {data: friendLinkList} = await useMyFeach('/friendlyLink/list');
 </script>

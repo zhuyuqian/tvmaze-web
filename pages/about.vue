@@ -1,6 +1,7 @@
+<!--关于-->
 <template>
   <nuxt-layout>
-    <div class="page" :class="{mobile:isMobile}">
+    <div class="page" :class="{mobile:IS_MOBILE}">
       <h1 class="page-title">{{ LOGO_TEXT }} 追剧日记 为追剧而生</h1>
       <p class="page-desc">剧集资讯、更新信息、播放时间表、追剧时间线、片单推荐</p>
       <div class="say-box animate__animated animate__fadeInLeft">
@@ -27,9 +28,9 @@
 <script setup lang="ts">
 import {useStore} from "../stores";
 
+const {IS_MOBILE} = useStore();
 const {LOGO_TEXT} = useDictionary();
-const {isMobile} = useStore();
-
+changeHead('关于')
 </script>
 
 <style lang="scss" scoped>
