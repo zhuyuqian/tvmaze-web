@@ -62,8 +62,6 @@
 const {$dayjs} = useUtil();
 const {$sc} = useNuxtApp();
 
-const configInfo = ref({});
-const showInfo = ref({});
 const countConfig = [
   {name: '剧总数', key: 'showTotal', path: '/show'},
   {name: '集总数', key: 'episodeTotal', path: '/'},
@@ -299,15 +297,10 @@ onMounted(() => {
   initChart();
 })
 
-const init = async () => {
-  let [{data: a}, {data: b}] = await Promise.all([
-    useMyFeach('/dashboard/show'),
-    useMyFeach('/common/config', {params: {code: 'TVMAZE_DASHBOARD_TITLE,TVMAZE_START_TIME'}}),
-  ])
-  showInfo.value = a;
-  configInfo.value = b;
-}
-await init();
+const [{data: showInfo}, {data: configInfo}] = await Promise.all([
+  useFetch('/api/dashboard/show'),
+  useFetch('/api/common/config', {params: {code: 'TVMAZE_DASHBOARD_TITLE,TVMAZE_START_TIME'}}),
+])
 </script>
 
 <style lang="scss" scoped>

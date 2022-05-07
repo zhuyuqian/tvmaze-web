@@ -33,11 +33,11 @@
 </template>
 
 <script setup>
-import {useStore} from "../../stores";
+import {useStore} from "~/stores";
 
 const {IS_MOBILE} = useStore();
 
-const {data: friendLinkList} = await useMyFeach('/friendlyLink/list');
+let {data: friendLinkList} = await useFetch('/api/friendlyLink/list');
 </script>
 
 <style lang="scss" scoped>

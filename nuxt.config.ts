@@ -1,6 +1,7 @@
 import {defineNuxtConfig} from 'nuxt'
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
+    ssr: false,
     app: {
         head: {
             title: 'TvMaze.cn - 追剧日记 - 你的个人追剧指南',

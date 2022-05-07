@@ -5,7 +5,7 @@
       <h1 class="page-title">{{ LOGO_TEXT }} 优化记录</h1>
       <p class="page-desc">了解 {{ LOGO_TEXT }} 在改进用户体验的过程中做了哪些努力</p>
       <el-steps direction="vertical" class="logs-warp">
-        <el-step v-for="log of logList" :title="log.logTitle" :key="log.logId" icon="alarmClock">
+        <el-step v-for="log of logList.data" :title="log.logTitle" :key="log.logId" icon="alarmClock">
           <template #description>
             <div class="log-box">
               <p class="desc-box">{{ log.logDesc }}</p>
@@ -27,7 +27,7 @@ const {IS_MOBILE} = useStore();
 const {LOGO_TEXT} = useDictionary();
 changeHead('优化记录');
 
-const {data: {data: logList}} = await useMyFeach('/log/list');
+const {data: logList} = await useFetch('/api/log/list');
 </script>
 
 <style lang="scss" scoped>
