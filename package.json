@@ -20,7 +20,7 @@
     "vue3-count-to": "^1.1.2"
   },
   "devDependencies": {
-    "nuxt": "3.0.0-rc.1",
+    "nuxt": "3.0.0-rc.6",
     "sass": "^1.51.0"
   }
 }
