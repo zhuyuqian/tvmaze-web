@@ -7,6 +7,7 @@ export const getQueryInfo = (query = {}, params = {}) => {
     type: query.type || undefined,
     genre: query.genre || undefined,
     name: query.name || undefined,
+    status: query.status || undefined,
     language: query.language || undefined,
   }
 }

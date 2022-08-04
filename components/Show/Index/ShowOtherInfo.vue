@@ -9,7 +9,6 @@
         {{ $t(`show.status.${info.showStatus}`) }}
       </p>
     </div>
-
     <div class="other-box">
       <p class="label">{{ $t('Premiered') }}</p>
       <p class="value">{{ $dayjs(info.showPremiered).format('YYYY-MM-DD') }}</p>

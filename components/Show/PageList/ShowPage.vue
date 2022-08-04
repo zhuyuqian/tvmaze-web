@@ -14,6 +14,7 @@
     <show-shape slot="rt"/>
     <el-row :gutter="15">
       <el-col :xs="5" :sm="5" :md="5" :lg="4" :xl="3" class="stick-top">
+        <show-status v-model="queryInfo.status"  @change="queryInfoChange"/>
         <show-language v-model="queryInfo.language" @change="queryInfoChange"/>
         <show-type v-model="queryInfo.type" @change="queryInfoChange"/>
         <show-genre v-model="queryInfo.genre" @change="queryInfoChange"/>

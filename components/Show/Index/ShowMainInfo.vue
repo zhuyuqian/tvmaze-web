@@ -11,12 +11,9 @@
     </div>
     <div class="show-summary" v-html="info.showSummary"></div>
     <div class="jump-web-site">
-      <a class="item" v-if="info.showOfficialSite" :href="info.showOfficialSite"
-         target="_blank">官网</a>
-      <a class="item" v-if="showExternals.tvmaze" :href="`https://tvmaze.com/shows/${showExternals.tvmaze}`"
-         target="_blank">TVmaze.com</a>
-      <a class="item" v-if="showExternals.imdb" :href="`https://www.imdb.com/title/${showExternals.imdb}`"
-         target="_blank">IMDb.com</a>
+      <a class="item" v-for="website of info.webSites" :key="website.link" :href="website.link" target="_blank">
+        <img class="site-image" :src="website.logo"/>
+      </a>
     </div>
   </div>
 </template>
@@ -90,15 +87,32 @@ export default {
   }
 
   .jump-web-site {
-    text-align: right;
     margin-top: 10px;
+    text-align: center;
 
     .item {
       display: inline-block;
-      font-size: 14px;
-      margin-right: 10px;
-      @include fontColor('color-primary');
+      margin-right: 5px;
+
+      .site-image {
+        width: 35px;
+        height: 35px;
+        padding: 4px;
+        object-fit: contain;
+        filter: grayscale(100%);
+        cursor: pointer;
+        border-radius: 50%;
+        @include border('border-base');
+        transition: all 0.2s;
+
+        &:hover {
+          @include borderColor('color-primary');
+          filter: grayscale(0);
+        }
+      }
     }
+
+
   }
 
   &.mobile {

@@ -21,7 +21,6 @@ export default {
     ] = await Promise.all([
       app.$axios.get('/webChannel/info', {params: {webChannelId: params.webChannelId}})
     ])
-    console.log(webChannelInfo)
     return {
       webChannelInfo
     }
