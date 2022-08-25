@@ -16,7 +16,7 @@ const getCookie = (cookie, tName) => {
   }
 }
 const isMobile = (ua) => {
-  return !!ua.match(/AppleWebKit.*Mobile.*/)
+  return !!ua?.match(/AppleWebKit.*Mobile.*/)
 }
 export default {
   async nuxtServerInit({commit}, {app, req}) {

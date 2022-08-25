@@ -1,6 +1,7 @@
 <template>
   <div class="float-menu-warp">
-    <a class="iconfont icon-dashboard animate__animated animate__heartBeat animate__infinite" target="_blank" href="/dashboard"></a>
+    <i class="iconfont icon-kfc animate__animated animate__heartBeat animate__infinite" @click="openKfc"></i>
+    <a class="iconfont icon-dashboard" target="_blank" href="/dashboard"></a>
     <el-popover placement="left" width="200" trigger="click" :visible-arrow="false">
       <i class="iconfont icon-wechat-qun" slot="reference"></i>
       <img class="contact-image" src="@/assets/image/author-wechat.png">
@@ -9,7 +10,17 @@
 </template>
 
 <script>
-export default {}
+export default {
+  methods: {
+    async openKfc() {
+      let {data: {data}} = await this.$axios.get('/common/crazy');
+      await this.$msgbox({
+        title: '疯狂星期四',
+        message: data
+      });
+    }
+  }
+}
 </script>
 
 <style lang="scss" scoped>

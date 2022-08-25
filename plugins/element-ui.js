@@ -21,6 +21,7 @@ import {
 } from 'element-ui';
 
 Vue.prototype.$msgbox = MessageBox;
+
 Vue.use(Input);
 Vue.use(Row);
 Vue.use(Col);

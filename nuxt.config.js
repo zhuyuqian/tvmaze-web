@@ -18,7 +18,7 @@ export default {
     ],
     link: [
       {rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'},
-      {rel: "stylesheet", href: '//at.alicdn.com/t/font_2965179_uy6rfm84t89.css'},
+      {rel: "stylesheet", href: '//at.alicdn.com/t/c/font_2965179_ij4pg4q5n7c.css'},
       {rel: 'stylesheet', href: "/lib/swiper.min.css"}
     ],
     htmlAttrs: {}
