@@ -32,6 +32,10 @@
       @include backgroundColor('color-primary');
     }
   }
+
+  &.el-button--text {
+    @include fontColor('color-primary');
+  }
 }
 
 // 单选框组
@@ -239,6 +243,11 @@
       @include backgroundColor('color-primary')
     }
   }
+}
+
+// 分割线
+.el-divider {
+  @include backgroundColor('color-disabled')
 }
 
 //message消息信息

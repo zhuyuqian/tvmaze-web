@@ -25,9 +25,9 @@ export default {
   components: {FloatMenu, HeaderControlWarp, HeaderMenuWarp, FooterMenuWarp},
   methods: {
     async consoleSelf() {
-      let {data: {data}} = await this.$axios.get('/user/self');
+      let {data: {data: infInfo}} = await this.$axios.get('/user/ip');
       console.log("-----------"),
-        console.log("唉呀你好呀，来自 %c" + data.address.address + " %c的朋友！", "color: #50a1ff; font-family: monoscope; font-weight: bold", ""),
+        console.log("唉呀你好呀，来自 %c" + infInfo.address?.address + " %c的朋友！", "color: #50a1ff; font-family: monoscope; font-weight: bold", ""),
         console.log("\n%c网站简单说明：\n", "font-weight: bold"),
         console.log("\n后端：ThinkJs (基于NodeJs) + MySQL\n"),
         console.log("\n前端：Nuxt.js (基于 VUE.js) + 16个 ElementUI 组件 + 手撸\n"),

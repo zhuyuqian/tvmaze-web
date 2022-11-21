@@ -1,6 +1,9 @@
 import Cookies from 'js-cookie'
 
 export default {
+  SET_USER_INFO(state, user) {
+    state.user = user
+  },
   SET_IS_MOBILE(state, flag) {
     state.mobile = flag;
   },

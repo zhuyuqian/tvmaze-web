@@ -6,25 +6,28 @@
         <nuxt-link to="/contact">加入</nuxt-link>
         <nuxt-link to="/changelog">更新日志</nuxt-link>
       </span>
-      <!--      <el-radio-group v-model="locale" @change="changeLocale">-->
-      <!--        &lt;!&ndash;        <el-radio v-for="(name,value) in $dic.localeMap" :key="value" :label="value">{{ name }}</el-radio>&ndash;&gt;-->
-      <!--      </el-radio-group>-->
-      <nav class="theme-box">
-        <a v-for="(label,value) of $dic.themeMap" href="javascript:void 0"
-           class="item-box" :class="{active:THEME===value}" :key="value"
-           @click="$store.commit('SET_THEME',value,this)">{{ label }}</a>
-      </nav>
+      <div class="rt-box">
+        <!--        <el-radio-group v-model="locale" @change="changeLocale">-->
+        <!--          <el-radio v-for="(name,value) in $dic.localeMap" :key="value" :label="value">{{ name
+        }}</el-radio>-->
+        <!--        </el-radio-group>-->
+        <nav class="theme-box">
+          <a v-for="(label,value) of $dic.themeMap" href="javascript:void 0"
+             class="item-box" :class="{active:$store.getters.THEME===value}" :key="value"
+             @click="$store.commit('SET_THEME',value,this)">{{ label }}</a>
+        </nav>
+        <el-divider direction="vertical"></el-divider>
+        <user-reg-or-login/>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-import {mapGetters} from 'vuex';
+import UserRegOrLogin from "@/components/_Layout/UserRegOrLogin";
 
 export default {
-  computed: {
-    ...mapGetters(['THEME', 'LOCALE'])
-  },
+  components: {UserRegOrLogin},
   data() {
     return {
       locale: null
@@ -37,7 +40,7 @@ export default {
     }
   },
   mounted() {
-    this.locale = this.LOCALE
+    this.locale = this.$store.getters.LOCALE
   }
 }
 </script>
@@ -68,17 +71,22 @@ export default {
       }
     }
 
-    .theme-box {
-      .item-box {
-        font-size: 12px;
-        margin-left: 15px;
+    .rt-box {
+      display: flex;
+      align-items: center;
 
-        &.active {
-          @include fontColor("color-primary");
-        }
+      .theme-box {
+        .item-box {
+          font-size: 12px;
+          margin-left: 15px;
 
-        &:first-child {
-          margin-left: 0;
+          &.active {
+            @include fontColor("color-primary");
+          }
+
+          &:first-child {
+            margin-left: 0;
+          }
         }
       }
     }

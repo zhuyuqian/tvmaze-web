@@ -24,10 +24,12 @@ export default {
       {data: {data: genre}},
       {data: {data: newCategory}},
       {data: {data: friendLinkList}},
+      {data: {data: userInfo}}
     ] = await Promise.all([
       app.$axios.get('/show/genre'),
       app.$axios.get('/new/category'),
-      app.$axios.get('/friendlyLink/list')
+      app.$axios.get('/friendlyLink/list'),
+      app.$axios.get('/user/user')
     ])
 
     let locale = getCookie(req.headers.cookie, 'locale') || 'zh';
@@ -35,6 +37,7 @@ export default {
     let theme = getCookie(req.headers.cookie, 'theme') || 'black';
 
     commit('SET_IS_MOBILE', isMobile(req.headers['user-agent']));
+    commit('SET_USER_INFO', userInfo)
     commit('SET_SHOW_GENRE_LIST', genre);
     commit('SET_NEW_CATEGORY_LIST', newCategory);
     commit('SET_FRIEND_LINK', friendLinkList);

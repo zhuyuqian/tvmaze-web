@@ -1,4 +1,6 @@
 export default {
+  // 用户信息
+  USER: state => state.user,
   // 是否是手机
   IS_MOBILE: state => state.mobile,
   // 语言

@@ -15,14 +15,24 @@ import {
   Dialog,
   Switch,
   MessageBox,
+  Message,
   Scrollbar,
   Steps,
-  Step
+  Step,
+  Divider,
+  Form,
+  FormItem
 } from 'element-ui';
 
 Vue.prototype.$msgbox = MessageBox;
+Vue.prototype.$message = Message;
 
+
+Vue.use(Form);
+Vue.use(FormItem);
 Vue.use(Input);
+Vue.use(Input);
+Vue.use(Divider);
 Vue.use(Row);
 Vue.use(Col);
 Vue.use(Pagination);

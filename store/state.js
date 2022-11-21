@@ -1,4 +1,6 @@
 export default () => ({
+  // 用户信息
+  user: {},
   // 是否是手机
   mobile: false,
   // 皮肤相关
