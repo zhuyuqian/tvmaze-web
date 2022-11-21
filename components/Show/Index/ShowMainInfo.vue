@@ -10,10 +10,15 @@
       </div>
     </div>
     <div class="show-summary" v-html="info.showSummary"></div>
-    <div class="jump-web-site">
-      <a class="item" v-for="website of info.webSites" :key="website.link" :href="website.link" target="_blank">
-        <img class="site-image" :src="website.logo"/>
-      </a>
+    <div class="icon-warp">
+      <div class="icon-box">
+        <i class="iconfont icon-focus" :class="{active:info.isFocus}" @click="focus"></i>
+      </div>
+      <div class="jump-web-site">
+        <a class="item" v-for="website of info.webSites" :key="website.link" :href="website.link" target="_blank">
+          <img class="site-image" :src="website.logo"/>
+        </a>
+      </div>
     </div>
   </div>
 </template>
@@ -34,6 +39,11 @@ export default {
     }
   },
   methods: {
+    async focus() {
+      let {data: {error, msg}} = await this.$axios.post('/user/focus', {type: 'SHOW', keyId: this.info.showId});
+      if (error) return this.$message.error(msg);
+      this.info.isFocus = !this.info.isFocus;
+    },
     initSwiper() {
       if (!this.showImageList.length) return;
       new Swiper(this.$refs['swiper'], {autoplay: true, disableOnInteraction: false, loop: true})
@@ -86,33 +96,57 @@ export default {
     }
   }
 
-  .jump-web-site {
+  .icon-warp {
     margin-top: 10px;
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
-    .item {
-      display: inline-block;
-      margin-right: 5px;
-
-      .site-image {
-        width: 35px;
-        height: 35px;
-        padding: 4px;
-        object-fit: contain;
-        filter: grayscale(100%);
-        cursor: pointer;
+    .icon-box {
+      .iconfont {
         border-radius: 50%;
-        @include border('border-base');
+        font-size: 24px;
+        padding: 8px;
+        cursor: pointer;
         transition: all 0.2s;
+        @include border('border-base');
+        @include fontColor('color-text');
 
-        &:hover {
+        &:hover, &.active {
           @include borderColor('color-primary');
-          filter: grayscale(0);
+          @include fontColor('color-primary');
         }
       }
     }
 
+    .jump-web-site {
+      margin-top: 10px;
+      text-align: center;
 
+      .item {
+        display: inline-block;
+        margin-right: 5px;
+
+        .site-image {
+          width: 35px;
+          height: 35px;
+          padding: 4px;
+          object-fit: contain;
+          filter: grayscale(100%);
+          cursor: pointer;
+          border-radius: 50%;
+          transition: all 0.2s;
+          @include border('border-base');
+
+          &:hover {
+            @include borderColor('color-primary');
+            filter: grayscale(0);
+          }
+        }
+      }
+
+
+    }
   }
 
   &.mobile {

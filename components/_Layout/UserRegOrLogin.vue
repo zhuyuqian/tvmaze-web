@@ -62,15 +62,12 @@ export default {
     login() {
       this.$refs['login-form'].validate(async (valid) => {
         if (!valid) return;
-        let {data: {error, msg, data}} = await this.$axios.post('/user/login', {
+        let {data: {error, msg}} = await this.$axios.post('/user/login', {
           username: this.loginInfo.username,
           password: encode(this.loginInfo.password)
         });
         if (error) return this.$message.error(msg);
-        this.$store.commit('SET_USER_INFO', data);
-        this.showLogin = false;
-        this.loginInfo.username = '';
-        this.loginInfo.password = '';
+        location.reload();
       })
     }
   }

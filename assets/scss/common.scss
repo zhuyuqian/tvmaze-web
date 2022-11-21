@@ -119,11 +119,14 @@ p {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-top: 2px;
+      margin-top: 3px;
       font-size: 12px;
       line-height: 20px;
 
       span {
+        display: flex;
+        align-items: center;
+
         &:before {
           margin-right: 2px;
         }
