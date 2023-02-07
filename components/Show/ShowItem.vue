@@ -3,6 +3,7 @@
              :class="{[shape]:true,[`delay-${delay}`]:true}"
              :target="target" :to="`/show/${info.showId}`"
              :title="info.showName">
+    <span class="status-box">{{ $t(`show.status.${info.showStatus}`) }}</span>
     <div class="cover-box">
       <image-plus :src="info.showImageMedium"/>
     </div>

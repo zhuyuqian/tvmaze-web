@@ -260,14 +260,14 @@ export default {
       this.yearAirsChart.setOption({
         tooltip: {position: 'top', formatter: ({value}) => `${value[0]}：${value[1]}`},
         visualMap: {
-          min: 0, max: 500,
+          min: 0, max: 1000,
           type: 'piecewise', orient: 'horizontal',
           right: 20, top: 0,
           textStyle: {color: '#999'}
         },
         calendar: {
           top: 50, left: 50, right: 20, bottom: 20,
-          range: '2022',
+          range: '2023',
           splitLine: {lineStyle: {width: 1, color: '#666'}},
           itemStyle: {borderWidth: 0.5, color: '#232323', borderColor: '#666'},
           monthLabel: {color: '#999'},

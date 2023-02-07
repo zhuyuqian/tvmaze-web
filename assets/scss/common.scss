@@ -89,8 +89,25 @@ p {
   @include border("border-base");
   @include backgroundColor("color-card-background");
 
+  .status-box {
+    position: absolute;
+    top: 12px;
+    right: -31px;
+    text-align: center;
+    font-size: 12px;
+    width: 100px;
+    height: 16px;
+    line-height: 16px;
+    transform: rotate(45deg);
+    z-index: 1;
+    @include backgroundColor('color-primary-light');
+    @include fontColor('color-card-background');
+    opacity: 0.7;
+  }
+
   .cover-box {
     font-size: 0;
+    position: relative;
   }
 
   .info-box {

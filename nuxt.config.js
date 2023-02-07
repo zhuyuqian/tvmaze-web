@@ -24,7 +24,7 @@ export default {
     htmlAttrs: {}
   },
   globalName: "tvmaze",
-  loading: {color: '#409EFF', height: '1px'},
+  loading: {height: 0},
   router: {
     scrollBehavior(to, from, savedPosition) {
       return {x: 0, y: 0}

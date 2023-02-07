@@ -8,12 +8,18 @@
         {{ $store.getters.USER.nickName }}
       </span>
       <div class="user-info-popover">
+        <div class="menu-box">
+          <nuxt-link class="menu-item iconfont icon-home" target="_blank" :to="`/user/${$store.getters.USER.uuid}`">
+            我的主页
+          </nuxt-link>
+        </div>
         <div class="foot-box">
-          <span class="button">我的设置</span>
+          <nuxt-link class="button" target="_blank" to="/user/settings">我的设置</nuxt-link>
           <span class="button" @click="logout">退出登录</span>
         </div>
       </div>
     </el-popover>
+    <!--登录弹窗-->
     <el-dialog title="登录" :visible.sync="showLogin" width="400px">
       <el-form size="small" ref="login-form" :model="loginInfo" :rules="loginRules">
         <el-form-item prop="username">
@@ -97,6 +103,30 @@ export default {
 
 .user-info-popover {
   width: 100%;
+
+  .menu-box {
+    padding: 0 0 10px 0;
+    display: flex;
+    flex-wrap: wrap;
+
+    .menu-item {
+      padding: 4px 0 4px 4px;
+      width: calc(50% - 5px);
+      font-size: 13px;
+      cursor: pointer;
+      border-radius: 4px;
+      @include fontColor('color-text');
+
+      &:before {
+        font-size: 16px;
+        @include fontColor('color-text');
+      }
+
+      &:hover {
+        @include backgroundColor('border-color')
+      }
+    }
+  }
 
   .foot-box {
     display: flex;
