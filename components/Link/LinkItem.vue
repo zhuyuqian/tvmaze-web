@@ -1,6 +1,6 @@
 <template>
   <a class="animate__animated animate__fadeInUp common-card list" :class="{[`delay-${delay}`]:true}"
-     target="_blank" :title="info.name" :href="info.link">
+     target="_blank" :title="info.name" :href="`${info.link}#tvmaze.cn`">
     <div class="cover-box" v-if="cover && info.icon">
       <image-plus :src="info.icon" fit="contain"/>
     </div>
