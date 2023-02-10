@@ -4,6 +4,7 @@
       <span class="link-box">
         <nuxt-link to="/about">关于</nuxt-link>
         <nuxt-link to="/contact">加入</nuxt-link>
+        <nuxt-link to="/link">导航</nuxt-link>
         <nuxt-link to="/changelog">更新日志</nuxt-link>
       </span>
       <div class="rt-box">

@@ -58,9 +58,14 @@ export default {
     @include border('border-base');
   }
 
-  ::v-deep .new-p {
+  ::v-deep .new-p, {
     margin: 10px 0;
-    font-size: 16px;
+    font-size: 14px;
+  }
+
+  ::v-deep .new-section {
+    margin: 10px 0;
+    font-size: 14px;
   }
 
   ::v-deep .new-show {
@@ -72,7 +77,17 @@ export default {
     margin: 10px auto;
     padding: 4px;
     border-radius: 4px;
+    display: block;
+    box-sizing: border-box;
     @include border('border-base');
+  }
+
+  ::v-deep .new-em {
+    font-size: 12px;
+  }
+
+  ::v-deep .new-figure {
+    font-size: 12px;
   }
 
   &.mobile {
@@ -81,13 +96,15 @@ export default {
     }
 
     ::v-deep .new-img {
-      display: block;
-      box-sizing: border-box;
       width: 100% !important;
     }
 
-    ::v-deep .new-p {
-      font-size: 14px;
+    ::v-deep .new-p, {
+      font-size: 13px;
+    }
+
+    ::v-deep .new-section {
+      font-size: 13px;
     }
   }
 }

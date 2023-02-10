@@ -68,10 +68,10 @@ export default {
   &.big {
 
     .title-warp {
-      margin-bottom: 20px;
+      margin-bottom: 10px;
 
       .name-box {
-        font-size: 24px;
+        font-size: 20px;
         @include fontColor("color-title");
       }
     }

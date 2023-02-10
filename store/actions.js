@@ -28,7 +28,7 @@ export default {
     ] = await Promise.all([
       app.$axios.get('/show/genre'),
       app.$axios.get('/new/category'),
-      app.$axios.get('/friendlyLink/list'),
+      app.$axios.get('/friendlyLink/list?isFooter=1'),
       app.$axios.get('/user/user')
     ])
 

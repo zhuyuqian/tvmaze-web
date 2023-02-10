@@ -1,6 +1,6 @@
 export default {
   head: {
-    title: 'TvMaze.cn - 追剧日记 - 你的个人追剧指南',
+    title: '追剧指南 - 美剧、英剧、日剧、韩剧资讯、更新、预告 - TvMaze.cn',
     meta: [
       {charset: 'utf-8'},
       {name: 'viewport', content: 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no'},

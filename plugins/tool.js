@@ -10,7 +10,7 @@ Dayjs.extend(relativeTime);
 Vue.prototype.$dayjs = Dayjs;
 Vue.prototype.$valid = {}
 Vue.prototype.$dic = {
-  logoText: 'TvMaze.cn',
+  logoText: '追剧指南 - TvMaze.cn',
   themeMap: {
     haitian: '海天',
     dark: "深邃",
