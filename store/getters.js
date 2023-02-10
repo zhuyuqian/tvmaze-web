@@ -18,5 +18,5 @@ export default {
   // 资讯分类列表
   NEW_CATEGORY_LIST: state => state.newCategoryList,
   // 友情链接列表
-  FRIEND_LINK_LIST: state => state.friendLinkList
+  LINK_LIST: state => state.linkList
 }

@@ -13,8 +13,8 @@ export default {
   SET_SHOW_GENRE_LIST(state, showGenreList) {
     state.showGenreList = showGenreList;
   },
-  SET_FRIEND_LINK(state, friendLinkList) {
-    state.friendLinkList = friendLinkList;
+  SET_FRIEND_LINK(state, linkList) {
+    state.linkList = linkList;
   },
   SET_LOCALE(state, locale) {
     state.locale = locale;

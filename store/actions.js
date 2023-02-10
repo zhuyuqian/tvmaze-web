@@ -23,12 +23,12 @@ export default {
     let [
       {data: {data: genre}},
       {data: {data: newCategory}},
-      {data: {data: friendLinkList}},
+      {data: {data: linkList}},
       {data: {data: userInfo}}
     ] = await Promise.all([
       app.$axios.get('/show/genre'),
       app.$axios.get('/new/category'),
-      app.$axios.get('/friendlyLink/list?isFooter=1'),
+      app.$axios.get('/link/list?isFooter=1'),
       app.$axios.get('/user/user')
     ])
 
@@ -40,7 +40,7 @@ export default {
     commit('SET_USER_INFO', userInfo)
     commit('SET_SHOW_GENRE_LIST', genre);
     commit('SET_NEW_CATEGORY_LIST', newCategory);
-    commit('SET_FRIEND_LINK', friendLinkList);
+    commit('SET_FRIEND_LINK', linkList);
     locale && commit('SET_LOCALE', locale);
     showShape && commit('SET_SHOW_SHAPE', showShape);
     theme && commit('SET_THEME', theme);

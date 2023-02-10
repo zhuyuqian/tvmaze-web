@@ -42,5 +42,5 @@ export default () => ({
   // 资讯分类列表
   newCategoryList: [],
   // 友情链接
-  friendLinkList: []
+  linkList: []
 })

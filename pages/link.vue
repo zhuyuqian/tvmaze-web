@@ -40,7 +40,7 @@ export default {
     }
   },
   async asyncData({app}) {
-    let {data: {data: friendlyList}} = await app.$axios.get('/friendlyLink/list');
+    let {data: {data: friendlyList}} = await app.$axios.get('/link/list');
     return {friendlyList}
   }
 }

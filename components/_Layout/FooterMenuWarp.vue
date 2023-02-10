@@ -13,7 +13,7 @@
         <div class="link-flex">
           <p class="name">友情链接</p>
           <div class="link-box">
-            <a v-for="link of $store.getters.FRIEND_LINK_LIST" :key="link.id" :href="`${link.link}#tvmaze.cn`"
+            <a v-for="link of $store.getters.LINK_LIST" :key="link.id" :href="`${link.link}#tvmaze.cn`"
                target="_blank">{{ link.name }}</a>
           </div>
         </div>
