@@ -79,15 +79,15 @@ export default {
       {data: {data: returnShowList}},
       {data: {data: hotShowList}},
       {data: {data: recommendedAlbumList}},
-      {data: {data: viewingReportList}},
+      {data: {data: {data: viewingReportList}}},
       {data: {data: synthesizeNewList}}
     ] = await Promise.all([
       app.$axios.get('/show/month'),
       app.$axios.get('/show/return'),
       app.$axios.get('/show/hot'),
       app.$axios.get('/album/recommended'),
-      app.$axios.get('/new/new?category=5'),
-      app.$axios.get('/new/new?category=1&size=4'),
+      app.$axios.get('/new/list?category=5&size=2'),
+      app.$axios.get('/new/new'),
     ])
     return {
       head: app.head,

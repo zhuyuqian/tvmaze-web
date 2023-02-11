@@ -1,17 +1,17 @@
 <template>
   <a class="animate__animated animate__fadeInUp common-card list" :class="{[`delay-${delay}`]:true}"
-     :target="info.newType==='INSTATION'?'':'_blank'" :title="info.newTitle"
-     :href="info.newType==='INSTATION'?`/new/${info.newId}`:info.newOriginalLink">
-    <div class="cover-box" v-if="cover && info.newCover">
-      <image-plus :src="info.newCover"/>
+     :target="info.type==='INSTATION'?'':'_blank'" :title="info.title"
+     :href="info.type==='INSTATION'?`/new/${info.id}`:info.originalLink">
+    <div class="cover-box" v-if="cover && info.cover">
+      <image-plus :src="info.cover"/>
     </div>
     <div class="info-box">
       <div class="other-box">
-        <span>{{ $dayjs(info.newPublishTime).format('YYYY-MM-DD') }}</span>
-        <span>{{ info.newPublishUser }}</span>
+        <span>{{ $dayjs(info.publishTime).format('YYYY-MM-DD') }}</span>
+        <span>{{ info.categoryName }}</span>
       </div>
-      <div class="name-box pub-ellipsis-1">{{ info.newTitle }}</div>
-      <div class="summary-box pub-ellipsis-2">{{ info.categoryName }} · {{ info.newAbstract }}</div>
+      <div class="name-box pub-ellipsis-1">{{ info.title }}</div>
+      <div class="summary-box pub-ellipsis-1">{{ info.publishUser }} · {{ info.abstract }}</div>
     </div>
   </a>
 </template>

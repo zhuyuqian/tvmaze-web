@@ -1,34 +1,33 @@
 <template>
   <div class="new-page mobile" v-if="$store.getters.IS_MOBILE">
-    <common-focus/>
     <div class="name-warp">
-      <h1>{{ newInfo.newTitle }}</h1>
-      <p>{{ newInfo.categoryName }} · {{ newInfo.newAbstract }}</p>
+      <h1>{{ newInfo.title }}</h1>
+      <p>{{ newInfo.categoryName }} · {{ newInfo.abstract }}</p>
     </div>
     <div class="new-content-warp">
       <div class="info-box">
-        <span>{{ newInfo.newPublishUser }} 发布于 {{ $dayjs(newInfo.newPublishTime).format('YYYY-MM-DD') }}</span>
-        <a v-if="newInfo.newOriginalLink" :href="newInfo.newOriginalLink" target="_blank">查看原文</a>
+        <span>{{ newInfo.publishUser }} 发布于 {{ $dayjs(newInfo.publishTime).format('YYYY-MM-DD') }}</span>
+        <a v-if="newInfo.originalLink" :href="newInfo.originalLink" target="_blank">查看原文</a>
       </div>
-      <new-content :html="newInfo.newHtml" :show-list="newInfo.showList"/>
+      <new-content :html="newInfo.html" :show-list="newInfo.showList"/>
     </div>
     <content-warp name="同类动态" size="small" v-if="relatedNewList.length">
-      <new-item v-for="item of relatedNewList" :key="item.newId" :info="item" :cover="false"/>
+      <new-item v-for="item of relatedNewList" :key="item.id" :info="item" :cover="false"/>
     </content-warp>
   </div>
   <div class="new-page" v-else>
     <div class="name-warp">
-      <h1>{{ newInfo.newTitle }}</h1>
-      <p>{{ newInfo.categoryName }} · {{ newInfo.newAbstract }}</p>
+      <h1>{{ newInfo.title }}</h1>
+      <p>{{ newInfo.categoryName }} · {{ newInfo.abstract }}</p>
     </div>
     <el-row :gutter="15">
       <el-col :xs="15" :sm="15" :md="17" :lg="18" :xl="18">
         <div class="new-content-warp">
           <div class="info-box">
-            <span>{{ newInfo.newPublishUser }} 发布于 {{ $dayjs(newInfo.newPublishTime).format('YYYY-MM-DD') }}</span>
-            <a v-if="newInfo.newOriginalLink" :href="newInfo.newOriginalLink" target="_blank">查看原文</a>
+            <span>{{ newInfo.publishUser }} 发布于 {{ $dayjs(newInfo.publishTime).format('YYYY-MM-DD') }}</span>
+            <a v-if="newInfo.originalLink" :href="newInfo.originalLink" target="_blank">查看原文</a>
           </div>
-          <new-content :html="newInfo.newHtml" :show-list="newInfo.showList"/>
+          <new-content :html="newInfo.html" :show-list="newInfo.showList"/>
         </div>
       </el-col>
       <el-col :xs="9" :sm="9" :md="7" :lg="6" :xl="6" class="stick-top">
@@ -37,7 +36,7 @@
           <show-item v-for="show of newInfo.showList" shape="list" :key="show.showId" :info="show"/>
         </content-warp>
         <content-warp name="同类动态" size="small" v-if="relatedNewList.length">
-          <new-item v-for="item of relatedNewList" :key="item.newId" :info="item" :cover="false"/>
+          <new-item v-for="item of relatedNewList" :key="item.id" :info="item" :cover="false"/>
         </content-warp>
       </el-col>
     </el-row>
@@ -54,18 +53,18 @@ export default {
   },
   head() {
     return {
-      title: `${this.newInfo.newTitle} - ${this.newInfo.categoryName} - ${this.$dic.logoText}`,
-      meta: [{hid: 'description', name: 'description', content: this.newInfo.newAbstract}]
+      title: `${this.newInfo.title} - ${this.newInfo.categoryName} - ${this.$dic.logoText}`,
+      meta: [{hid: 'description', name: 'description', content: this.newInfo.abstract}]
     }
   },
   async asyncData({app, params}) {
-    let {newId} = params;
+    let {id} = params;
     let [
       {data: {data: newInfo}},
       {data: {data: relatedNewList}}
     ] = await Promise.all([
-      app.$axios.get('/new/info', {params: {newId}}),
-      app.$axios.get('/new/related', {params: {newId}})
+      app.$axios.get('/new/info', {params: {id}}),
+      app.$axios.get('/new/related', {params: {id}})
     ])
     return {
       newInfo,
