@@ -3,7 +3,7 @@ import {mapGetters} from 'vuex'
 export const getQueryInfo = (query = {}, params = {}) => {
   return {
     page: query.page ? Number(query.page) : 1,
-    order: query.order || 'a-z',
+    order: query.order || 'new',
     type: query.type || undefined,
     genre: query.genre || undefined,
     name: query.name || undefined,

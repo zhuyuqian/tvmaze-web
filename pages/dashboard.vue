@@ -267,7 +267,7 @@ export default {
         },
         calendar: {
           top: 50, left: 50, right: 20, bottom: 20,
-          range: '2023',
+          range: this.$dayjs().format('YYYY'),
           splitLine: {lineStyle: {width: 1, color: '#666'}},
           itemStyle: {borderWidth: 0.5, color: '#232323', borderColor: '#666'},
           monthLabel: {color: '#999'},

@@ -34,7 +34,7 @@ const getSearchInfo = (query = {}) => {
     page: query.page ? Number(query.page) : 1,
     name: query.name || undefined,
     gender: query.gender || undefined,
-    order: query.order || 'a-z',
+    order: query.order || 'new',
   }
 }
 
